@@ -1,0 +1,142 @@
+,Run_startup,Enable_Ana_Testpoint,DACPA_tourn_on_wo_calibration,Procedura_Maurizio,Boost_Test_Default,DAC-PA TDM_768_IN,DAC-PA TDM_768_IN_and_Path_generator,DAC-PA PDM_3MHz_IN,DAC-PA PDM_6MHz_IN,DAC-PA PDM_12MHz_IN,DAC-PA ANALOG_IN_DC_COUPLED,DAC-PA ANALOG_IN_AC_COUPLED,BOOST_FORCE_VBSO19V
+0,"Force__VBAT__3.6V
+Force__VDDIO__1.8V
+Force__VDD__1.8V
+Force__SDWN__1.8V
+
+0x00_0x0F ""Power-up""
+0xFE_0x01 ""Select page 1""
+0x2F_0xAA ""Unlock test page""
+0x2F_0xBB ""Unlock test page""
+0xB0[0]_0x00 ""Unlock OTP field""
+0xEE[1]_0x00 ""external VDD, check???""        0xFE_0x00 ""Return page 0""","0x19_0x00 ""Enable reference analog test""
+Force__SDWN__OPEN","0x13[4]_1b1 ""Disable authomatic calibration at power up""
+0x19_0x01 ""Play, speaker enable""","Procedura per consentire la misura dell'offset in ANALOG_IN, visto che i DAC non sono abilitati di default  per applicare la parola di correzione","Force__VBIAS__5V
+Force__VBSO__3.6V
+Force__SW__3.6V
+
+0xFE_0x00 ""Select page 0""
+0xB0_0x00 ""en 1 bst low""
+0xB1_0x00 ""en 2 bst low""
+0xB3[4:3]_0x00 ""en 3 bst low""
+0x18[6]_0x01 ""Enable Mirr""
+0xB1[6]_0x01 ""Bootstrap en""
+0xB2[1]_0x00 ""ls_sel off""
+0xB4[2:0]_0x00 ""hsa_hsb_byp off""
+0xFE_0x01 ""Select page 1""
+0x17[6]_0x01 ""Force Mirr""
+0x16[6]_0x01 ""Force Bootstrap""","Run_Startup
+0xFE_0x00 ""in base page""
+0x13[4]_1b1 ""seq_auto_cal_dis=1 disable authomatic calibration""
+0x11[1:0]_2b00 ""Input mode: TDM""
+0x32_0x15 ""FSYN=48kHz, OSR=48x64""
+0x70_0x80 ""Seconod order modulator 1-stage""
+0x71_0x80 ""Seconod order modulator 2-stage""
+0x72_0x80 ""Seconod order modulator 3-stage""
+0x77_0x00 ""Single index DWA 1-stage""
+0x78_0x00 ""Single index DWA 2-stage""
+0x79_0x00 ""Single index DWA 3-stage""
+0x19_0x01 ""Speaker enable""
+Wait__delay__10ms
+Read__0B ""bit[7] ""has to be 1, audio processor is able to play""
+""Now we are ble to play using TDM IN;
+0xFE_0x00 in base page""
+","Run_Startup
+0xFE_0x00 ""in base page""
+0x13[4]_1b1 ""seq_auto_cal_dis=1 disable authomatic calibration""
+0x11[1:0]_2b00 ""Input mode: TDM""
+0x32_0x15 ""FSYN=48kHz, OSR=48x64""
+0x70_0x80 ""Second order modulator 1-stage""
+0x71_0x80 ""Second order modulator 2-stage""
+0x72_0x80 ""Second order modulator 3-stage""
+0x77_0x00 ""Single index DWA 1-stage""
+0x78_0x00 ""Single index DWA 2-stage""
+0x79_0x00 ""Single index DWA 3-stage""
+0x19_0x01 ""Speaker enable""
+Wait__delay__10ms
+Read__0B ""bit[7] ""has to be 1, audio processor is able to play""
+""Now we are ble to play using TDM IN; if we eant play sing internal sinewave, do the following:""
+0xFE_0x01 ""in test page""
+0x1E_0x18 ""set enable and gain = -7dB (Gains from-1dB to -61dB step -6) anf freq=1kHz (available freq: 1-2-4-8-16kHz)""
+0x1F_0x00 ""offset zero""
+0xFE_0x00 ""in base page""
+""Now we are ble to play using internal sine wave""","Run_Startup
+0xFE_0x00 ""in base page""
+0x13[4]_1b1 ""seq_auto_cal_dis=1 disable authomatic calibration""
+0x11[1:0]_2b01 ""Input mode: PDM""
+0x11[3:2]_2b00 ""freq. 3MHz""
+0x1D[0]_1b1 ""If 1 low PDM low power mode""
+0x70_0x80 ""Second order modulator 1-stage""
+0x71_0x80 ""Second order modulator 2-stage""
+0x72_0x80 ""Second order modulator 3-stage""
+0x77_0x00 ""Single index DWA 1-stage""
+0x78_0x00 ""Single index DWA 2-stage""
+0x79_0x00 ""Single index DWA 3-stage""
+0x19_0x01 ""Speaker enable""
+Wait__delay__10ms
+Read__0B ""bit[7] ""has to be 1, audio processor is able to play""
+""Now we are ble to play using PDM IN""
+","Run_Startup
+0xFE_0x00 ""in base page""
+0x13[4]_1b1 ""seq_auto_cal_dis=1 disable authomatic calibration""
+0x11[1:0]_2b01 ""Input mode: PDM""
+0x11[3:2]_2b01 ""freq. 6MHz""
+0x1D[0]_1b1 ""If 1 low PDM low power mode""
+0x70_0x80 ""Second order modulator 1-stage""
+0x71_0x80 ""Second order modulator 2-stage""
+0x72_0x80 ""Second order modulator 3-stage""
+0x77_0x00 ""Single index DWA 1-stage""
+0x78_0x00 ""Single index DWA 2-stage""
+0x79_0x00 ""Single index DWA 3-stage""
+0x19_0x01 ""Speaker enable""
+Wait__delay__10ms
+Read__0B ""bit[7] ""has to be 1, audio processor is able to play""
+""Now we are ble to play using PDM IN""","Run_Startup
+0xFE_0x00 ""in base page""
+0x13[4]_1b1 ""seq_auto_cal_dis=1 disable authomatic calibration""
+0x11[1:0]_2b01 ""Input mode: PDM""
+0x11[3:2]_2b10 ""freq. 12MHz""
+0x1D[0]_1b1 ""If 1 low PDM low power mode""
+0x70_0x80 ""Second order modulator 1-stage""
+0x71_0x80 ""Second order modulator 2-stage""
+0x72_0x80 ""Second order modulator 3-stage""
+0x77_0x00 ""Single index DWA 1-stage""
+0x78_0x00 ""Single index DWA 2-stage""
+0x79_0x00 ""Single index DWA 3-stage""
+0x19_0x01 ""Speaker enable""
+Wait__delay__10ms
+Read__0B ""bit[7] ""has to be 1, audio processor is able to play""
+""Now we are ble to play using PDM IN""","Run_Startup
+0xFE_0x00 ""in base page""
+0x13[4]_1b1 ""seq_auto_cal_dis=1 disable authomatic calibration""
+0x11[1:0]_2b11 ""Input mode: Analog IN""
+0x10[7]_1b1 ""en_ana_dc_mode=1 DC coupling""
+0x83[2:0]_3b000 ""12dB gain""
+0x19_0x01 ""Speaker enable""
+Wait__delay__10ms
+Read__0B ""bit[7] ""has to be 1, audio processor is able to play""
+""Now we are ble to play Analog IN""
+","Run_Startup
+0xFE_0x00 ""in base page""
+0x13[4]_1b1 ""seq_auto_cal_dis=1 disable authomatic calibration""
+0x11[1:0]_2b11 ""Input mode: Analog IN""
+0x10[7]_1b0 ""en_ana_dc_mode=0 AC coupling""
+0x83[2:0]_3b010 ""18dB gain""
+0x19_0x01 ""Speaker enable""
+Wait__delay__10ms
+Read__0B ""bit[7] ""has to be 1, audio processor is able to play""
+""Now we are ble to play Analog IN""
+","Force__VBIAS__19V
+Force__VBSO__19V
+
+0xFE_0x00 ""Select page 0""
+0xB0_0x00 ""en 1 bst low""
+0xB1_0x00 ""en 2 bst low""
+0xB3[4:3]_0x00 ""en 3 bst low"" 
+0x18[6]_0x01 ""Enable Mirr"" Wait__delay__0.01ms 
+0xB1[6]_0x01 ""Bootstrap en""
+0xB2[1]_0x00 ""ls_sel off""
+0xB4[2:0]_0x00 ""hsa_hsb_byp off""
+0xFE_0x01 ""Select page 1""
+0x17[6]_0x01 ""Force Mirr""
+0x16[6]_0x01 ""Force Bootstrap"""

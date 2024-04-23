@@ -1,0 +1,134 @@
+{
+    "List_Tab": [
+        {
+            "Name": "STATUS",
+            "Regs": [
+                [
+                    0,
+                    "00 - 0F"
+                ]
+            ],
+            "Fields": []
+        },
+        {
+            "Name": "AUTOMATIC SEQUENCES",
+            "Regs": [
+                [
+                    0,
+                    "10 - 1F"
+                ]
+            ],
+            "Fields": []
+        },
+        {
+            "Name": "ENABLES",
+            "Regs": [
+                [
+                    0,
+                    "20 - 2F"
+                ]
+            ],
+            "Fields": []
+        },
+        {
+            "Name": "TDM INTERFACE SETTINGS",
+            "Regs": [
+                [
+                    0,
+                    "30 - 4F"
+                ]
+            ],
+            "Fields": []
+        },
+        {
+            "Name": "MISC INTERFACE SETTINGS",
+            "Regs": [
+                [
+                    0,
+                    "50 - 6F"
+                ]
+            ],
+            "Fields": []
+        },
+        {
+            "Name": "DAC SETTINGS",
+            "Regs": [
+                [
+                    0,
+                    "70 - 7F"
+                ]
+            ],
+            "Fields": []
+        },
+        {
+            "Name": "PA AND REF SETTINGS",
+            "Regs": [
+                [
+                    0,
+                    "80 - AF"
+                ]
+            ],
+            "Fields": []
+        },
+        {
+            "Name": "ANALOG BOOST SETTINGS",
+            "Regs": [
+                [
+                    0,
+                    "B0 - BF"
+                ]
+            ],
+            "Fields": []
+        },
+        {
+            "Name": "DIGITAL BOOST SETTINGS",
+            "Regs": [
+                [
+                    0,
+                    "C0 - DF"
+                ]
+            ],
+            "Fields": []
+        },
+        {
+            "Name": "CALIBRATION SETTINGS",
+            "Regs": [
+                [
+                    0,
+                    "E0 - F7"
+                ]
+            ],
+            "Fields": []
+        },
+        {
+            "Name": "PAD CONTROL",
+            "Regs": [
+                [
+                    0,
+                    "F8"
+                ]
+            ],
+            "Fields": []
+        },
+        {
+            "Name": "STATUS",
+            "Regs": [
+                [
+                    1,
+                    "00 - AD"
+                ]
+            ],
+            "Fields": []
+        },
+        {
+            "Name": "OTP SECTION",
+            "Regs": [
+                [
+                    1,
+                    "AE"
+                ]
+            ],
+            "Fields": []
+        }
+    ]
+}

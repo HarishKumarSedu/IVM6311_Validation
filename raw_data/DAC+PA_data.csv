@@ -1,0 +1,244 @@
+Parameters,"DAC-PA OFFSET CALIBRATION ANALOG_IN
+TO BE REPEATED FOR ALL 5 ANALOG GAINS (12-15-18-21-24dB)","DAC-PA OFFSET CALIBRATION DIGITAL_IN (both PDM, TDM)
+This procedure has the aim to measure the offset when the part will be in idle mode
+",THD-noise evaluation in configuration TDM 768 external signal,THD-noise evaluation in configuration TDM 768 internal signal,"THD-noise evaluation in configuration Analog in DC-couplud (No calibration)
+TO BE REPEATED FOR ALL 5 ANALOG GAINS (12-15-18-21-24dB)","THD-noise evaluation in configuration Analog in AC-coupled (No calibration)
+",THD-noise evaluation in configuration PDM IN 3MHz (No calibration),THD-noise evaluation in configuration PDM IN 6MHz (No calibration),THD-noise evaluation in configuration PDM IN 12MHz (No calibration),"Characterization of DAC currents
+(curva a vasca da bagno)",Ref. current Measurement,DAC element PMOS current Measurement,DAC element NMOS current Measurement,Common Mode Block VGS Measurement,Common Mode Block (AC-coupled) voltage Measurement
+Test_Name,"DAC-PA OFFSET CALIBRATION ANALOG_IN
+TO BE REPEATED FOR ALL 5 ANALOG GAINS (12-15-18-21-24dB)","DAC-PA OFFSET CALIBRATION DIGITAL_IN (both PDM, TDM)
+This procedure has the aim to measure the offset when the part will be in idle mode
+",THD-noise evaluation in configuration TDM 768 external signal,THD-noise evaluation in configuration TDM 768 internal signal,"THD-noise evaluation in configuration Analog in DC-couplud (No calibration)
+TO BE REPEATED FOR ALL 5 ANALOG GAINS (12-15-18-21-24dB)","THD-noise evaluation in configuration Analog in AC-coupled (No calibration)
+",THD-noise evaluation in configuration PDM IN 3MHz (No calibration),THD-noise evaluation in configuration PDM IN 6MHz (No calibration),THD-noise evaluation in configuration PDM IN 12MHz (No calibration),"Characterization of DAC currents
+(curva a vasca da bagno)",Ref. current Measurement,DAC element PMOS current Measurement,DAC element NMOS current Measurement,Common Mode Block VGS Measurement,Common Mode Block (AC-coupled) voltage Measurement
+Test_Description,"Run_Startup
+0xFE_0x00 ""in base page""
+0x83[2:0]_3b000 ""Analog Gain 12dB setting""
+0x11[1:0]_2b11 ""Input mode: analog""
+0xE0[1:0]_2b00 ""Calibration time 600us, change in case of issues""
+0xE0[3:2]_2b00 ""AZ mode time 300us, change in case of issues""
+0xE2[0]_1b1 ""Internal calibration start""
+Wait__delay__20ms
+Read__E5 ""bit[4] =1 indicates end of calibration""
+0xFE_0x01 ""in test page""
+Read__D0-D2 ""OTP cal registers D0-D2 in page 1 are written, not possible to measure analog value""
+0xFE_0x00 ""in base page""
+0xE2_0x00 ""Reset internal calibration bit""
+0xE2[0]_0x02 ""External calibration start""
+Wait__delay__20ms
+Read__E5 ""bit[4] =1 indicates end of calibration""
+0xFE_0x01 ""in test page""
+Read__D3-D5 ""OTP cal registers D3-D5 in page 1 are written (difference btw ext-int values), it is possible to measure analog value""
+0xFE_0x00 ""in base page""
+DACPA_tourn _on_wo_calibration
+Wait__delay__10ms
+Read__17 ""check result 0x0A to be in playback mode""
+Procedura_Maurizio
+Measure__EXT_IDLE_OFFSET__diff__OUTP__OUTM
+
+","Run_Startup
+0xFE_0x00 ""in base page""
+0x11[1:0]_2b00 ""Input mode: TDM""
+0x32_0x41 ""setting FSYN rate=384kHz and OSR=20""
+0xE0[1:0]_2b00 ""Calibration time 600us, change in case of issues""
+0xE0[3:2]_2b00 ""AZ mode time 300us, change in case of issues""
+0xE2[0]_1b1 ""Internal calibration start""
+Wait__delay__20ms
+Read__E5 ""bit[4] =1 indicates end of calibration""
+0xFE_0x01 ""in test page""
+Read__CA-CC ""OTP cal registers CA-CC in page 1 are written, not possible to measure analog value""
+0xFE_0x00 ""in base page""
+0xE2_0x00 ""Reset internal calibration bit""
+0xE2[0]_0x02 ""External calibration start""
+Wait__delay__20ms
+Read__E5 ""bit[4] =1 indicates end of calibration""
+0xFE_0x01 ""in test page""
+Read__CD-CF ""OTP cal registers CD-CF in page 1 are written, (difference btw ext-int values), it is possible to measure analog value""
+0xFE_0x00 ""in base page""
+0x50[0]_1b0 ""noise gate disabling""
+DACPA_tourn _on_wo_calibration
+Wait__delay__10ms
+Read__17 ""check result 0x0A to be in playback mode""
+
+Measure__EXT_IDLE_OFFSET__diff__OUTP__OUTM
+"" we've measured the offset when the part will be in idle mode""
+
+0xFE_0x01 ""in test page""
+Save_CB_varCB ""int offset idle""
+Save_CC_varCC ""int offset idle""
+Save_CE_varCE ""diff. ext-int in idle""
+Save_CF_varCF ""diff. ext-int in idle""
+Copy__0xCB[7:4]__0xCC[3:0] ""int/ext zero copied in int/ext idle""
+Copy__0xCA[7:4]__0xCB[3:0] ""int/ext zero copied in int/ext idle""
+Copy__0xCA[3:0]__0xCC[7:4] ""int/ext zero copied in int/ext idle""
+""This work-around has to be done because there is not the possibility to block idle offset ramp when we wont to measure zero register offset""
+
+Measure__EXT_ZERO_OFFSET__diff__OUTP__OUTM
+"" we've measured the offset when the part will has zero signal""
+Restore_varCB_CB ""int offset idle""
+Restore_varCC_CC ""int offset idle""
+Restore_varCE_CE ""diff. ext-int in idle""
+Restore_varCF_CF ""diff. ext-int in idle""
+
+","DAC-PA TDM_768_IN
+ForceTDM__-6_1000
+Measure__THD__AP
+Measure__flatness__AP
+Measure__PSRR__AP
+Measure__current__VDDIO
+Measure__current__VDD
+Measure__current__VBAT
+ForceTDM__-60__1000
+Measure__noise__AP
+Measure__current__VDDIO
+Measure__current__VDD
+Measure__current__VBAT
+","DAC-PA TDM_768_IN_and_Path_generator
+Measure__THD__AP
+Measure__flatness__AP
+Measure__PSRR__AP
+Measure__current__VDDIO
+Measure__current__VDD
+Measure__current__VBAT
+0xFE_0x01 ""in test page""
+0x1E_0xF8 ""set enable and gain = -61dB (Gains from-1dB to -61dB step -6) anf freq=1kHz (available freq: 1-2-4-8-16kHz)
+0xFE_0x00 ""in base page""
+Measure__noise__AP
+Measure__current__VDDIO
+Measure__current__VDD
+Measure__current__VBAT
+","DAC-PA ANALOG_IN_DC_COUPLED
+ForceANA__-6_1000
+Measure__THD__AP
+Measure__flatness__AP
+Measure__PSRR__AP
+Measure__current__VDDIO
+Measure__current__VDD
+Measure__current__VBAT
+ForceANA__-60__1000
+Measure__noise__AP
+Measure__current__VDDIO
+Measure__current__VDD
+Measure__current__VBAT
+","DAC-PA ANALOG_IN_AC_COUPLED
+ForceANA__-6_1000
+Measure__THD__AP
+Measure__current__VDDIO
+Measure__current__VDD
+Measure__current__VBAT
+ForceANA__-60__1000
+Measure__noise__AP
+Measure__current__VDDIO
+Measure__current__VDD
+Measure__current__VBAT
+","DAC-PA PDM_3MHz_IN
+ForcePDM__-6_1000
+Measure__THD__AP
+Measure__flatness__AP
+Measure__PSRR__AP
+Measure__current__VDDIO
+Measure__current__VDD
+Measure__current__VBAT
+ForcePDM__-60__1000
+Measure__noise__AP
+Measure__current__VDDIO
+Measure__current__VDD
+Measure__current__VBAT","DAC-PA PDM_6MHz_IN
+ForcePDM__-6_1000
+Measure__THD__AP
+Measure__flatness__AP
+Measure__PSRR__AP
+Measure__current__VDDIO
+Measure__current__VDD
+Measure__current__VBAT
+ForcePDM__-60__1000
+Measure__noise__AP
+Measure__current__VDDIO
+Measure__current__VDD
+Measure__current__VBAT","DAC-PA PDM_12MHz_IN
+ForcePDM__-6_1000
+Measure__THD__AP
+Measure__flatness__AP
+Measure__PSRR__AP
+Measure__current__VDDIO
+Measure__current__VDD
+Measure__current__VBAT
+ForcePDM__-60__1000
+Measure__noise__AP
+Measure__current__VDDIO
+Measure__current__VDD
+Measure__current__VBAT",TO BE DONE,"DAC-PA ANALOG_IN_DC_COUPLED
+0xFE_0x01 ""In test page""
+0x19[2]_1b1 ""Enable dacpa analog test""
+0x1A[3:0]_4b0000 ""I0P5U_TEST""
+
+Measure__Current__SDWN
+
+
+0xFE_0x00 ""Return page 0""","DAC-PA ANALOG_IN_DC_COUPLED
+0xFE_0x01 ""In test page""
+0x19[2]_1b1 ""Enable dacpa analog test""
+0x1A[3:0]_4b0001 ""IMIRRP_TEST""
+
+Measure__Current__SDWN
+
+
+0xFE_0x00 ""Return page 0""","DAC-PA ANALOG_IN_DC_COUPLED
+0xFE_0x01 ""In test page""
+0x19[2]_1b1 ""Enable dacpa analog test""
+0x1A[3:0]_4b0010 ""IMIRRN_TEST""
+
+Measure__Current__SDWN
+
+
+0xFE_0x00 ""Return page 0""","DAC-PA ANALOG_IN_AC_COUPLED
+0xFE_0x01 ""In test page""
+0x19[2]_1b1 ""Enable dacpa analog test""
+0x1A[3:0]_4b0011 ""COMM_BLOCK_OUT""
+
+Measure__Voltage__SDWN
+
+
+0xFE_0x00 ""Return page 0""","DAC-PA ANALOG_IN_AC_COUPLED
+0xFE_0x01 ""In test page""
+0x19[2]_1b1 ""Enable dacpa analog test""
+0x1A[3:0]_4b0011 ""COMM_BLOCK_OUT""
+
+Measure__Voltage__SDWN
+
+BOOST_FORCE_VBSO19V
+
+Measure__Voltage__SDWN
+
+0xFE_0x00 ""Return page 0"""
+Min,,,,,,,,,,,,,,,
+Min Value/%,,,,,,,,,,,,,,,
+Typ,,,"75, yy, zz, xx, xx, xx, 40, xx, xx, xx","75, yy, zz, xx, xx, xx, 40, xx, xx, xx","75, yy, zz, xx, xx, xx, 40, xx, xx, xx","75, yy, zz, xx, xx, xx, 40, xx, xx, xx","75, yy, zz, xx, xx, xx, 40, xx, xx, xx","75, yy, zz, xx, xx, xx, 40, xx, xx, xx","75, yy, zz, xx, xx, xx, 40, xx, xx, xx",,"0,5",187,187,0.8,"0.9,18"
+Max,1,"30 (IDLE OFFSET), 1 (ZERO OFFSET)",,,,,,,,,,,,,
+Max Value/%,,,,,,,,,,,,,,,
+Unit ,mV,mV,"dB, dB, dB, uA, uA, uA uVRMS, uA, uA, uA
+","dB, dB, dB, uA, uA, uA uVRMS, uA, uA, uA
+","dB, dB, dB, uA, uA, uA uVRMS, uA, uA, uA
+","dB, dB, dB, uA, uA, uA uVRMS, uA, uA, uA
+","dB, dB, dB, uA, uA, uA uVRMS, uA, uA, uA
+","dB, dB, dB, uA, uA, uA uVRMS, uA, uA, uA
+","dB, dB, dB, uA, uA, uA uVRMS, uA, uA, uA
+",,uA,nA,nA,V,"V,V"
+Name,Condition,Condition,Condition,Condition,Condition,Condition,Condition,Condition,Condition,Condition,Condition,Condition,Condition,Condition,Condition
+VBAT ,"3,6V","3,6V","3,6V","3,6V","3,6V","3,6V","3,6V","3,6V","3,6V",,"3,6V","3,6V","3,6V","3,6V","3,6V"
+SW ,,,,,,,,,,,,,,,
+VDDIO ,"1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V",,"1,8V","1,8V","1,8V","1,8V","1,8V"
+VDD ,"1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V",,"1,8V","1,8V","1,8V","1,8V","1,8V"
+SDWN ,,,,,,,,,,,Measure Current,Measure Current,Measure Current,Measure Voltage,Measure Voltage
+SDA ,,,,,,,,,,,,,,,
+SCL ,,,,,,,,,,,,,,,
+FSYN ,,Force 384 kHz clock with AP,Force 48 kHz clock with AP,Force 48 kHz clock with AP,,,,,,,,,,,
+SDI / PDMIN / ANAINP ,Force to 0.9V,Force zero signal with AP,Force signal,,Force 0.9V+signal,Force +signal,Force data,Force data,Force data,,,,,,
+BCLK / PDMCLK / ANAINN ,Force to 0.9V,Force 7.680 MHz clock with AP,64x48kHz = 3MHz,64x48kHz = 3MHz,Force 0.9V-signal,Force -signal,Force 3MHz,Force 6MHz,Force 12MHz,,,,,,
+VBSO ,,,,,,,,,,,,,,,
+BIAS ,,,,,,,,,,,,,,,
+CMEM ,,,,,,,,,,,,,,,
+OUTP ,Measure diff. offset,Measure diff. offset,"Measure THD, noise from AP","Measure THD, noise from AP","Measure THD, noise from AP","Measure THD, noise from AP","Measure THD, noise from AP","Measure THD, noise from AP","Measure THD, noise from AP",,,,,,
+OUTN ,Measure diff. offset,Measure diff. offset,"Measure THD, noise from AP","Measure THD, noise from AP","Measure THD, noise from AP","Measure THD, noise from AP","Measure THD, noise from AP","Measure THD, noise from AP","Measure THD, noise from AP",,,,,,
+PGND ,GND,GND,GND,GND,GND,GND,GND,GND,GND,,GND,GND,GND,GND,GND

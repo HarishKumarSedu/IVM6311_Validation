@@ -1,0 +1,47 @@
+Parameters,BIST,PAD LOOPBACK,SCAN
+Test_Name,BIST,PAD LOOPBACK,SCAN
+Test_Description,"Run_Startup
+0xFE_0x00 ""Page 0""
+0x11_0x00 ""Set TDM mode""
+0xFE_0x01 ""Page 1""
+0x06_0x03 ""Bist enable=1""
+
+Wait__delay__250us
+
+READ_REG 0x06[5:4], expected value=0x3
+
+0x06_0x00 ""Bist enable=0""
+
+","Run_Startup
+0x00_0x ""Set IO test mode""
+0x00_0x0 ""Set IO enable=1""
+
+0x00_0x00 ""Set IO enable=0""
+
+","Run_Startup
+0x05_0x01 ""Set scan mode""
+
+"
+Min,1793,1793,1793
+Min Value/%,min %,min %,min %
+Typ,1.799,1.799,1.799
+Max,1804,1804,1804
+Max Value/%,max %,max %,max %
+Unit ,V,V,V
+Name,Condition,Condition,Condition
+VBAT ,"3,6V","3,6V","3,6V"
+SW ,"3,6V","3,6V","3,6V"
+VDDIO ,"1,8V","1,8V","1,8V"
+VDD ,"1,8V","1,8V","1,8V"
+SDWN ,,,
+SDA ,,,
+SCL ,,,
+FSYN ,,,
+SDI / PDMIN / ANAINP ,,,
+BCLK / PDMCLK / ANAINN ,,,
+VBSO ,,,
+BIAS ,,,
+CMEM ,,,
+OUTP ,,,
+OUTN ,,,
+PGND ,GND,GND,GND

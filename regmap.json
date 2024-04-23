@@ -1,0 +1,5694 @@
+{
+    "RegMap": [
+        {
+            "PAGE": 0,
+            "REG": "00",
+            "POS": 3,
+            "Name": "fro_sel_0p8125mhz",
+            "Length": 1,
+            "Option": "Frequency selection of ckg_froclk_muxed, it's meaningfull only if REG00[1]=1. \t00 = 3.25MHz\t01 = 1.625MHz\t1X = 0.8125MHz",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "00",
+            "POS": 2,
+            "Name": "fro_sel_1p625mhz",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "00",
+            "POS": 1,
+            "Name": "fro_sel",
+            "Length": 1,
+            "Option": "Frequency selection of ckg_froclk_muxed. \tThe effective selection is = boot_done & REG00[1] &  OTP_FRO_SEL\t0 = 13MHz\t1 = divided version according to REG00[3:2]",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "00",
+            "POS": 0,
+            "Name": "powerup",
+            "Length": 1,
+            "Option": "Power Up\t0 = Power-down\t1 = Normal operation",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "01",
+            "POS": 0,
+            "Name": "hard_reset",
+            "Length": 1,
+            "Option": "Software hard-reset.",
+            "Attribute": "P",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "02",
+            "POS": 3,
+            "Name": "general_fault_aon",
+            "Length": 1,
+            "Option": "Removing of gating on resyncs inside rfu_top\t0 = resyncs are gated\t1 = resyncs are always clocked",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "02",
+            "POS": 2,
+            "Name": "int_mask_mode",
+            "Length": 1,
+            "Option": "Interrupt mask mode\t0 = flags are set if mask is 1\t1 = flags are set but interrupt is output on line only if its mask is 1 (default)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "02",
+            "POS": 1,
+            "Name": "int_polarity",
+            "Length": 1,
+            "Option": "Interrupt polarity\t0 = INTLINE active low (default)\t1 = INTLINE active high",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "02",
+            "POS": 0,
+            "Name": "int_clear_mode",
+            "Length": 1,
+            "Option": "Interrupt clear mode\t0 = clear on read\t1 = clear on write (default)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "03",
+            "POS": 7,
+            "Name": "audio_en_int",
+            "Length": 1,
+            "Option": "Audio enabled (that is, Audio processor can start with playback)",
+            "Attribute": "I",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "03",
+            "POS": 6,
+            "Name": "pa_ng_on_int",
+            "Length": 1,
+            "Option": "PA noise-gate ON",
+            "Attribute": "I",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "03",
+            "POS": 5,
+            "Name": "pa_ng_off_int",
+            "Length": 1,
+            "Option": "PA noise-gate OFF",
+            "Attribute": "J",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "03",
+            "POS": 4,
+            "Name": "fsyn_valid_fault",
+            "Length": 1,
+            "Option": "TDM FSYN fault",
+            "Attribute": "J",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "03",
+            "POS": 3,
+            "Name": "tdm_i_fault",
+            "Length": 1,
+            "Option": "TDM input fault",
+            "Attribute": "I",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "03",
+            "POS": 2,
+            "Name": "tsd_fault",
+            "Length": 1,
+            "Option": "TSD event",
+            "Attribute": "I",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "03",
+            "POS": 1,
+            "Name": "pwrok_fault",
+            "Length": 1,
+            "Option": "PWROK fault",
+            "Attribute": "J",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "03",
+            "POS": 0,
+            "Name": "clk_missing_fault",
+            "Length": 1,
+            "Option": "Clock monitor fault",
+            "Attribute": "I",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "04",
+            "POS": 7,
+            "Name": "audio_en_int_mask",
+            "Length": 1,
+            "Option": "Audio enable mask\t0 = INTN is not affected (default)\t1 = INTN is affected",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "04",
+            "POS": 6,
+            "Name": "pa_ng_on_int_mask",
+            "Length": 1,
+            "Option": "ClassD noise-gate ON mask\t0 = INTN is not affected (default)\t1 = INTN is affected",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "04",
+            "POS": 5,
+            "Name": "pa_ng_off_int_mask",
+            "Length": 1,
+            "Option": "ClassD noise-gate OFF mask\t0 = INTN is not affected (default)\t1 = INTN is affected",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "04",
+            "POS": 4,
+            "Name": "fsyn_valid_fault_mask",
+            "Length": 1,
+            "Option": "TDM FSYN fault mask\t0 = INTN is not affected (default)\t1 = INTN is affected",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "04",
+            "POS": 3,
+            "Name": "tdm_i_fault_mask",
+            "Length": 1,
+            "Option": "TDM input fault mask\t0 = INTN is not affected (default)\t1 = INTN is affected",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "04",
+            "POS": 2,
+            "Name": "tsd_fault_mask",
+            "Length": 1,
+            "Option": "TSD fault mask\t0 = INTN is not affected (default)\t1 = INTN is affected",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "04",
+            "POS": 1,
+            "Name": "pwrok_fault_mask",
+            "Length": 1,
+            "Option": "PWROK fault mask\t0 = INTN is not affected (default)\t1 = INTN is affected",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "04",
+            "POS": 0,
+            "Name": "clk_missing_fault_mask",
+            "Length": 1,
+            "Option": "Clock missing fault mask\t0 = INTN is not affected (default)\t1 = INTN is affected",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "05",
+            "POS": 6,
+            "Name": "fir4_clip_fault",
+            "Length": 1,
+            "Option": "Clip from FIR 4",
+            "Attribute": "I",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "05",
+            "POS": 5,
+            "Name": "fir3_clip_fault",
+            "Length": 1,
+            "Option": "Clip from FIR 3",
+            "Attribute": "I",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "05",
+            "POS": 4,
+            "Name": "fir2_clip_fault",
+            "Length": 1,
+            "Option": "Clip from FIR 2",
+            "Attribute": "I",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "05",
+            "POS": 3,
+            "Name": "fir1_clip_fault",
+            "Length": 1,
+            "Option": "Clip from FIR 1",
+            "Attribute": "I",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "05",
+            "POS": 2,
+            "Name": "bst_ocp_fault",
+            "Length": 1,
+            "Option": "BST OCP fault",
+            "Attribute": "I",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "05",
+            "POS": 1,
+            "Name": "bst_bias_ovp_fault",
+            "Length": 1,
+            "Option": "Over-voltage from BST",
+            "Attribute": "I",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "05",
+            "POS": 0,
+            "Name": "bst_bso_ovp_fault",
+            "Length": 1,
+            "Option": "Over-voltage from BST",
+            "Attribute": "I",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "06",
+            "POS": 6,
+            "Name": "fir4_clip_fault_mask",
+            "Length": 1,
+            "Option": "Clip from FIR 4 mask\t0 = INTN is not affected (default)\t1 = INTN is affected",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "06",
+            "POS": 5,
+            "Name": "fir3_clip_fault_mask",
+            "Length": 1,
+            "Option": "Clip from FIR 3 mask\t0 = INTN is not affected (default)\t1 = INTN is affected",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "06",
+            "POS": 4,
+            "Name": "fir2_clip_fault_mask",
+            "Length": 1,
+            "Option": "Clip from FIR 1 mask\t0 = INTN is not affected (default)\t1 = INTN is affected",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "06",
+            "POS": 3,
+            "Name": "fir1_clip_fault_mask",
+            "Length": 1,
+            "Option": "Clip from FIR 1 mask\t0 = INTN is not affected (default)\t1 = INTN is affected",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "06",
+            "POS": 2,
+            "Name": "bst_ocp_fault_mask",
+            "Length": 1,
+            "Option": "OCP from BST mask\t0 = INTN is not affected (default)\t1 = INTN is affected",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "06",
+            "POS": 1,
+            "Name": "bst_bias_ovp_fault_mask",
+            "Length": 1,
+            "Option": "Over-voltage from BST mask\t0 = INTN is not affected (default)\t1 = INTN is affected",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "06",
+            "POS": 0,
+            "Name": "bst_bso_ovp_fault_mask",
+            "Length": 1,
+            "Option": "Over-voltage from BST mask\t0 = INTN is not affected (default)\t1 = INTN is affected",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "0A",
+            "POS": 7,
+            "Name": "bst_byp_on",
+            "Length": 1,
+            "Option": "BYPASS detection\t0 = boost not in bypass\t1 = boost in bypass",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "0A",
+            "POS": 6,
+            "Name": "classd_ng_on",
+            "Length": 1,
+            "Option": "NG detection\t0 = system in noise gate\t1 = system in play",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "0A",
+            "POS": 4,
+            "Name": "fsyn_valid",
+            "Length": 1,
+            "Option": "FSYN detection\t0 = fsyn not valid\t1 = fsyn valid",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "0A",
+            "POS": 3,
+            "Name": "tdm_i",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "0A",
+            "POS": 2,
+            "Name": "tsd",
+            "Length": 1,
+            "Option": "TSD detection\t0 = over-temperature detected\t1 = temperature below level",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "0A",
+            "POS": 1,
+            "Name": "pwrok",
+            "Length": 1,
+            "Option": "PWROK status\t0 = power is not OK\t1 = power is OK\t",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "0A",
+            "POS": 0,
+            "Name": "clk_missing",
+            "Length": 1,
+            "Option": "Clock monitor status\t0 = clock error\t1 = clock OK\t",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "0B",
+            "POS": 7,
+            "Name": "audio_en",
+            "Length": 1,
+            "Option": "Audio enabled (that is, Audio processor can start with playback)\t0 = Processor must not play\t1 = Processor can play",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "0B",
+            "POS": 1,
+            "Name": "bst_bias_ovp",
+            "Length": 1,
+            "Option": "Bst bias ovp status\t0 = ovp not present\t1 = ovp present\t",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "0B",
+            "POS": 0,
+            "Name": "bst_bso_ovp",
+            "Length": 1,
+            "Option": "Bst bso ovp status\t0 = ovp not present\t1 = ovp present\t",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "0C",
+            "POS": 4,
+            "Name": "mnt_fsyn_rate[2:0]",
+            "Length": 3,
+            "Option": "TDM FYSN detected sample rate\t000 = idle\t001 = 48kHz\t010 = 96kHz\t011 = 192kHz\t100 = 384kHz\t101 = 768kHz",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "0C",
+            "POS": 0,
+            "Name": "mnt_bclk_osr[2:0]",
+            "Length": 3,
+            "Option": "TDM detected BCLK OSR\t000 = idle\t001 = 20\t010 = 32\t011 = 40\t100 = 48\t101 = 64\t",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "0D",
+            "POS": 4,
+            "Name": "platform[1:0]",
+            "Length": 2,
+            "Option": "Detected platform (it drives effective otp fields)\t00 = Platform 0\t01 = Platform 1\t00 = Platform 2\t01 = Platform 3\t",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "0D",
+            "POS": 0,
+            "Name": "boot_done",
+            "Length": 1,
+            "Option": "Boot (otp loading, platform detection and i2c_load) status\t0 = boot not completed\t1 = boot completed\t",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "0E",
+            "POS": 7,
+            "Name": "ext_offset_zero_sat",
+            "Length": 1,
+            "Option": "Saturation of zero calibration\t0 = calibration not saturated\t1 = calibration saturated",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "0E",
+            "POS": 6,
+            "Name": "ext_offset_idle_sat",
+            "Length": 1,
+            "Option": "Saturation of idle calibration\t0 = calibration not saturated\t1 = calibration saturated",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "0E",
+            "POS": 0,
+            "Name": "applied_offset[11:8]",
+            "Length": 4,
+            "Option": "Applied calibration offset on data path. LSB = 28.61uV (15V/2^19)",
+            "Attribute": "R",
+            "Match": "0F"
+        },
+        {
+            "PAGE": 0,
+            "REG": "0F",
+            "POS": 0,
+            "Name": "applied_offset[7:0]",
+            "Length": 8,
+            "Option": "Applied calibration offset on data path. LSB = 28.61uV (15V/2^19)",
+            "Attribute": "R",
+            "Match": "0E"
+        },
+        {
+            "PAGE": 0,
+            "REG": "10",
+            "POS": 7,
+            "Name": "en_ana_dc_mode",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "10",
+            "POS": 6,
+            "Name": "i3c_hs_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "10",
+            "POS": 4,
+            "Name": "tif_en",
+            "Length": 1,
+            "Option": "Enable of up-sample filters. This field is dynamically gated according to the scenario.\t0 = disabled\t1 = enabled (default)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "10",
+            "POS": 3,
+            "Name": "et_en",
+            "Length": 1,
+            "Option": "Enable of digital envelop tracking fsm. This field is dynamically gated according to the scenario.\t0 = disabled\t1 = enabled (default)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "10",
+            "POS": 2,
+            "Name": "refclk_en",
+            "Length": 1,
+            "Option": "Digital enable of refclk. Refclk is ungated according to the logic AND between this field and REG00[0].\t0 = disabled\t1 = enabled (default)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "10",
+            "POS": 1,
+            "Name": "mod_en",
+            "Length": 1,
+            "Option": "Enable of digital modulators. This field is dynamically gated according to the scenario.\t0 = disabled\t1 = enabled (default)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "10",
+            "POS": 0,
+            "Name": "tdm_en",
+            "Length": 1,
+            "Option": "Enable of tdm interface. This field is dynamically gated according to the scenario.\t0 = disabled\t1 = enabled (default)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "11",
+            "POS": 2,
+            "Name": "pdm_freq[1:0]",
+            "Length": 2,
+            "Option": "Select the PDM freq, it's only meaningful in PDM mode.\t00 = 3.072MHz\t01 = 6.144MHz\t1X = 12.288MHz",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "11",
+            "POS": 0,
+            "Name": "input_mode[1:0]",
+            "Length": 2,
+            "Option": "Select the input type. The default of this field is OTP dependent:\t00 = TDM\t01 = PDM\t1X = Analog in",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "12",
+            "POS": 4,
+            "Name": "seq_step_time_cmem[1:0]  ",
+            "Length": 2,
+            "Option": "CMEM fast charge time.\t00 = 50ms\t01 = 100ms\t10 = 150ms\t11 = 200ms",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "12",
+            "POS": 2,
+            "Name": "seq_step_time_pd[1:0]",
+            "Length": 2,
+            "Option": "Sequencer time during internal-feedback exit.\t00 = 50us\t01 = 100us\t10 = 200us\t11 = 300us",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "12",
+            "POS": 0,
+            "Name": "seq_step_time_pu[1:0]",
+            "Length": 2,
+            "Option": "Sequencer time during internal-feedback entering.\t00 = 50us\t01 = 100us\t10 = 200us\t11 = 300us",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "13",
+            "POS": 7,
+            "Name": "clk_missing_rst_en",
+            "Length": 1,
+            "Option": "Enable of clock missing feature.\t0 = disabled (default)\t1 = enabled",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "13",
+            "POS": 5,
+            "Name": "clk_missing_rst_mode[1:0]",
+            "Length": 2,
+            "Option": "Clock missing reset mode selection.\t00 = 200us resolution, 1.4 ms timeout\t01 = 200us resolution, 2.8 ms timeout\t10 = 1ms resolution, 7 ms timeout\t11 = 1ms resolution, 14 ms timeout",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "13",
+            "POS": 4,
+            "Name": "seq_auto_cal_dis",
+            "Length": 1,
+            "Option": "Automatic offset calibration at path opening.\t0 = enabled (default)\t1 = disabled",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "13",
+            "POS": 3,
+            "Name": "seq_pd_mode",
+            "Length": 1,
+            "Option": "Spkear power-down mode.\t0 = analog sequence after digital volume ramp (default)\t1 = digital volume ramp only",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "13",
+            "POS": 1,
+            "Name": "seq_cmem_wait",
+            "Length": 1,
+            "Option": "CMEM charging mode.\t0 = CMEM charged during play (default)\t1 = waiting for CMEM charging before to enter in play",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "13",
+            "POS": 0,
+            "Name": "seq_bst_ovp_en",
+            "Length": 1,
+            "Option": "Enable of shutdown sequence according to a bst ovp.\t0 = interrupt only (default)\t1 = interrupt and shutdown",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "14",
+            "POS": 3,
+            "Name": "seq_ng_mode",
+            "Length": 1,
+            "Option": "Spkear noise-gate mode\t0 = internal feedback\t1 = dedicated noise-gate procedure (default)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "14",
+            "POS": 2,
+            "Name": "ng_tif_en",
+            "Length": 1,
+            "Option": "Enable of tif in noise-gate. It's meaningfull in TDM (below 768KHz) mode only.\t0 = tif turned off in noise gate\t1 = tif enabled in noise gate (default)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "14",
+            "POS": 1,
+            "Name": "ng_intfb_pa_en",
+            "Length": 1,
+            "Option": "In internal feedback noise-gate, selects the pa status. It's meaningful only if REG14[3] = 0\t0 = pa off in ng\t1 = pa on in ng (dafault)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "14",
+            "POS": 0,
+            "Name": "ng_intfb_clk_en",
+            "Length": 1,
+            "Option": "In internal feedback noise-gate, selects the mod clocks status. It's meaningful only if REG14[3] = 0\t0 = clk off in ng\t1 = clk on in ng (dafault)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "15",
+            "POS": 0,
+            "Name": "seq_ramp_offs_step_time[10:8]",
+            "Length": 3,
+            "Option": "Step time used during offset ramps. It's the number of refclk periods for each step.",
+            "Attribute": "N",
+            "Match": "16"
+        },
+        {
+            "PAGE": 0,
+            "REG": "16",
+            "POS": 0,
+            "Name": "seq_ramp_offs_step_time[7:0]",
+            "Length": 8,
+            "Option": "Step time used during offset ramps. It's the number of refclk periods for each step.",
+            "Attribute": "N",
+            "Match": "15"
+        },
+        {
+            "PAGE": 0,
+            "REG": "17",
+            "POS": 0,
+            "Name": "seq_state[4:0]",
+            "Length": 5,
+            "Option": "Sequencer FSM state.\t\t0_0000 = SPK_OFF            \t0_0001 = BST_PWRUP          \t0_0010 = WAIT_PA_EN         \t0_0011 = WAIT_PA_EN_D       \t0_0100 = MUTE               \t0_0101 = INT_CAL            \t0_0110 = EXT_CAL            \t0_0111 = WAIT_INTFB_DN      \t0_1000 = BST_BIAS_EN        \t0_1001 = WAIT_VOL_PU        \t0_1010 = PLAYBACK           \t0_1011 = WAIT_VOL_PD        \t0_1100 = WAIT_BST_BYP       \t0_1101 = WAIT_BST_BIAS      \t0_1110 = BST_BIAS_DN        \t0_1111 = WAIT_INTFB_UP      \t1_0000 = WAIT_PA_PD         \t1_0001 = NG_WAIT_BST_BYP    \t1_0010 = NG_MOD_BLK         \t1_0011 = NG_CLK_OFF         \t1_0100 = NOISE_GATE         \t1_0101 = NG_CLK_ON          \t1_0110 = NG_MOD_UNBLK       \t1_0111 = NG_INTFB           \t",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "19",
+            "POS": 1,
+            "Name": "spk_mute",
+            "Length": 1,
+            "Option": "Signal path mute\t0 = Signal path un-muted\t1 = Signal path muted",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "19",
+            "POS": 0,
+            "Name": "spk_en",
+            "Length": 1,
+            "Option": "Signal path enable\t0 = Signal path disabled\t1 = Signal path enabled",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "1A",
+            "POS": 0,
+            "Name": "ng_on",
+            "Length": 1,
+            "Option": "Setting of ng scenario. When set the sequencer enters in idle. It's meaningful only if REG50[0]=0.\t0 = sequencer in play (default)\t1 = sequencer in idle",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "1B",
+            "POS": 0,
+            "Name": "auto_mode_en",
+            "Length": 1,
+            "Option": "Enable of automatic platform (written during i2c_load).\t0 = Manual platform\t1 = Automatic platform",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "1C",
+            "POS": 0,
+            "Name": "force_et_seq_clock_on",
+            "Length": 1,
+            "Option": "Clock gating mode for sequencer and et digital blocks.\t0 = Blocks dynamically gated (default)\t1 = Blocks always on",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "1D",
+            "POS": 0,
+            "Name": "pdm_mode_low_freq",
+            "Length": 1,
+            "Option": "Low power mode for modulator in PDM mode (downsample of filter output).\t0 = Downsample not present\t1 = Downsample present (low power mode)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "20",
+            "POS": 4,
+            "Name": "ana_spare2[3:0]",
+            "Length": 4,
+            "Option": "Spare i2c fields for analog purposes.",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "20",
+            "POS": 0,
+            "Name": "ana_spare1[3:0]",
+            "Length": 4,
+            "Option": "Spare i2c fields for analog purposes.",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "30",
+            "POS": 7,
+            "Name": "tdm_resync",
+            "Length": 1,
+            "Option": "Re-start synchronization between TDM and audio path.",
+            "Attribute": "P",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "31",
+            "POS": 2,
+            "Name": "tdm_delay_mode",
+            "Length": 1,
+            "Option": "TDM interface delayed mode setting (To be set when TDM is disabled)\t0 = serial data is valid starting from the first bit of the communication\t1 = serial data is valid with one bitclk period delay after the first bit of the communication (default)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "31",
+            "POS": 1,
+            "Name": "tdm_fsyn_polarity",
+            "Length": 1,
+            "Option": "FSYN polarity (To be set when TDM is disabled)\t0 = transmission starts at FSYN falling edge (default)\t1 = transmission starts at FSYN rising edge",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "31",
+            "POS": 0,
+            "Name": "tdm_bclk_polarity",
+            "Length": 1,
+            "Option": "BCLK polarity (To be set when TDM is disabled)\t0 = SDI sampled at BCLK rising edge and SDO transmitted at BCLK falling edge (default)\t1 = SDI sampled at BCLK falling edge and SDO transmitted at BCLK rising edge\t",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "32",
+            "POS": 4,
+            "Name": "tdm_fsyn_rate[2:0]",
+            "Length": 3,
+            "Option": "TDM FYSN detected sample rate\t000 = idle\t001 = 48kHz\t010 = 96kHz\t011 = 192kHz\t100 = 384kHz\t101 = 768kHz",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "32",
+            "POS": 0,
+            "Name": "tdm_bclk_osr[2:0]",
+            "Length": 3,
+            "Option": "TDM detected BCLK OSR\t000 = idle\t001 = 20\t010 = 32\t011 = 40\t100 = 48\t101 = 64\t",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "33",
+            "POS": 0,
+            "Name": "tdm_i_skip_bclk[5:0]",
+            "Length": 6,
+            "Option": "Number of BCLKs between FSYN edge and the first slot and between two slots (0-63) (needs tdm_apply_conf)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "35",
+            "POS": 6,
+            "Name": "tdm_i_slot_size[1:0]",
+            "Length": 2,
+            "Option": "TDM interface slot size (needs tdm_apply_conf):\t00 = 20 bits (default)\t01 = 16 bits\t10 = 24 bits\t11 = 32 bits ",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "35",
+            "POS": 5,
+            "Name": "tdm_ch1i_dl",
+            "Length": 1,
+            "Option": "Channel 1 in data length (needs tdm_apply_conf)\t0 = 20 bit  (default)\t1 = 16 bit\t",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "35",
+            "POS": 0,
+            "Name": "tdm_ch1i_slot[4:0]",
+            "Length": 5,
+            "Option": "TDM interface slot for channel 1 input (needs tdm_apply_conf, 0 means no slot assigned to channel 1)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "39",
+            "POS": 7,
+            "Name": "tdm_fsyn_rate_mnt_en",
+            "Length": 1,
+            "Option": "TDM FSYN rate monitor enable\t0 = disabled (default)\t1 = enabled",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "39",
+            "POS": 6,
+            "Name": "tdm_fsyn_mnt_en",
+            "Length": 1,
+            "Option": "TDM FSYN monitor enable\t0 = disabled\t1 = enabled (default)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "39",
+            "POS": 4,
+            "Name": "tdm_fsyn_mnt_mode[1:0]",
+            "Length": 2,
+            "Option": "TDM FSYN monitor mode\t00 = only interrupt\t01 = immediate shutdown\t10 = audio chain reset (default)\t11 = audio chain permanent disable",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "39",
+            "POS": 0,
+            "Name": "tdm_fsyn_mnt_mask_cnt[3:0]",
+            "Length": 4,
+            "Option": "TDM FSYN monitor initial mask count (number of FSYN to skip)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "3A",
+            "POS": 2,
+            "Name": "tdm_sync_mode",
+            "Length": 1,
+            "Option": "TDM sync mode\t0 = internal synchronisms not linked to TDM (default)\t1 = internal synchronisms in phase with TDM",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "3A",
+            "POS": 1,
+            "Name": "tdm_bclk_mnt_mode",
+            "Length": 1,
+            "Option": "TDM BCLK monitor mode\t0 = fault if OSR changes\t1 = don't fault if OSR changes (default)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "3A",
+            "POS": 0,
+            "Name": "tdm_auto_fsyn_rate",
+            "Length": 1,
+            "Option": "TDM FSYN rate mode\t0 = FSYN_RATE is programmed trough TDM_FSYN_RATE\t1 = FSYN_RATE is detected by clock monitor (default)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "3B",
+            "POS": 0,
+            "Name": "fir1_m2db",
+            "Length": 1,
+            "Option": "Attenuation mode of FIR1 up-sample filter.\t0 = 0dB\t1 = -2dB\t",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "3F",
+            "POS": 0,
+            "Name": "tif_spare[7:0]",
+            "Length": 8,
+            "Option": "Spare register for digital tif block.\t",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "50",
+            "POS": 6,
+            "Name": "ngif_filt_ratio[1:0]",
+            "Length": 2,
+            "Option": "Select the ratio to be used by NGIF_FILT_SAMPLE\t00 = 1 (default) \t01 = 2\t10 = 4\t11 = 8 ",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "50",
+            "POS": 4,
+            "Name": "ngif_filt_sample[1:0]",
+            "Length": 2,
+            "Option": "Selects the time filter duration for automute to be issued.\tSignal under threshold condition is deglitched with the selected timing before automute being issued.\tAutomute is released immediately as soon as audio signal returns above threshold. (R set by NGIF_FILT_RATIO)\t00 = 6260xR sample (default)\t01 = 3130xR sample\t10 =   780xR sample \t11 =   130xR sample",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "50",
+            "POS": 3,
+            "Name": "ngif_hyst_en",
+            "Length": 1,
+            "Option": "Selects the audio signal hysteretic double threshold to be used for amutomute control.\t0 = no hysteresis (default)\t1 = 6dB",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "50",
+            "POS": 1,
+            "Name": "ngif_mask",
+            "Length": 1,
+            "Option": "Noise-gating mask:\t0 = only interrupt (default)\t1 = automatic mute",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "50",
+            "POS": 0,
+            "Name": "ngif_en",
+            "Length": 1,
+            "Option": "Noise-gating enable\t0 = disabled\t1 = enabled (default)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "51",
+            "POS": 0,
+            "Name": "ngif_thresh[12:8]",
+            "Length": 5,
+            "Option": "Noise-gate interface threshold for channel 1. QS0.19",
+            "Attribute": "N",
+            "Match": "52"
+        },
+        {
+            "PAGE": 0,
+            "REG": "52",
+            "POS": 0,
+            "Name": "ngif_thresh[7:0]",
+            "Length": 8,
+            "Option": "Noise-gate interface threshold for channel 1. QS0.19",
+            "Attribute": "N",
+            "Match": "51"
+        },
+        {
+            "PAGE": 0,
+            "REG": "70",
+            "POS": 7,
+            "Name": "sdm1_order",
+            "Length": 1,
+            "Option": "SDM1 order selection:\t0: first order (default)\t1: second order",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "70",
+            "POS": 6,
+            "Name": "sdm1_dith_type",
+            "Length": 1,
+            "Option": "SDM1 dither type:\t0: high-pass filtered white noise (default)\t1: white noise",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "70",
+            "POS": 4,
+            "Name": "sdm1_dith_div[1:0]",
+            "Length": 2,
+            "Option": "SDM1 dithering division:\t00: dither disabled (default)\t01: dither / 1\t10: dither / 2\t11: dither / 4",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "70",
+            "POS": 0,
+            "Name": "sdm1_dith_strength[3:0]",
+            "Length": 4,
+            "Option": "SDM1 dithering amplitude selection: -49dB + DITH_STRENGTH*1dB",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "71",
+            "POS": 7,
+            "Name": "sdm2_order",
+            "Length": 1,
+            "Option": "SDM2 order selection:\t0: first order (default)\t1: second order",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "71",
+            "POS": 6,
+            "Name": "sdm2_dith_type",
+            "Length": 1,
+            "Option": "SDM2 dither type:\t0: high-pass filtered white noise (default)\t1: white noise",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "71",
+            "POS": 4,
+            "Name": "sdm2_dith_div[1:0]",
+            "Length": 2,
+            "Option": "SDM2 dithering division:\t00: dither disabled (default)\t01: dither / 1\t10: dither / 2\t11: dither / 4",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "71",
+            "POS": 0,
+            "Name": "sdm2_dith_strength[3:0]",
+            "Length": 4,
+            "Option": "SDM2 dithering amplitude selection: -49dB + DITH_STRENGTH*1dB",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "72",
+            "POS": 7,
+            "Name": "sdm3_order",
+            "Length": 1,
+            "Option": "SDM3 order selection:\t0: first order (default)\t1: second order",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "72",
+            "POS": 6,
+            "Name": "sdm3_dith_type",
+            "Length": 1,
+            "Option": "SDM3 dither type:\t0: high-pass filtered white noise (default)\t1: white noise",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "72",
+            "POS": 4,
+            "Name": "sdm3_dith_div[1:0]",
+            "Length": 2,
+            "Option": "SDM3 dithering division:\t00: dither disabled (default)\t01: dither / 1\t10: dither / 2\t11: dither / 4",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "72",
+            "POS": 0,
+            "Name": "sdm3_dith_strength[3:0]",
+            "Length": 4,
+            "Option": "SDM3 dithering amplitude selection: -49dB + DITH_STRENGTH*1dB",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "75",
+            "POS": 6,
+            "Name": "dwa1_freq_sel[1:0]",
+            "Length": 2,
+            "Option": "DWA1 frequency selection.\t00: DAC clock (default)\t01: DAC clock / 2\t10: DAC clock / 4\t11: DAC clock / 8",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "75",
+            "POS": 4,
+            "Name": "dwa1_level[1:0]",
+            "Length": 2,
+            "Option": "DAC1 number of elements to be used.\t00: 32 (default)\t01: 30\t1x: 28",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "75",
+            "POS": 3,
+            "Name": "dac_forcez3",
+            "Length": 1,
+            "Option": "DAC3 Force Zero.",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "75",
+            "POS": 2,
+            "Name": "dac_forcez2",
+            "Length": 1,
+            "Option": "DAC2 Force Zero.",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "75",
+            "POS": 1,
+            "Name": "dac_forcez1",
+            "Length": 1,
+            "Option": "DAC1 Force Zero.",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "75",
+            "POS": 0,
+            "Name": "dac_inv_dwa_data",
+            "Length": 1,
+            "Option": "DAC data inversion.\t0: normal mode (default)\t1: data is inverted",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "76",
+            "POS": 6,
+            "Name": "dwa3_freq_sel[1:0]",
+            "Length": 2,
+            "Option": "DWA3 frequency selection.\t00: DAC clock (default)\t01: DAC clock / 2\t10: DAC clock / 4\t11: DAC clock / 8",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "76",
+            "POS": 4,
+            "Name": "dwa3_level[1:0]",
+            "Length": 2,
+            "Option": "DAC3 number of elements to be used.\t00: 64 (default)\t01: 62\t1x: 60",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "76",
+            "POS": 2,
+            "Name": "dwa2_freq_sel[1:0]",
+            "Length": 2,
+            "Option": "DWA2 frequency selection.\t00: DAC clock (default)\t01: DAC clock / 2\t10: DAC clock / 4\t11: DAC clock / 8",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "76",
+            "POS": 0,
+            "Name": "dwa2_level[1:0]",
+            "Length": 2,
+            "Option": "DAC2 number of elements to be used.\t00: 32 (default)\t01: 30\t1x: 28",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "77",
+            "POS": 6,
+            "Name": "dwa1_mode[1:0]",
+            "Length": 2,
+            "Option": "DAC1 randomizer type selection.\t0x0: DI-DWA\t0x1: DDI-DWA\t0x2: SHIFTER (default)\t0x3: OFF",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "77",
+            "POS": 0,
+            "Name": "dwa1_shift_sel[4:0]",
+            "Length": 5,
+            "Option": "DAC1 shift selection.\tSHIFT is DWA1_SHIFT_SEL+1 (default is 1)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "78",
+            "POS": 6,
+            "Name": "dwa2_mode[1:0]",
+            "Length": 2,
+            "Option": "DAC2 randomizer type selection.\t0x0: DI-DWA\t0x1: DDI-DWA\t0x2: SHIFTER (default)\t0x3: OFF",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "78",
+            "POS": 0,
+            "Name": "dwa2_shift_sel[4:0]",
+            "Length": 5,
+            "Option": "DAC2 shift selection.\tSHIFT is DWA2_SHIFT_SEL+1 (default is 16)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "79",
+            "POS": 6,
+            "Name": "dwa3_mode[1:0]",
+            "Length": 2,
+            "Option": "DAC3 randomizer type selection.\t0x0: DI-DWA\t0x1: DDI-DWA\t0x2: SHIFTER (default)\t0x3: OFF",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "79",
+            "POS": 0,
+            "Name": "dwa3_shift_sel[5:0]",
+            "Length": 6,
+            "Option": "DAC2 shift selection.\tSHIFT is DWA2_SHIFT_SEL+1 (default is 16)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "7A",
+            "POS": 7,
+            "Name": "dac1_dyc_en",
+            "Length": 1,
+            "Option": "Enable of dynamic compensation for DAC1.\t0: disabled (default)\t1: enabled",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "7A",
+            "POS": 0,
+            "Name": "dac1_dyc_target[5:0]",
+            "Length": 6,
+            "Option": "Target od dynamic compensation feature for DAC1.",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "7B",
+            "POS": 7,
+            "Name": "dac2_dyc_en",
+            "Length": 1,
+            "Option": "Enable of dynamic compensation for DAC2.\t0: disabled (default)\t1: enabled",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "7B",
+            "POS": 0,
+            "Name": "dac2_dyc_target[5:0]",
+            "Length": 6,
+            "Option": "Target od dynamic compensation feature for DAC2.",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "7C",
+            "POS": 7,
+            "Name": "dac3_dyc_en",
+            "Length": 1,
+            "Option": "Enable of dynamic compensation for DAC3.\t0: disabled (default)\t1: enabled",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "7C",
+            "POS": 0,
+            "Name": "dac3_dyc_target[5:0]",
+            "Length": 6,
+            "Option": "Target od dynamic compensation feature for DAC3.",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "7F",
+            "POS": 0,
+            "Name": "mod_spare[7:0]",
+            "Length": 8,
+            "Option": "Spare register for digital mod block.\t",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "80",
+            "POS": 4,
+            "Name": "pa_zsel[3:0]",
+            "Length": 4,
+            "Option": "Load resistance setting:\t0000: 12 Ohm (default)\t1000: 24 Ohm\t1100: 48 Ohm\t1110: 96 Ohm\t1111: 120 Ohm\tOthers: not allowed\t\t\t",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "80",
+            "POS": 3,
+            "Name": "tsd_pa_down_en",
+            "Length": 1,
+            "Option": "Not present in digital interface doc. To be completed by Maurizio",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "80",
+            "POS": 2,
+            "Name": "ref_dvddldo_mode",
+            "Length": 1,
+            "Option": "Use of internal LDO for 1.8V supply:\t0: 1.8V externally provided\t1: Use internal LDO",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "80",
+            "POS": 0,
+            "Name": "tsd_temp_sel[1:0]",
+            "Length": 2,
+            "Option": "Not present in digital interface doc. To be completed by Maurizio",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "81",
+            "POS": 0,
+            "Name": "rfu_tsd_temp_sel[1:0]",
+            "Length": 2,
+            "Option": "Thermal shut down setting:\t00: 105 deg\t01: 115 deg\t10: 125 deg\t11: 135 deg",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "83",
+            "POS": 0,
+            "Name": "dpa_ana_gain[2:0]",
+            "Length": 3,
+            "Option": "Power Amplifier gain setting:\t000: 12.25 dB\t001: 14.93 dB\t010: 18.18 dB\t011: 21.30 dB\t1xx: 23.41 dB",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "84",
+            "POS": 7,
+            "Name": "bst_fault",
+            "Length": 1,
+            "Option": "Enable of hiz setting of bst. It's meaningful only if REG84[4]=1.\t0: bst not in hiz\t1: bst in hiz after a pwrok falling edge (default)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "84",
+            "POS": 4,
+            "Name": "seq_pwrok_mode[2:0]",
+            "Length": 3,
+            "Option": "PWROK mode selection (all actions remain active until software clear)\t000 = MUTE sequence\t001 = MUTE sequence and boost Hi-Z\t010 = SDWN sequence \t011 = SDWN sequence and boost Hi-Z (default)\t100 = interrupt only",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "84",
+            "POS": 0,
+            "Name": "seq_pwrok_deglitch_range",
+            "Length": 1,
+            "Option": "Range selection for PWROK deglitch time\t0 = from 460ns to 59us\t1 = from 59us to 15.124ms (default)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "85",
+            "POS": 0,
+            "Name": "seq_pwrok_deglitch_time[7:0]",
+            "Length": 8,
+            "Option": "PWROK deglitch time (range scales wth SEQ_PWROK_DEGLITCH_RANGE)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "86",
+            "POS": 3,
+            "Name": "pa_rsk",
+            "Length": 1,
+            "Option": "rsk mode:\t0: high stability/reliability (default)\t1: low noise",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "86",
+            "POS": 2,
+            "Name": "pa_r300k_comp_dis",
+            "Length": 1,
+            "Option": "Internal 1.2MW resistor to improve clock&pop performance:\t0: enabled (default)\t1: diabled",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "86",
+            "POS": 1,
+            "Name": "pa_lp_en",
+            "Length": 1,
+            "Option": "Power Amplifier current control:\t0: low noise\t1: low current (default)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "86",
+            "POS": 0,
+            "Name": "pa_ocp_en",
+            "Length": 1,
+            "Option": "Reseved",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "87",
+            "POS": 0,
+            "Name": "pa_clamp_th[4:0]",
+            "Length": 5,
+            "Option": "Not present in digital interface doc. To be completed by Maurizio",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "88",
+            "POS": 0,
+            "Name": "pa_nmos_clamp_th[4:0]",
+            "Length": 5,
+            "Option": "Not present in digital interface doc. To be completed by Maurizio",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "8F",
+            "POS": 0,
+            "Name": "seq_spare[7:0]",
+            "Length": 8,
+            "Option": "Spare register for digital sequencer block.\t",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B0",
+            "POS": 7,
+            "Name": "bst_byp_en",
+            "Length": 1,
+            "Option": "Enable of bypass mode:\t1 enable\t0 disable",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B0",
+            "POS": 6,
+            "Name": "bst_zc_en",
+            "Length": 1,
+            "Option": "Enable of zerocross circuit:\t1 enable\t0 disable",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B0",
+            "POS": 5,
+            "Name": "bst_bat_track_en",
+            "Length": 1,
+            "Option": "Enable of battery tracking circuit:\t1 enable\t0 disable",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B0",
+            "POS": 4,
+            "Name": "bst_mfl_en",
+            "Length": 1,
+            "Option": "Enable of minimum frequency lock circuit:\t1 enable\t0 disable",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B0",
+            "POS": 3,
+            "Name": "bst_env_track_en",
+            "Length": 1,
+            "Option": "Enable of envelope track circuit:\t1 enable\t0 disable\tcomparator that tells if the boost is tracking",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B0",
+            "POS": 1,
+            "Name": "bst_ocp_en",
+            "Length": 1,
+            "Option": "Enable of ovr current protection circuit:\t1 enable\t0 disable",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B0",
+            "POS": 0,
+            "Name": "bst_en",
+            "Length": 1,
+            "Option": "General boost enable:\t1 enable\t0 disable",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B1",
+            "POS": 7,
+            "Name": "bst_env_err_en",
+            "Length": 1,
+            "Option": "Enable of envelope error circuit:\t1 enable\t0 disable\tcomparator that tells if the VBSO is too low",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B1",
+            "POS": 6,
+            "Name": "bst_bootstrap_en",
+            "Length": 1,
+            "Option": "Enable of bootstrap circuit:\t1 enable\t0 disable",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B1",
+            "POS": 5,
+            "Name": "bst_amp_bias_en",
+            "Length": 1,
+            "Option": "Enable of bias loop error amplifier circuit:\t1 enable\t0 disable",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B1",
+            "POS": 4,
+            "Name": "bst_amp_bso_en",
+            "Length": 1,
+            "Option": "Enable of bso loop error amplifier circuit:\t1 enable\t0 disable",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B1",
+            "POS": 3,
+            "Name": "bst_comp_bias_en",
+            "Length": 1,
+            "Option": "Enable of bias loop pwm comparator circuit:\t1 enable\t0 disable",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B1",
+            "POS": 2,
+            "Name": "bst_comp_bso_en",
+            "Length": 1,
+            "Option": "Enable of bso loop pwm comparator circuit:\t1 enable\t0 disable",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B1",
+            "POS": 1,
+            "Name": "bst_bias_ovp_en",
+            "Length": 1,
+            "Option": "Enable of bias over voltage comparator circuit:\t1 enable\t0 disable\t",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B1",
+            "POS": 0,
+            "Name": "bst_bso_ovp_en",
+            "Length": 1,
+            "Option": "Enable of bso over voltage comparator circuit:\t1 enable\t0 disable",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B2",
+            "POS": 6,
+            "Name": "bst_mfl_sel[1:0]",
+            "Length": 2,
+            "Option": "Selection bit for the lowest possible switching frequency:\t00 - 20.5kHz\t01 - 24.4kHz\t10 - 28.2kHz\t11 - 33.6kHz",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B2",
+            "POS": 4,
+            "Name": "bst_ovp_bso_sel[1:0]",
+            "Length": 2,
+            "Option": "Selection bits for the bias over voltage limit:\t00: 21.45V\t01: 22.55V\t10: 23.65V\t11: 24.47V",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B2",
+            "POS": 2,
+            "Name": "bst_ovp_bias_th[1:0]",
+            "Length": 2,
+            "Option": "Selection bit for the lowest possible switching frequency:\t00: +0\t01: +1\t10: +2\t11: +3",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B2",
+            "POS": 1,
+            "Name": "bst_ls_sel",
+            "Length": 1,
+            "Option": "selct the state of the low side switch when the force mode is active:\t1: on\t0: off",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B2",
+            "POS": 0,
+            "Name": "bst_power_force",
+            "Length": 1,
+            "Option": "Enable direct forcing of the power mos for testing:\t1 enable\t0 disable",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B3",
+            "POS": 5,
+            "Name": "bst_lp_en",
+            "Length": 1,
+            "Option": "unused",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B3",
+            "POS": 4,
+            "Name": "bst_clamp_bias_en",
+            "Length": 1,
+            "Option": "Enable of bias clamp circuit:\t1 enable\t0 disable",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B3",
+            "POS": 3,
+            "Name": "bst_clamp_bso_en",
+            "Length": 1,
+            "Option": "Enable of  bso clamp circuit:\t1 enable\t0 disable",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B3",
+            "POS": 0,
+            "Name": "bst_loop_cap_sel[2:0]",
+            "Length": 3,
+            "Option": "Selection bit for the lowest possible switching frequency:\t00: 300fF\t01: 600fF default\t10: 900fF\t11: 1.2pF\tother code not used",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B4",
+            "POS": 3,
+            "Name": "force_bst_env_err",
+            "Length": 1,
+            "Option": "Not present in digital interface doc. To be completed by Maurizio",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B4",
+            "POS": 2,
+            "Name": "bst_hsb_sel",
+            "Length": 1,
+            "Option": "selct the state of the high side b switch when the force mode is active:\t1: on\t0: off",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B4",
+            "POS": 1,
+            "Name": "bst_hsa_sel",
+            "Length": 1,
+            "Option": "select the state of the high side a switch when the force mode is active:\t1: on\t0: off",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "B4",
+            "POS": 0,
+            "Name": "bst_byp_sel",
+            "Length": 1,
+            "Option": "select the state of the bypass switch when the force mode is active:\t1: on\t0: off",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "C0",
+            "POS": 0,
+            "Name": "bst_ocp_sel[2:0]",
+            "Length": 3,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "C1",
+            "POS": 4,
+            "Name": "bst_att_step[2:0]",
+            "Length": 3,
+            "Option": "Boost attack step. \tStep = 1 + BST_ATT_STEP[2:0]",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "C1",
+            "POS": 0,
+            "Name": "bst_att_time[8]",
+            "Length": 1,
+            "Option": "Boost attack time. \tTime for each step = Trefclk x BST_ATT_TIME[8:0]",
+            "Attribute": "N",
+            "Match": "C2"
+        },
+        {
+            "PAGE": 0,
+            "REG": "C2",
+            "POS": 0,
+            "Name": "bst_att_time[7:0]",
+            "Length": 8,
+            "Option": "Boost attack time. \tTime for each step = Trefclk x BST_ATT_TIME[8:0]",
+            "Attribute": "N",
+            "Match": "C1"
+        },
+        {
+            "PAGE": 0,
+            "REG": "C3",
+            "POS": 4,
+            "Name": "bst_rel_step[2:0]",
+            "Length": 3,
+            "Option": "Boost release step. \tThe step is 1 + BST_REL_STEP[2:0]",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "C3",
+            "POS": 0,
+            "Name": "bst_rel_time[11:8]",
+            "Length": 4,
+            "Option": "Boost relase time. \tTime for each step = 2us x BST_REL_TIME[11:0]",
+            "Attribute": "N",
+            "Match": "C4"
+        },
+        {
+            "PAGE": 0,
+            "REG": "C4",
+            "POS": 0,
+            "Name": "bst_rel_time[7:0]",
+            "Length": 8,
+            "Option": "Boost relase time. \tTime for each step = 2us x BST_REL_TIME[11:0]",
+            "Attribute": "N",
+            "Match": "C3"
+        },
+        {
+            "PAGE": 0,
+            "REG": "C5",
+            "POS": 4,
+            "Name": "bst_rel_time_pd_sel",
+            "Length": 1,
+            "Option": "BST release time for power-down\t0 = same as playback (default)\t1 = related to bst_rel_time_fault field",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "C5",
+            "POS": 0,
+            "Name": "bst_rel_time_fault[11:8]",
+            "Length": 4,
+            "Option": "Boost relase time after a fault.\tTime for each step = 2us x BST_REL_TIME[11:0]",
+            "Attribute": "N",
+            "Match": "C6"
+        },
+        {
+            "PAGE": 0,
+            "REG": "C6",
+            "POS": 0,
+            "Name": "bst_rel_time_fault[7:0]",
+            "Length": 8,
+            "Option": "Boost relase time after a fault.\tTime for each step = 2us x BST_REL_TIME[11:0]",
+            "Attribute": "N",
+            "Match": "C5"
+        },
+        {
+            "PAGE": 0,
+            "REG": "C7",
+            "POS": 4,
+            "Name": "bst_first_step[2:0]",
+            "Length": 3,
+            "Option": "Boost attack first step. \tThe step is 1 + BST_FIRST_STEP[2:0]",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "C7",
+            "POS": 0,
+            "Name": "bst_byp_track_time[3:0]",
+            "Length": 4,
+            "Option": "Battery tracking time in bypass mode.\tTime for battery tracking = 200us x BST_BYP_TRACK_TIME[3:0]",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "C8",
+            "POS": 0,
+            "Name": "bst_dgltch_byp[2:0]",
+            "Length": 3,
+            "Option": "Deglitch on rising edge of bypass analog signal. It is gated when there's a boost request from input or when BSO dac is forced by means of reg0F[4] of page 1.\tDeglitch = 10us x BST_DGLTCH_BYP",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "C9",
+            "POS": 0,
+            "Name": "bst_dc_bias[4:0]",
+            "Length": 5,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "CA",
+            "POS": 0,
+            "Name": "bst_bso[6:0]",
+            "Length": 7,
+            "Option": "Starting value for BSO dac loaded during sequencer power-on. This value is set in fixed way when BSO dac is forced by means of reg0F[4] of page 1.\tBSO value = BST_BSO[6:0] * 0.275mV",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "CB",
+            "POS": 7,
+            "Name": "bst_bso_head_range_dis",
+            "Length": 1,
+            "Option": "Disable of BSO range-based headroom.\t0 = headroom depends on BSO range\t1 = headroom is set by BST_BSO_HEAD_HIGH_RANGE in dig mode and by BST_HEAD_TRACK_HIGH_RANGE in ana mode.",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "CB",
+            "POS": 0,
+            "Name": "bst_bso_head_range_sel[6:0]",
+            "Length": 7,
+            "Option": "Range selection for BSO headroom.\tBSO range threshold = BST_BSO_HEAD_RANGE_SEL[6:0] * 0.275mV",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "CC",
+            "POS": 0,
+            "Name": "bst_bso_head_low_range[4:0]",
+            "Length": 5,
+            "Option": "In dig mode, applied BSO headroom when current bst_bso is lower than BST_BSO_HEAD_RANGE_SEL.\tBSO headroom = BST_BSO_HEAD_LOW_RANGE[4:0] * 0.275mV",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "CD",
+            "POS": 0,
+            "Name": "bst_bso_head_high_range[4:0]",
+            "Length": 5,
+            "Option": "In dig mode, applied BSO headroom when current bst_bso is higher than BST_BSO_HEAD_RANGE_SEL.\tBSO headroom = BST_BSO_HEAD_HIGH_RANGE[4:0] * 0.275mV",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "CE",
+            "POS": 4,
+            "Name": "bst_head_track_high_range[2:0]",
+            "Length": 3,
+            "Option": "In ana mode, applied BSO headroom when current bst_bso is higher than BST_BSO_HEAD_RANGE_SEL.\tBSO headroom = (1 + BST_HEAD_TRACK_HIGH_RANGE) x 0.5V",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "CE",
+            "POS": 0,
+            "Name": "bst_head_track_low_range[2:0]",
+            "Length": 3,
+            "Option": "In ana mode, applied BSO headroom when current bst_bso is higher than BST_BSO_HEAD_RANGE_SEL.\tBSO headroom = (1 + BST_HEAD_TRACK_LOW_RANGE) x 0.5V",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "CF",
+            "POS": 0,
+            "Name": "et_state[3:0]",
+            "Length": 4,
+            "Option": "ET FSM state.\t\t0000 = ET_OFF     \t\t\t0001 = BYPASS \t\t\t\t0010 = BYP_BATT_TRACK_DN     \t\t0011 = BYP_BATT_TRACK_UP     \t\t0100 = IN_TRACK_FIRST_STEP \t\t0101 = IN_TRACK  \t\t\t0110 = IN_TRACK_UP  \t\t\t0111 = HOLD \t\t\t\t1000 = RELEASE_WAIT_TRACK \t\t1001 = RELEASE \t\t",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "DF",
+            "POS": 0,
+            "Name": "et_spare[7:0]",
+            "Length": 8,
+            "Option": "Spare register for digital et block.\t",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "E0",
+            "POS": 4,
+            "Name": "dpa_inana_calib_dis",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "E0",
+            "POS": 2,
+            "Name": "azmode_time[1:0]",
+            "Length": 2,
+            "Option": "Comparator Mesurement time:\t00 = 300 us (default)\t01 = 400 us\t10 = 500 us\t11 = 600 us",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "E0",
+            "POS": 0,
+            "Name": "cal_measure_time[1:0]",
+            "Length": 2,
+            "Option": "Comparator Mesurement time:\t00 = 600 us (default)\t01 = 800 us\t10 = 1 ms\t11 = 1.2 ms",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "E1",
+            "POS": 4,
+            "Name": "offs_comp_en ",
+            "Length": 1,
+            "Option": "Add calculated offset to the audio path.\t0 = offset not added\t1 = offset added (default)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "E1",
+            "POS": 2,
+            "Name": "azcomp_isel1c[1:0]",
+            "Length": 2,
+            "Option": "First stage current setting:\t00: 800nA\t01: 1.2uA\t10: 1.4uA\t11: 2.0uA\t",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "E1",
+            "POS": 0,
+            "Name": "azcomp_isel2c[1:0]",
+            "Length": 2,
+            "Option": "Second stage current setting:\t00: 800nA\t01: 1.2uA\t10: 1.4uA\t11: 2.0uA\t",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "E2",
+            "POS": 1,
+            "Name": "ext_cal_offs",
+            "Length": 1,
+            "Option": "ATE External Offset Calibration",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "E2",
+            "POS": 0,
+            "Name": "int_cal_offs",
+            "Length": 1,
+            "Option": "ATE Internal Offset Calibration",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "E3",
+            "POS": 7,
+            "Name": "ana_idle_ext_cal_polarity",
+            "Length": 1,
+            "Option": "Polarity for comparator output:\t0 = normal\t1 = inverted",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "E3",
+            "POS": 6,
+            "Name": "ana_idle_int_cal_polarity",
+            "Length": 1,
+            "Option": "Polarity for comparator output:\t0 = normal\t1 = inverted",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "E3",
+            "POS": 5,
+            "Name": "ana_zero_ext_cal_polarity",
+            "Length": 1,
+            "Option": "Polarity for comparator output:\t0 = normal\t1 = inverted",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "E3",
+            "POS": 4,
+            "Name": "ana_zero_int_cal_polarity",
+            "Length": 1,
+            "Option": "Polarity for comparator output:\t0 = normal\t1 = inverted",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "E3",
+            "POS": 3,
+            "Name": "dig_idle_ext_cal_polarity",
+            "Length": 1,
+            "Option": "Polarity for comparator output:\t0 = normal\t1 = inverted",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "E3",
+            "POS": 2,
+            "Name": "dig_idle_int_cal_polarity",
+            "Length": 1,
+            "Option": "Polarity for comparator output:\t0 = normal\t1 = inverted",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "E3",
+            "POS": 1,
+            "Name": "dig_zero_ext_cal_polarity",
+            "Length": 1,
+            "Option": "Polarity for comparator output:\t0 = normal\t1 = inverted",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "E3",
+            "POS": 0,
+            "Name": "dig_zero_int_cal_polarity",
+            "Length": 1,
+            "Option": "Polarity for comparator output:\t0 = normal\t1 = inverted",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "E4",
+            "POS": 0,
+            "Name": "azcomp_trig",
+            "Length": 1,
+            "Option": "Test mode start for azcomp.\t0 = idle (default)\t1 = starting of test",
+            "Attribute": "P",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "E5",
+            "POS": 4,
+            "Name": "cal_offs_end",
+            "Length": 1,
+            "Option": "End of last calibration, triggered by REGE2[1] or REGE2[0]. In functional mode, this field is set to 1 at the end of internal calibration if it is not skipped.",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "E5",
+            "POS": 3,
+            "Name": "azcomp_sat_zero",
+            "Length": 1,
+            "Option": "Saturation during last zero calibration.",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "E5",
+            "POS": 2,
+            "Name": "azcomp_sat_idle",
+            "Length": 1,
+            "Option": "Saturation during last idle calibration.",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "E5",
+            "POS": 1,
+            "Name": "azcomp_out ",
+            "Length": 1,
+            "Option": "AZcomp_out value, triggered in test mode only (by REGE4[0])",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "E5",
+            "POS": 0,
+            "Name": "azcomp_ready",
+            "Length": 1,
+            "Option": "AZcomp_out value is ready, triggered in test mode only (by REGE4[0])",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "EF",
+            "POS": 0,
+            "Name": "cal_spare[7:0]",
+            "Length": 8,
+            "Option": "Spare register for digital cal block.\t",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "FC",
+            "POS": 2,
+            "Name": "tdm_pad_di_en",
+            "Length": 1,
+            "Option": "TDM PADs input enable.\t0 = disabled\t1 = enabled",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 0,
+            "REG": "FE",
+            "POS": 0,
+            "Name": "i2c_page_sel[1:0]",
+            "Length": 2,
+            "Option": "Selection of I2C page.\t00 = page 0 (default)\t01 = page 1\t1X = not allowed",
+            "Attribute": "N",
+            "Match": "FE"
+        },
+        {
+            "PAGE": 0,
+            "REG": "FF",
+            "POS": 3,
+            "Name": "device_id[4:0]",
+            "Length": 5,
+            "Option": "Device ID.",
+            "Attribute": "R",
+            "Match": "FF"
+        },
+        {
+            "PAGE": 0,
+            "REG": "FF",
+            "POS": 0,
+            "Name": "version_id[2:0]",
+            "Length": 3,
+            "Option": "Version ID.",
+            "Attribute": "R",
+            "Match": "FF"
+        },
+        {
+            "PAGE": 1,
+            "REG": "00",
+            "POS": 3,
+            "Name": "io_tst_en",
+            "Length": 1,
+            "Option": "Digital IO PADs test enable\t0 = disabled (default)\t1 = enabled",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "00",
+            "POS": 0,
+            "Name": "io_tst_mode[2:0]",
+            "Length": 3,
+            "Option": "Digital IO PADs test mode\t000 = read test mode, value from PADs readable from IO_TST_RD\t001 = write test mode, value to PADs writeable into IO_TST_WR\t010 = Inout test 1 (FSYN -> SDI)\t011 = Inout test 2 (SDI -> FSYN)\t100 = Inout test 1 (BCLK -> SDI)\t101 = Inout test 2 (SDI -> BCLK)\t110 = Inout test 1 (SCL -> SDA)\t111 = Inout test 2 (SDA -> SCL)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "01",
+            "POS": 0,
+            "Name": "io_tst_wr[2:0]",
+            "Length": 3,
+            "Option": "Value written on FSYN pad when REG00[3]=1 and REG00[2:0]=001.",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "02",
+            "POS": 0,
+            "Name": "io_tst_rd[4:0]",
+            "Length": 5,
+            "Option": "None",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "03",
+            "POS": 0,
+            "Name": "dig_test_en[4:0]",
+            "Length": 5,
+            "Option": "Enable of SDA pad for TMUX. Note that after setting this bit to 1, a digital reset is needed.\t0 = pad in funcional mode\t1 = pad connected to TMUX",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "04",
+            "POS": 0,
+            "Name": "dig_test_sel[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "05",
+            "POS": 6,
+            "Name": "scan_exit_dis",
+            "Length": 1,
+            "Option": "Disable of procedure to exit from scan. \t0 = Procedure to exit from scan enabled\t1 = Procedure to exit from scan disabled",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "05",
+            "POS": 5,
+            "Name": "resume_from_scan",
+            "Length": 1,
+            "Option": "Disable of platform detection when digital part exits from scan.\t0 = Standard powerup\t1 = Platform detection disabled during powerup following the scan",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "05",
+            "POS": 4,
+            "Name": "tdm_pad_dsr",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "05",
+            "POS": 3,
+            "Name": "dig_pad_dsr",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "05",
+            "POS": 1,
+            "Name": "scan_enh",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "05",
+            "POS": 0,
+            "Name": "scanx_enh",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "06",
+            "POS": 5,
+            "Name": "bist_end",
+            "Length": 1,
+            "Option": "End of bist.\t0 = bist not finished\t1 = bist finished",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "06",
+            "POS": 4,
+            "Name": "bist_result",
+            "Length": 1,
+            "Option": "Result of bist, its polarity depends on REG06[1], it's meaningful only if REG06[5]=1.\t0 = bist passed if REG06[1]=0, bist failed otherwise\t1 = bist passed if REG06[1]=1, bist failed otherwise",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "06",
+            "POS": 1,
+            "Name": "bist_polarity",
+            "Length": 1,
+            "Option": "Set polarity of bist_result bit.\t0 = bist passed if REG06[4]=0\t1 = bist passed if REG06[4]=1",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "06",
+            "POS": 0,
+            "Name": "bist_en",
+            "Length": 1,
+            "Option": "Start of bist.\t0 = bist not started\t1 = bist started",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "07",
+            "POS": 0,
+            "Name": "tmux_cnt_sel[1:0]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "08",
+            "POS": 7,
+            "Name": "tst_dac",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "08",
+            "POS": 0,
+            "Name": "tst_data_dwa[6:0]",
+            "Length": 7,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "09",
+            "POS": 0,
+            "Name": "tst_idx_pos_dwa[5:0]",
+            "Length": 6,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "0A",
+            "POS": 0,
+            "Name": "tst_idx_neg_dwa[5:0]",
+            "Length": 6,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "0C",
+            "POS": 0,
+            "Name": "seq_prog_latch_dis",
+            "Length": 1,
+            "Option": "Disable SEQ programming latching at powerup\t0 = no (default)\t1 = yes",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "0D",
+            "POS": 3,
+            "Name": "cal_dac_clk_polarity",
+            "Length": 1,
+            "Option": "During calibration, set the polarity of dac_clk compared with modulator FSM clock\t0 = not inverted\t1 = inverted  (default)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "0D",
+            "POS": 2,
+            "Name": "pdm_dac_clk_polarity",
+            "Length": 1,
+            "Option": "In PDM mode, set the polarity of dac_clk compared with pdm_clk\t0 = not inverted\t1 = inverted  (default)",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "0D",
+            "POS": 0,
+            "Name": "tdm_dac_clk_delay[1:0]",
+            "Length": 2,
+            "Option": "In TDM mode, set the bclk number between dac data and clock edge to dac\t00 = 0 bits \t01 = 1 bits (default)\t10 = 2 bits\t11 = 3 bits ",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "0E",
+            "POS": 1,
+            "Name": "pdm_fro_mux_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "0E",
+            "POS": 0,
+            "Name": "tdm_fro_mux_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "0F",
+            "POS": 7,
+            "Name": "force_otp_clock_on",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "0F",
+            "POS": 6,
+            "Name": "force_mod_clock_on",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "0F",
+            "POS": 5,
+            "Name": "force_bst_bias",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "0F",
+            "POS": 4,
+            "Name": "force_bst_bso",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "0F",
+            "POS": 3,
+            "Name": "force_ref_sdwn_b_dis",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "0F",
+            "POS": 2,
+            "Name": "force_intfb_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "0F",
+            "POS": 1,
+            "Name": "force_pa_pd_d",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "0F",
+            "POS": 0,
+            "Name": "force_pa_pd",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "10",
+            "POS": 7,
+            "Name": "force_dac3_frz",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "10",
+            "POS": 6,
+            "Name": "force_dac2_frz",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "10",
+            "POS": 5,
+            "Name": "force_dac1_frz",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "10",
+            "POS": 4,
+            "Name": "force_dac3_clk_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "10",
+            "POS": 3,
+            "Name": "ref_sdwn_b_dis_m",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "10",
+            "POS": 2,
+            "Name": "intfb_en_m",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "10",
+            "POS": 1,
+            "Name": "pa_pd_d_m",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "10",
+            "POS": 0,
+            "Name": "pa_pd_m",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "11",
+            "POS": 0,
+            "Name": "bst_bias_m[5:0]",
+            "Length": 6,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "13",
+            "POS": 7,
+            "Name": "force_pa_clamp_dis",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "13",
+            "POS": 6,
+            "Name": "force_fd_res",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "13",
+            "POS": 5,
+            "Name": "force_en_ana_dc_mode",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "13",
+            "POS": 4,
+            "Name": "force_en_dig_path",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "13",
+            "POS": 3,
+            "Name": "force_en_ana_path",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "13",
+            "POS": 2,
+            "Name": "force_en_dac3",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "13",
+            "POS": 1,
+            "Name": "force_en_dac2",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "13",
+            "POS": 0,
+            "Name": "force_en_dac1",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "14",
+            "POS": 7,
+            "Name": "pa_clamp_dis_m",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "14",
+            "POS": 6,
+            "Name": "fd_res_m",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "14",
+            "POS": 5,
+            "Name": "force_bst_fault",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "14",
+            "POS": 4,
+            "Name": "en_dig_path_m",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "14",
+            "POS": 3,
+            "Name": "en_ana_path_m",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "14",
+            "POS": 2,
+            "Name": "en_dac3_m",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "14",
+            "POS": 1,
+            "Name": "en_dac2_m",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "14",
+            "POS": 0,
+            "Name": "en_dac1_m",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "15",
+            "POS": 7,
+            "Name": "force_pa_ocp_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "15",
+            "POS": 6,
+            "Name": "force_bst_bat_track_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "15",
+            "POS": 5,
+            "Name": "force_bst_mfl_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "15",
+            "POS": 4,
+            "Name": "force_bst_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "15",
+            "POS": 3,
+            "Name": "force_bst_byp_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "15",
+            "POS": 2,
+            "Name": "force_bst_ocp_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "15",
+            "POS": 1,
+            "Name": "force_bst_env_err_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "15",
+            "POS": 0,
+            "Name": "force_bst_env_track_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "16",
+            "POS": 7,
+            "Name": "force_bst_zc_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "16",
+            "POS": 6,
+            "Name": "force_bst_bootstrap_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "16",
+            "POS": 5,
+            "Name": "force_bst_amp_bias_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "16",
+            "POS": 4,
+            "Name": "force_bst_amp_bso_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "16",
+            "POS": 3,
+            "Name": "force_bst_comp_bias_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "16",
+            "POS": 2,
+            "Name": "force_bst_comp_bso_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "16",
+            "POS": 1,
+            "Name": "force_bst_bias_ovp_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "16",
+            "POS": 0,
+            "Name": "force_bst_bso_ovp_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "17",
+            "POS": 7,
+            "Name": "force_dig_fast_charge_cmem",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "17",
+            "POS": 6,
+            "Name": "force_dig_bst_mirror_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "17",
+            "POS": 5,
+            "Name": "force_bst_clamp_bias_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "17",
+            "POS": 4,
+            "Name": "force_bst_clamp_bso_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "17",
+            "POS": 3,
+            "Name": "force_dig_azcomp_en_del",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "17",
+            "POS": 2,
+            "Name": "force_dig_offs_zero_idle",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "17",
+            "POS": 1,
+            "Name": "force_dig_azcomp_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "17",
+            "POS": 0,
+            "Name": "force_dig_azcomp_az",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "18",
+            "POS": 7,
+            "Name": "dig_fast_charge_cmem_m",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "18",
+            "POS": 6,
+            "Name": "dig_bst_mirror_en_m",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "18",
+            "POS": 5,
+            "Name": "et_datai_unmask",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "18",
+            "POS": 4,
+            "Name": "force_pa_nmos_clamp_dis",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "18",
+            "POS": 3,
+            "Name": "dig_azcomp_en_del_m",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "18",
+            "POS": 2,
+            "Name": "dig_offs_zero_idle_m",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "18",
+            "POS": 1,
+            "Name": "dig_azcomp_en_m",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "18",
+            "POS": 0,
+            "Name": "dig_azcomp_az_m",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "19",
+            "POS": 7,
+            "Name": "ana_tst_mode_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "19",
+            "POS": 4,
+            "Name": "pa_nmos_clamp_dis_m",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "19",
+            "POS": 3,
+            "Name": "azcomp_test_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "19",
+            "POS": 2,
+            "Name": "dacpa_test_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "19",
+            "POS": 1,
+            "Name": "bst_test_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "19",
+            "POS": 0,
+            "Name": "ref_test_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "1A",
+            "POS": 0,
+            "Name": "ana_test_sel[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "1E",
+            "POS": 4,
+            "Name": "internal_sin_gain[3:0]",
+            "Length": 4,
+            "Option": "Set amplitude of internal sin generator.\t0x0-0x9: -1dB - INTERNAL_SIN_GAIN * 6dB \t0xA-0xF = -61dB\t",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "1E",
+            "POS": 3,
+            "Name": "internal_sin_en",
+            "Length": 1,
+            "Option": "Enable of of internal sin generator.\t0: disabled (default)\t1: enabled ",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "1E",
+            "POS": 0,
+            "Name": "internal_sin_freq[2:0]",
+            "Length": 3,
+            "Option": "Set frequency of internal sin generator.\t0x0: 1KHz\t0x1: 2KHz\t0x2: 4KHz\t0x3: 8KHz\t0x4-0x7 = 16KHz",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "1F",
+            "POS": 0,
+            "Name": "internal_sin_offset[7:0]",
+            "Length": 8,
+            "Option": "Set offset of internal sin generator (from -14.65mV to 14.53mV)\tApplied offset = INTERNAL_SIN_OFFSET * 114.44uV",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "20",
+            "POS": 0,
+            "Name": "debug_in_en[8]",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "21"
+        },
+        {
+            "PAGE": 1,
+            "REG": "21",
+            "POS": 0,
+            "Name": "debug_in_en[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "20"
+        },
+        {
+            "PAGE": 1,
+            "REG": "22",
+            "POS": 0,
+            "Name": "debug_in[8]",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "23"
+        },
+        {
+            "PAGE": 1,
+            "REG": "23",
+            "POS": 0,
+            "Name": "debug_in[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "22"
+        },
+        {
+            "PAGE": 1,
+            "REG": "24",
+            "POS": 0,
+            "Name": "debug_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "2F",
+            "POS": 0,
+            "Name": "unlock_tst_addr",
+            "Length": 1,
+            "Option": "Test page unlock status. To unlock test page write first 0xAA and then 0xBB in this address. To lock test page write 0x00 in this address.\t0 = test page locked\t1 = test page unlocked",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "30",
+            "POS": 6,
+            "Name": "ifir_coeff_nr[1:0]",
+            "Length": 2,
+            "Option": "Set number of coefficients:\t00 = 10 coefficients\t01 = 20 coefficients\t10 = 30 coefficients\t11 = 40 coefficients (default)\t",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "30",
+            "POS": 4,
+            "Name": "ifir_mode[1:0]",
+            "Length": 2,
+            "Option": "Set configuration of second fixed-coeff fir:\t00 = 13 taps (default)\t01 = 10 taps\t10 = 4 taps\t11 = bypassed\t",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "30",
+            "POS": 0,
+            "Name": "ifir_shift[3:0]",
+            "Length": 4,
+            "Option": "Set the shift applied to the output of second fixed-coeff fir:\t0000 = /128 \t0001 = /64\t0010 = /32\t0011 = /16 \t0100 = /8 \t0101 = /4\t0110 = /2 \t0111 = 1\t1000 = x2 (default)\t1001 = x4\t1010 = x8\t1011 = x16\t1100 = x32 \t1101 = x64\t1110 = x128\t1111 = x128\t\t\t\t\t\t\t\t\t\t",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "31",
+            "POS": 0,
+            "Name": "ifir_coeff_loader_start",
+            "Length": 1,
+            "Option": "Reload of default values for all ifir coefficientes.",
+            "Attribute": "P",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "32",
+            "POS": 0,
+            "Name": "ifir_coeff_0[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "33"
+        },
+        {
+            "PAGE": 1,
+            "REG": "33",
+            "POS": 0,
+            "Name": "ifir_coeff_0[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "32"
+        },
+        {
+            "PAGE": 1,
+            "REG": "34",
+            "POS": 0,
+            "Name": "ifir_coeff_1[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "35"
+        },
+        {
+            "PAGE": 1,
+            "REG": "35",
+            "POS": 0,
+            "Name": "ifir_coeff_1[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "34"
+        },
+        {
+            "PAGE": 1,
+            "REG": "36",
+            "POS": 0,
+            "Name": "ifir_coeff_2[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "37"
+        },
+        {
+            "PAGE": 1,
+            "REG": "37",
+            "POS": 0,
+            "Name": "ifir_coeff_2[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "36"
+        },
+        {
+            "PAGE": 1,
+            "REG": "38",
+            "POS": 0,
+            "Name": "ifir_coeff_3[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "39"
+        },
+        {
+            "PAGE": 1,
+            "REG": "39",
+            "POS": 0,
+            "Name": "ifir_coeff_3[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "38"
+        },
+        {
+            "PAGE": 1,
+            "REG": "3A",
+            "POS": 0,
+            "Name": "ifir_coeff_4[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "3B"
+        },
+        {
+            "PAGE": 1,
+            "REG": "3B",
+            "POS": 0,
+            "Name": "ifir_coeff_4[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "3A"
+        },
+        {
+            "PAGE": 1,
+            "REG": "3C",
+            "POS": 0,
+            "Name": "ifir_coeff_5[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "3D"
+        },
+        {
+            "PAGE": 1,
+            "REG": "3D",
+            "POS": 0,
+            "Name": "ifir_coeff_5[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "3C"
+        },
+        {
+            "PAGE": 1,
+            "REG": "3E",
+            "POS": 0,
+            "Name": "ifir_coeff_6[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "3F"
+        },
+        {
+            "PAGE": 1,
+            "REG": "3F",
+            "POS": 0,
+            "Name": "ifir_coeff_6[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "3E"
+        },
+        {
+            "PAGE": 1,
+            "REG": "40",
+            "POS": 0,
+            "Name": "ifir_coeff_7[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "41"
+        },
+        {
+            "PAGE": 1,
+            "REG": "41",
+            "POS": 0,
+            "Name": "ifir_coeff_7[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "40"
+        },
+        {
+            "PAGE": 1,
+            "REG": "42",
+            "POS": 0,
+            "Name": "ifir_coeff_8[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "43"
+        },
+        {
+            "PAGE": 1,
+            "REG": "43",
+            "POS": 0,
+            "Name": "ifir_coeff_8[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "42"
+        },
+        {
+            "PAGE": 1,
+            "REG": "44",
+            "POS": 0,
+            "Name": "ifir_coeff_9[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "45"
+        },
+        {
+            "PAGE": 1,
+            "REG": "45",
+            "POS": 0,
+            "Name": "ifir_coeff_9[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "44"
+        },
+        {
+            "PAGE": 1,
+            "REG": "46",
+            "POS": 0,
+            "Name": "ifir_coeff_10[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "47"
+        },
+        {
+            "PAGE": 1,
+            "REG": "47",
+            "POS": 0,
+            "Name": "ifir_coeff_10[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "46"
+        },
+        {
+            "PAGE": 1,
+            "REG": "48",
+            "POS": 0,
+            "Name": "ifir_coeff_11[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "49"
+        },
+        {
+            "PAGE": 1,
+            "REG": "49",
+            "POS": 0,
+            "Name": "ifir_coeff_11[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "48"
+        },
+        {
+            "PAGE": 1,
+            "REG": "4A",
+            "POS": 0,
+            "Name": "ifir_coeff_12[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "4B"
+        },
+        {
+            "PAGE": 1,
+            "REG": "4B",
+            "POS": 0,
+            "Name": "ifir_coeff_12[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "4A"
+        },
+        {
+            "PAGE": 1,
+            "REG": "4C",
+            "POS": 0,
+            "Name": "ifir_coeff_13[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "4D"
+        },
+        {
+            "PAGE": 1,
+            "REG": "4D",
+            "POS": 0,
+            "Name": "ifir_coeff_13[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "4C"
+        },
+        {
+            "PAGE": 1,
+            "REG": "4E",
+            "POS": 0,
+            "Name": "ifir_coeff_14[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "4F"
+        },
+        {
+            "PAGE": 1,
+            "REG": "4F",
+            "POS": 0,
+            "Name": "ifir_coeff_14[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "4E"
+        },
+        {
+            "PAGE": 1,
+            "REG": "50",
+            "POS": 0,
+            "Name": "ifir_coeff_15[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "51"
+        },
+        {
+            "PAGE": 1,
+            "REG": "51",
+            "POS": 0,
+            "Name": "ifir_coeff_15[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "50"
+        },
+        {
+            "PAGE": 1,
+            "REG": "52",
+            "POS": 0,
+            "Name": "ifir_coeff_16[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "53"
+        },
+        {
+            "PAGE": 1,
+            "REG": "53",
+            "POS": 0,
+            "Name": "ifir_coeff_16[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "52"
+        },
+        {
+            "PAGE": 1,
+            "REG": "54",
+            "POS": 0,
+            "Name": "ifir_coeff_17[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "55"
+        },
+        {
+            "PAGE": 1,
+            "REG": "55",
+            "POS": 0,
+            "Name": "ifir_coeff_17[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "54"
+        },
+        {
+            "PAGE": 1,
+            "REG": "56",
+            "POS": 0,
+            "Name": "ifir_coeff_18[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "57"
+        },
+        {
+            "PAGE": 1,
+            "REG": "57",
+            "POS": 0,
+            "Name": "ifir_coeff_18[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "56"
+        },
+        {
+            "PAGE": 1,
+            "REG": "58",
+            "POS": 0,
+            "Name": "ifir_coeff_19[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "59"
+        },
+        {
+            "PAGE": 1,
+            "REG": "59",
+            "POS": 0,
+            "Name": "ifir_coeff_19[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "58"
+        },
+        {
+            "PAGE": 1,
+            "REG": "5A",
+            "POS": 0,
+            "Name": "ifir_coeff_20[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "5B"
+        },
+        {
+            "PAGE": 1,
+            "REG": "5B",
+            "POS": 0,
+            "Name": "ifir_coeff_20[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "5A"
+        },
+        {
+            "PAGE": 1,
+            "REG": "5C",
+            "POS": 0,
+            "Name": "ifir_coeff_21[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "5D"
+        },
+        {
+            "PAGE": 1,
+            "REG": "5D",
+            "POS": 0,
+            "Name": "ifir_coeff_21[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "5C"
+        },
+        {
+            "PAGE": 1,
+            "REG": "5E",
+            "POS": 0,
+            "Name": "ifir_coeff_22[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "5F"
+        },
+        {
+            "PAGE": 1,
+            "REG": "5F",
+            "POS": 0,
+            "Name": "ifir_coeff_22[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "5E"
+        },
+        {
+            "PAGE": 1,
+            "REG": "60",
+            "POS": 0,
+            "Name": "ifir_coeff_23[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "61"
+        },
+        {
+            "PAGE": 1,
+            "REG": "61",
+            "POS": 0,
+            "Name": "ifir_coeff_23[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "60"
+        },
+        {
+            "PAGE": 1,
+            "REG": "62",
+            "POS": 0,
+            "Name": "ifir_coeff_24[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "63"
+        },
+        {
+            "PAGE": 1,
+            "REG": "63",
+            "POS": 0,
+            "Name": "ifir_coeff_24[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "62"
+        },
+        {
+            "PAGE": 1,
+            "REG": "64",
+            "POS": 0,
+            "Name": "ifir_coeff_25[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "65"
+        },
+        {
+            "PAGE": 1,
+            "REG": "65",
+            "POS": 0,
+            "Name": "ifir_coeff_25[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "64"
+        },
+        {
+            "PAGE": 1,
+            "REG": "66",
+            "POS": 0,
+            "Name": "ifir_coeff_26[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "67"
+        },
+        {
+            "PAGE": 1,
+            "REG": "67",
+            "POS": 0,
+            "Name": "ifir_coeff_26[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "66"
+        },
+        {
+            "PAGE": 1,
+            "REG": "68",
+            "POS": 0,
+            "Name": "ifir_coeff_27[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "69"
+        },
+        {
+            "PAGE": 1,
+            "REG": "69",
+            "POS": 0,
+            "Name": "ifir_coeff_27[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "68"
+        },
+        {
+            "PAGE": 1,
+            "REG": "6A",
+            "POS": 0,
+            "Name": "ifir_coeff_28[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "6B"
+        },
+        {
+            "PAGE": 1,
+            "REG": "6B",
+            "POS": 0,
+            "Name": "ifir_coeff_28[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "6A"
+        },
+        {
+            "PAGE": 1,
+            "REG": "6C",
+            "POS": 0,
+            "Name": "ifir_coeff_29[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "6D"
+        },
+        {
+            "PAGE": 1,
+            "REG": "6D",
+            "POS": 0,
+            "Name": "ifir_coeff_29[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "6C"
+        },
+        {
+            "PAGE": 1,
+            "REG": "6E",
+            "POS": 0,
+            "Name": "ifir_coeff_30[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "6F"
+        },
+        {
+            "PAGE": 1,
+            "REG": "6F",
+            "POS": 0,
+            "Name": "ifir_coeff_30[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "6E"
+        },
+        {
+            "PAGE": 1,
+            "REG": "70",
+            "POS": 0,
+            "Name": "ifir_coeff_31[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "71"
+        },
+        {
+            "PAGE": 1,
+            "REG": "71",
+            "POS": 0,
+            "Name": "ifir_coeff_31[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "70"
+        },
+        {
+            "PAGE": 1,
+            "REG": "72",
+            "POS": 0,
+            "Name": "ifir_coeff_32[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "73"
+        },
+        {
+            "PAGE": 1,
+            "REG": "73",
+            "POS": 0,
+            "Name": "ifir_coeff_32[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "72"
+        },
+        {
+            "PAGE": 1,
+            "REG": "74",
+            "POS": 0,
+            "Name": "ifir_coeff_33[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "75"
+        },
+        {
+            "PAGE": 1,
+            "REG": "75",
+            "POS": 0,
+            "Name": "ifir_coeff_33[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "74"
+        },
+        {
+            "PAGE": 1,
+            "REG": "76",
+            "POS": 0,
+            "Name": "ifir_coeff_34[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "77"
+        },
+        {
+            "PAGE": 1,
+            "REG": "77",
+            "POS": 0,
+            "Name": "ifir_coeff_34[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "76"
+        },
+        {
+            "PAGE": 1,
+            "REG": "78",
+            "POS": 0,
+            "Name": "ifir_coeff_35[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "79"
+        },
+        {
+            "PAGE": 1,
+            "REG": "79",
+            "POS": 0,
+            "Name": "ifir_coeff_35[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "78"
+        },
+        {
+            "PAGE": 1,
+            "REG": "7A",
+            "POS": 0,
+            "Name": "ifir_coeff_36[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "7B"
+        },
+        {
+            "PAGE": 1,
+            "REG": "7B",
+            "POS": 0,
+            "Name": "ifir_coeff_36[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "7A"
+        },
+        {
+            "PAGE": 1,
+            "REG": "7C",
+            "POS": 0,
+            "Name": "ifir_coeff_37[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "7D"
+        },
+        {
+            "PAGE": 1,
+            "REG": "7D",
+            "POS": 0,
+            "Name": "ifir_coeff_37[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "7C"
+        },
+        {
+            "PAGE": 1,
+            "REG": "7E",
+            "POS": 0,
+            "Name": "ifir_coeff_38[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "7F"
+        },
+        {
+            "PAGE": 1,
+            "REG": "7F",
+            "POS": 0,
+            "Name": "ifir_coeff_38[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "7E"
+        },
+        {
+            "PAGE": 1,
+            "REG": "80",
+            "POS": 0,
+            "Name": "ifir_coeff_39[9:8]",
+            "Length": 2,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "81"
+        },
+        {
+            "PAGE": 1,
+            "REG": "81",
+            "POS": 0,
+            "Name": "ifir_coeff_39[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "80"
+        },
+        {
+            "PAGE": 1,
+            "REG": "8F",
+            "POS": 0,
+            "Name": "ifir_spare[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "AE",
+            "POS": 7,
+            "Name": "otp_status",
+            "Length": 1,
+            "Option": "High when OTP controller has successfully completed the burn/load/test sequence depending on the command issued.",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "AE",
+            "POS": 6,
+            "Name": "otp_result",
+            "Length": 1,
+            "Option": "High when OTP controller has successfully completed the read margin test.",
+            "Attribute": "R",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "AE",
+            "POS": 2,
+            "Name": "otp_margin_read",
+            "Length": 1,
+            "Option": "OTP margin read test command",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "AE",
+            "POS": 1,
+            "Name": "otp_burn",
+            "Length": 1,
+            "Option": "OTP burn command",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "AE",
+            "POS": 0,
+            "Name": "otp_load",
+            "Length": 1,
+            "Option": "OTP load command",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "AF",
+            "POS": 7,
+            "Name": "otp_single_byte",
+            "Length": 1,
+            "Option": "OTP single byte mode\t0 = all addresses are burned/read (default)\t1 = only address defined by OTP_ADDR is burned/read",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "AF",
+            "POS": 6,
+            "Name": "otp_margin_read_mode",
+            "Length": 1,
+            "Option": "OTP margin read mode\t0 = expected OTP data is 0xFF (default)\t1 = expected OTP data is the ones from I2C addresses 0x6B-0x8A",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "AF",
+            "POS": 0,
+            "Name": "otp_addr[5:0]",
+            "Length": 6,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B0",
+            "POS": 4,
+            "Name": "vbgr_adj[3:0]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B0",
+            "POS": 3,
+            "Name": "i3c_instance_id",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B0",
+            "POS": 2,
+            "Name": "i2c_slave_id",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B0",
+            "POS": 1,
+            "Name": "i3c_dis",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B0",
+            "POS": 0,
+            "Name": "otp_burnt_b",
+            "Length": 1,
+            "Option": "0 = otp section burnt ( this bit must be set to 0 in otp burning procedure) \t1 = otp section not burnt ",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B1",
+            "POS": 4,
+            "Name": " otp_vbg_curv_adj[3:0]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B1",
+            "POS": 0,
+            "Name": "bst_ocp_trim[3:0]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "B2"
+        },
+        {
+            "PAGE": 1,
+            "REG": "B2",
+            "POS": 6,
+            "Name": "platf_pdm_freq_p0[1:0]",
+            "Length": 2,
+            "Option": "Select the PDM freq, it's only meaningful in PDM mode.\t00 = 3.072MHz\t01 = 6.144MHz\t1X = 12.288MHz",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B2",
+            "POS": 5,
+            "Name": "bst_ocp_trim[4]",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "B1"
+        },
+        {
+            "PAGE": 1,
+            "REG": "B2",
+            "POS": 0,
+            "Name": "bst_zc_trim[4:0]",
+            "Length": 5,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B3",
+            "POS": 5,
+            "Name": "tsd_pvt_adj[2:0]",
+            "Length": 3,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B3",
+            "POS": 4,
+            "Name": "spare1[3]",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "EE"
+        },
+        {
+            "PAGE": 1,
+            "REG": "B3",
+            "POS": 0,
+            "Name": "spare2[3:0]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B4",
+            "POS": 6,
+            "Name": "platf_input_mode_p0[1:0]",
+            "Length": 2,
+            "Option": "Select the input type. If this platform is detected, this field change the default of REG09[1:0] in base page.\t00 = TDM\t01 = PDM\t1X = Analog in",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B4",
+            "POS": 0,
+            "Name": "otp_bst_comp_bso_trim[5:0]",
+            "Length": 6,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B5",
+            "POS": 6,
+            "Name": "platf_input_mode_p1[1:0]",
+            "Length": 2,
+            "Option": "Select the input type. If this platform is detected, this field change the default of REG09[1:0] in base page.\t00 = TDM\t01 = PDM\t1X = Analog in",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B5",
+            "POS": 0,
+            "Name": "otp_bst_comp_bias_trim[5:0]",
+            "Length": 6,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B6",
+            "POS": 6,
+            "Name": "platf_input_mode_p2[1:0]",
+            "Length": 2,
+            "Option": "Select the input type. If this platform is detected, this field change the default of REG09[1:0] in base page.\t00 = TDM\t01 = PDM\t1X = Analog in",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B6",
+            "POS": 3,
+            "Name": "platf_tdm_fsyn_rate_p0[2:0]",
+            "Length": 3,
+            "Option": "Select the TDM rate. If this platform is detected, this field change the default of REG51[6:4] in base page.\t000 = idle\t001 = 48kHz\t010 = 96kHz\t011 = 192kHz\t100 = 384kHz\t101 = 768kHz",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B6",
+            "POS": 0,
+            "Name": "platf_tdm_bclk_osr_p0[2:0] ",
+            "Length": 3,
+            "Option": "Select the BCLK frequency. If this platform is detected, this field change the default of REG51[2:0] in base page.\t000 = idle\t001 = 20\t010 = 32\t011 = 40\t100 = 48\t101 = 64\t",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B7",
+            "POS": 6,
+            "Name": "platf_input_mode_p3[1:0]",
+            "Length": 2,
+            "Option": "Select the input type. If this platform is detected, this field change the default of REG09[1:0] in base page.\t00 = TDM\t01 = PDM\t1X = Analog in",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B7",
+            "POS": 3,
+            "Name": "platf_tdm_fsyn_rate_p1[2:0]",
+            "Length": 3,
+            "Option": "Select the TDM rate. If this platform is detected, this field change the default of REG51[6:4] in base page.\t000 = idle\t001 = 48kHz\t010 = 96kHz\t011 = 192kHz\t100 = 384kHz\t101 = 768kHz",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B7",
+            "POS": 0,
+            "Name": "platf_tdm_bclk_osr_p1[2:0]",
+            "Length": 3,
+            "Option": "Select the BCLK frequency. If this platform is detected, this field change the default of REG51[2:0] in base page.\t000 = idle\t001 = 20\t010 = 32\t011 = 40\t100 = 48\t101 = 64\t",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B8",
+            "POS": 7,
+            "Name": "bst_loop_res_force",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B8",
+            "POS": 4,
+            "Name": "platf_dpa_ana_gain_p0[2:0]",
+            "Length": 3,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B8",
+            "POS": 3,
+            "Name": "platf_pdm_mode_low_freq",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B8",
+            "POS": 0,
+            "Name": "platf_dpa_ana_gain_p1[2:0]",
+            "Length": 3,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B9",
+            "POS": 7,
+            "Name": "i3c_remapping_page_sel_3",
+            "Length": 1,
+            "Option": "I2C page of remapped register 3. It's meaningfull only if i3c_remapping_en_3 = 1.\t0= page 0\t1 = page 1",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B9",
+            "POS": 6,
+            "Name": "i3c_remapping_en_3",
+            "Length": 1,
+            "Option": "Remapping en of register 3.\t0= register 3 not over-written during i2c_load\t1 = register 3 over-written during i2c_load",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B9",
+            "POS": 5,
+            "Name": "i3c_remapping_page_sel_2",
+            "Length": 1,
+            "Option": "I2C page of remapped register 2. It's meaningfull only if i3c_remapping_en_2 = 1.\t0= page 0\t1 = page 1",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B9",
+            "POS": 4,
+            "Name": "i3c_remapping_en_2",
+            "Length": 1,
+            "Option": "Remapping en of register 2.\t0= register 2 not over-written during i2c_load\t1 = register 2 over-written during i2c_load",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B9",
+            "POS": 3,
+            "Name": "i3c_remapping_page_sel_1",
+            "Length": 1,
+            "Option": "I2C page of remapped register 1. It's meaningfull only if i3c_remapping_en_1 = 1.\t0= page 0\t1 = page 1",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B9",
+            "POS": 2,
+            "Name": "i3c_remapping_en_1",
+            "Length": 1,
+            "Option": "Remapping en of register 1.\t0= register 1 not over-written during i2c_load\t1 = register 1 over-written during i2c_load",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B9",
+            "POS": 1,
+            "Name": "i3c_remapping_page_sel_0",
+            "Length": 1,
+            "Option": "I2C page of remapped register 0. It's meaningfull only if i3c_remapping_en_0 = 1.\t0= page 0\t1 = page 1",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "B9",
+            "POS": 0,
+            "Name": "i3c_remapping_en_0",
+            "Length": 1,
+            "Option": "Remapping en of register 0.\t0= register 0 not over-written during i2c_load\t1 = register 0 over-written during i2c_load",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "BA",
+            "POS": 6,
+            "Name": "platf_pdm_freq_p1[1:0]",
+            "Length": 2,
+            "Option": "Select the PDM freq, it's only meaningful in PDM mode.\t00 = 3.072MHz\t01 = 6.144MHz\t1X = 12.288MHz",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "BA",
+            "POS": 5,
+            "Name": "i3c_remapping_page_sel_6",
+            "Length": 1,
+            "Option": "I2C page of remapped register 6. It's meaningfull only if i3c_remapping_en_6 = 1.\t0= page 0\t1 = page 1",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "BA",
+            "POS": 4,
+            "Name": "i3c_remapping_en_6",
+            "Length": 1,
+            "Option": "Remapping en of register 6.\t0= register 6 not over-written during i2c_load\t1 = register 6 over-written during i2c_load",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "BA",
+            "POS": 3,
+            "Name": "i3c_remapping_page_sel_5",
+            "Length": 1,
+            "Option": "I2C page of remapped register 5. It's meaningfull only if i3c_remapping_en_5 = 1.\t0= page 0\t1 = page 1",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "BA",
+            "POS": 2,
+            "Name": "i3c_remapping_en_5",
+            "Length": 1,
+            "Option": "Remapping en of register 5.\t0= register 5 not over-written during i2c_load\t1 = register 5 over-written during i2c_load",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "BA",
+            "POS": 1,
+            "Name": "i3c_remapping_page_sel_4",
+            "Length": 1,
+            "Option": "I2C page of remapped register 4. It's meaningfull only if i3c_remapping_en_4 = 1.\t0= page 0\t1 = page 1",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "BA",
+            "POS": 0,
+            "Name": "i3c_remapping_en_4",
+            "Length": 1,
+            "Option": "Remapping en of register 4.\t0= register 4 not over-written during i2c_load\t1 = register 4 over-written during i2c_load",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "BB",
+            "POS": 0,
+            "Name": "i3c_remapping_add_0[7:0]",
+            "Length": 8,
+            "Option": "I2C address of remapped register 0. It's meaningfull only if i3c_remapping_en_0 = 1.\t",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "BC",
+            "POS": 0,
+            "Name": "i3c_remapping_data_0[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "BD",
+            "POS": 0,
+            "Name": "i3c_remapping_add_1[7:0]",
+            "Length": 8,
+            "Option": "I2C address of remapped register 1. It's meaningfull only if i3c_remapping_en_1 = 1.\t",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "BE",
+            "POS": 0,
+            "Name": "i3c_remapping_data_1[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "BF",
+            "POS": 0,
+            "Name": "i3c_remapping_add_2[7:0]",
+            "Length": 8,
+            "Option": "I2C address of remapped register 2. It's meaningfull only if i3c_remapping_en_2 = 1.\t",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "C0",
+            "POS": 0,
+            "Name": "i3c_remapping_data_2[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "C1",
+            "POS": 0,
+            "Name": "i3c_remapping_add_3[7:0]",
+            "Length": 8,
+            "Option": "I2C address of remapped register 3. It's meaningfull only if i3c_remapping_en_3 = 1.\t",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "C2",
+            "POS": 0,
+            "Name": "i3c_remapping_data_3[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "C3",
+            "POS": 0,
+            "Name": "i3c_remapping_add_4[7:0]",
+            "Length": 8,
+            "Option": "I2C address of remapped register 4. It's meaningfull only if i3c_remapping_en_4 = 1.\t",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "C4",
+            "POS": 0,
+            "Name": "i3c_remapping_data_4[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "C5",
+            "POS": 0,
+            "Name": "i3c_remapping_add_5[7:0]",
+            "Length": 8,
+            "Option": "I2C address of remapped register 5. It's meaningfull only if i3c_remapping_en_5 = 1.\t",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "C6",
+            "POS": 0,
+            "Name": "i3c_remapping_data_5[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "C7",
+            "POS": 0,
+            "Name": "i3c_remapping_add_6[7:0]",
+            "Length": 8,
+            "Option": "I2C address of remapped register 6. It's meaningfull only if i3c_remapping_en_6 = 1.\t",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "C8",
+            "POS": 0,
+            "Name": "i3c_remapping_data_6[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "C9",
+            "POS": 7,
+            "Name": "bst_loop_res[1]",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "C9"
+        },
+        {
+            "PAGE": 1,
+            "REG": "C9",
+            "POS": 4,
+            "Name": "platf_dpa_ana_gain_p2[2:0]",
+            "Length": 3,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "C9",
+            "POS": 3,
+            "Name": "bst_loop_res[0]",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "C9"
+        },
+        {
+            "PAGE": 1,
+            "REG": "C9",
+            "POS": 0,
+            "Name": "platf_dpa_ana_gain_p3[2:0]",
+            "Length": 3,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "CA",
+            "POS": 0,
+            "Name": "int_dig_zero_off[11:4]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "CB"
+        },
+        {
+            "PAGE": 1,
+            "REG": "CB",
+            "POS": 4,
+            "Name": "int_dig_zero_off[3:0]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "CA"
+        },
+        {
+            "PAGE": 1,
+            "REG": "CB",
+            "POS": 0,
+            "Name": "int_dig_idle_off[11:8]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "CC"
+        },
+        {
+            "PAGE": 1,
+            "REG": "CC",
+            "POS": 0,
+            "Name": "int_dig_idle_off[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "CB"
+        },
+        {
+            "PAGE": 1,
+            "REG": "CD",
+            "POS": 0,
+            "Name": "diff_dig_zero_off[11:4]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "CE"
+        },
+        {
+            "PAGE": 1,
+            "REG": "CE",
+            "POS": 4,
+            "Name": "diff_dig_zero_off[3:0]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "CD"
+        },
+        {
+            "PAGE": 1,
+            "REG": "CE",
+            "POS": 0,
+            "Name": "diff_dig_idle_off[11:8]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "CF"
+        },
+        {
+            "PAGE": 1,
+            "REG": "CF",
+            "POS": 0,
+            "Name": "diff_dig_idle_off[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "CE"
+        },
+        {
+            "PAGE": 1,
+            "REG": "D0",
+            "POS": 0,
+            "Name": "int_ana_zero_off_gain0[11:4]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "D1"
+        },
+        {
+            "PAGE": 1,
+            "REG": "D1",
+            "POS": 4,
+            "Name": "int_ana_zero_off_gain0[3:0]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "D0"
+        },
+        {
+            "PAGE": 1,
+            "REG": "D1",
+            "POS": 0,
+            "Name": "int_ana_idle_off_gain0[11:8]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "D2"
+        },
+        {
+            "PAGE": 1,
+            "REG": "D2",
+            "POS": 0,
+            "Name": "int_ana_idle_off_gain0[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "D1"
+        },
+        {
+            "PAGE": 1,
+            "REG": "D3",
+            "POS": 0,
+            "Name": "diff_ana_zero_off_gain0[11:4]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "D4"
+        },
+        {
+            "PAGE": 1,
+            "REG": "D4",
+            "POS": 4,
+            "Name": "diff_ana_zero_off_gain0[3:0]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "D3"
+        },
+        {
+            "PAGE": 1,
+            "REG": "D4",
+            "POS": 0,
+            "Name": "diff_ana_idle_off_gain0[11:8]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "D5"
+        },
+        {
+            "PAGE": 1,
+            "REG": "D5",
+            "POS": 0,
+            "Name": "diff_ana_idle_off_gain0[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "D4"
+        },
+        {
+            "PAGE": 1,
+            "REG": "D6",
+            "POS": 0,
+            "Name": "int_ana_zero_off_gain1[11:4]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "D7"
+        },
+        {
+            "PAGE": 1,
+            "REG": "D7",
+            "POS": 4,
+            "Name": "int_ana_zero_off_gain1[3:0]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "D6"
+        },
+        {
+            "PAGE": 1,
+            "REG": "D7",
+            "POS": 0,
+            "Name": "int_ana_idle_off_gain1[11:8]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "D8"
+        },
+        {
+            "PAGE": 1,
+            "REG": "D8",
+            "POS": 0,
+            "Name": "int_ana_idle_off_gain1[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "D7"
+        },
+        {
+            "PAGE": 1,
+            "REG": "D9",
+            "POS": 0,
+            "Name": "diff_ana_zero_off_gain1[11:4]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "DA"
+        },
+        {
+            "PAGE": 1,
+            "REG": "DA",
+            "POS": 4,
+            "Name": "diff_ana_zero_off_gain1[3:0]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "D9"
+        },
+        {
+            "PAGE": 1,
+            "REG": "DA",
+            "POS": 0,
+            "Name": "diff_ana_idle_off_gain1[11:8]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "DB"
+        },
+        {
+            "PAGE": 1,
+            "REG": "DB",
+            "POS": 0,
+            "Name": "diff_ana_idle_off_gain1[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "DA"
+        },
+        {
+            "PAGE": 1,
+            "REG": "DC",
+            "POS": 0,
+            "Name": "int_ana_zero_off_gain2[11:4]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "DD"
+        },
+        {
+            "PAGE": 1,
+            "REG": "DD",
+            "POS": 4,
+            "Name": "int_ana_zero_off_gain2[3:0]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "DC"
+        },
+        {
+            "PAGE": 1,
+            "REG": "DD",
+            "POS": 0,
+            "Name": "int_ana_idle_off_gain2[11:8]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "DE"
+        },
+        {
+            "PAGE": 1,
+            "REG": "DE",
+            "POS": 0,
+            "Name": "int_ana_idle_off_gain2[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "DD"
+        },
+        {
+            "PAGE": 1,
+            "REG": "DF",
+            "POS": 0,
+            "Name": "diff_ana_zero_off_gain2[11:4]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "E0"
+        },
+        {
+            "PAGE": 1,
+            "REG": "E0",
+            "POS": 4,
+            "Name": "diff_ana_zero_off_gain2[3:0]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "DF"
+        },
+        {
+            "PAGE": 1,
+            "REG": "E0",
+            "POS": 0,
+            "Name": "diff_ana_idle_off_gain2[11:8]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "E1"
+        },
+        {
+            "PAGE": 1,
+            "REG": "E1",
+            "POS": 0,
+            "Name": "diff_ana_idle_off_gain2[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "E0"
+        },
+        {
+            "PAGE": 1,
+            "REG": "E2",
+            "POS": 0,
+            "Name": "int_ana_zero_off_gain3[11:4]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "E3"
+        },
+        {
+            "PAGE": 1,
+            "REG": "E3",
+            "POS": 4,
+            "Name": "int_ana_zero_off_gain3[3:0]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "E2"
+        },
+        {
+            "PAGE": 1,
+            "REG": "E3",
+            "POS": 0,
+            "Name": "int_ana_idle_off_gain3[11:8]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "E4"
+        },
+        {
+            "PAGE": 1,
+            "REG": "E4",
+            "POS": 0,
+            "Name": "int_ana_idle_off_gain3[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "E3"
+        },
+        {
+            "PAGE": 1,
+            "REG": "E5",
+            "POS": 0,
+            "Name": "diff_ana_zero_off_gain3[11:4]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "E6"
+        },
+        {
+            "PAGE": 1,
+            "REG": "E6",
+            "POS": 4,
+            "Name": "diff_ana_zero_off_gain3[3:0]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "E5"
+        },
+        {
+            "PAGE": 1,
+            "REG": "E6",
+            "POS": 0,
+            "Name": "diff_ana_idle_off_gain3[11:8]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "E7"
+        },
+        {
+            "PAGE": 1,
+            "REG": "E7",
+            "POS": 0,
+            "Name": "diff_ana_idle_off_gain3[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "E6"
+        },
+        {
+            "PAGE": 1,
+            "REG": "E8",
+            "POS": 0,
+            "Name": "int_ana_zero_off_gain4[11:4]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "E9"
+        },
+        {
+            "PAGE": 1,
+            "REG": "E9",
+            "POS": 4,
+            "Name": "int_ana_zero_off_gain4[3:0]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "E8"
+        },
+        {
+            "PAGE": 1,
+            "REG": "E9",
+            "POS": 0,
+            "Name": "int_ana_idle_off_gain4[11:8]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "EA"
+        },
+        {
+            "PAGE": 1,
+            "REG": "EA",
+            "POS": 0,
+            "Name": "int_ana_idle_off_gain4[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "E9"
+        },
+        {
+            "PAGE": 1,
+            "REG": "EB",
+            "POS": 0,
+            "Name": "diff_ana_zero_off_gain4[11:4]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "EC"
+        },
+        {
+            "PAGE": 1,
+            "REG": "EC",
+            "POS": 4,
+            "Name": "diff_ana_zero_off_gain4[3:0]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "EB"
+        },
+        {
+            "PAGE": 1,
+            "REG": "EC",
+            "POS": 0,
+            "Name": "diff_ana_idle_off_gain4[11:8]",
+            "Length": 4,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "ED"
+        },
+        {
+            "PAGE": 1,
+            "REG": "ED",
+            "POS": 0,
+            "Name": "diff_ana_idle_off_gain4[7:0]",
+            "Length": 8,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "EC"
+        },
+        {
+            "PAGE": 1,
+            "REG": "EE",
+            "POS": 5,
+            "Name": "spare1[2:0]",
+            "Length": 3,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": "B3"
+        },
+        {
+            "PAGE": 1,
+            "REG": "EE",
+            "POS": 4,
+            "Name": "auto_mode_retry_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "EE",
+            "POS": 3,
+            "Name": "auto_mode_i2c_dis",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "EE",
+            "POS": 2,
+            "Name": "auto_mode_fault_en",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "EE",
+            "POS": 1,
+            "Name": "platf_ref_dvddldo_mode",
+            "Length": 1,
+            "Option": "Use of internal LDO for 1.8V supply:\t0: 1.8V externally provided\t1: Use internal LDO",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "EE",
+            "POS": 0,
+            "Name": "auto_mode_dis",
+            "Length": 1,
+            "Option": "OTP option to automatically turn on the path as soon as digital rstb is de-asserted\t0 = path tuned on rstb\t1 = path turned on by I2C",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "EF",
+            "POS": 7,
+            "Name": "otp_fro_sel_0p8125mhz",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "EF",
+            "POS": 6,
+            "Name": "otp_fro_sel_1p625mhz",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "EF",
+            "POS": 5,
+            "Name": "otp_fro_sel",
+            "Length": 1,
+            "Option": "None",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "EF",
+            "POS": 0,
+            "Name": "fro_freq_adj[4:0]",
+            "Length": 5,
+            "Option": "FRO frequency adjustment:\t00000: default\tform 00001 to 00111 frquency increases\tfrom 01000 to 01111 frequency decreases\tMSB has a boost function\t",
+            "Attribute": "N",
+            "Match": ""
+        },
+        {
+            "PAGE": 1,
+            "REG": "FE",
+            "POS": 0,
+            "Name": "i2c_page_sel[1:0]",
+            "Length": 2,
+            "Option": "Selection of I2C page.\t00 = page 0 (default)\t01 = page 1\t1X = not allowed",
+            "Attribute": "N",
+            "Match": "FE"
+        },
+        {
+            "PAGE": 1,
+            "REG": "FF",
+            "POS": 3,
+            "Name": "device_id[4:0]",
+            "Length": 5,
+            "Option": "Device ID.",
+            "Attribute": "R",
+            "Match": "FF"
+        },
+        {
+            "PAGE": 1,
+            "REG": "FF",
+            "POS": 0,
+            "Name": "version_id[2:0]",
+            "Length": 3,
+            "Option": "Version ID.",
+            "Attribute": "R",
+            "Match": "FF"
+        }
+    ]
+}

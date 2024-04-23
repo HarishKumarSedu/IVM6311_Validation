@@ -1,0 +1,84 @@
+Parameters,UVLO,VBGR_ADJ_TRIM,OUT_TEST_FRO_VVCO ,OUT_TEST_FRO_IMSB,TSDN,REF_LDO,FRO_CLOCK
+Test_Name,UVLO,VBGR_ADJ_TRIM,OUT_TEST_FRO_VVCO ,OUT_TEST_FRO_IMSB,TSDN,REF_LDO,FRO_CLOCK
+Test_Description,"Force__VBAT__3.6V
+Force__SDWN__1.8V
+0xFE_0x01 ""Select page 1""
+0x2F_0xAA ""Unlock test page""
+
+Enable_Ana_Testpoint
+
+0x1A_0x00 ""UVLO""
+
+Measure__Voltage__SDWN
+
+0x2F_0xBB ""Lock test page""
+
+
+0xFE_0x00 ""Return page 0""","Run_Startup
+Enable_Ana_Testpoint
+
+0x1A_0x01 ""Bandgap""
+
+Measure__Voltage__SDWN
+TrimSweep - 0xB0[7:4] ""Select code which sets ATEST voltage as close as possible to target""
+
+Calculate__MinError
+Trim - 0xB0[7:4] 
+
+0xFE_0x00 ""Return page 0""","Run_Startup                                                        Enable_Ana_Testpoint
+
+0x1A_0x02 ""FRO VVCO"" Measure__Voltage__SDWN                              0xFE_0x00 ""Return page 0""","Run_Startup                                                        Enable_Ana_Testpoint
+
+0x1A_0x03 ""FRO IMSB"" Measure__Current__SDWN                              0xFE_0x00 ""Return page 0""","Run_Startup
+Enable_Ana_Testpoint
+
+0x1A_0x04 ""TSDN""
+
+Measure__Voltage__SDWN
+TrimSweep - 0xB3[7:5] ""Select code which sets ATEST voltage as close as possible to target""
+
+Calculate__MinError
+Trim - 0xB3[7:5] 
+
+0xFE_0x00 ""Return page 0""","Run_Startup
+Enable_Ana_Testpoint
+0x1A_0x05 ""REF_LDO""
+
+Measure__Voltage__SDWN
+
+
+0xFE_0x00 ""Return page 0""","Run_Startup
+0x03_0x04 ""Enable digital test FSYN""
+0x04_0x32 ""Enable digital test ana_ref_fro_clk_13m""
+
+Measure__Frequency__FSYN
+TrimSweep - 0xEF[4:0] ""Select code which sets ATEST frequency as close as possible to target""
+
+Calculate__MinError
+Trim - 0xEF[4:0] 
+
+
+0xFE_0x00 ""Return page 0"""
+Min,,1793,,,,1796,"12,5"
+Min Value/%,,min %,,,,,
+Typ,VBAT,"1,799",820m,520n,"0,542","1,799",13
+Max,,1804,,,,1802,"13,5"
+Max Value/%,,max %,,,,,
+Unit ,V,V,V,A,V,V,MHz
+Name,Condition,Condition,,,Condition,Condition,Condition
+VBAT ,"3,6V","3,6V","3,6V","3,6V","3,6V","3,6V","3,6V"
+SW ,,"3,6V","3,6V","3,6V","3,6V","3,6V","3,6V"
+VDDIO ,,"1,8V","1,8V","1,8V","1,8V","1,8V","1,8V"
+VDD ,,"1,8V","1,8V","1,8V","1,8V","1,8V","1,8V"
+SDWN ,Measure V,Measure V,Measure V,Measure Current,Measure V,Measure V,
+SDA ,,,,,,,
+SCL ,,,,,,,
+FSYN ,,,,,,,Measure Frequency
+SDI / PDMIN / ANAINP ,,,,,,,
+BCLK / PDMCLK / ANAINN ,,,,,,,
+VBSO ,,,,,,,
+BIAS ,,,,,,,
+CMEM ,,,,,,,
+OUTP ,,,,,,,
+OUTN ,,,,,,,
+PGND ,GND,GND,,,GND,GND,GND

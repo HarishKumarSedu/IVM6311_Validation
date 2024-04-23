@@ -1,0 +1,570 @@
+,PAGE,REG,POS,Name,Length,Option,Attribute,Match
+0,0,00,3,fro_sel_0p8125mhz,1,"Frequency selection of ckg_froclk_muxed, it's meaningfull only if REG00[1]=1. 	00 = 3.25MHz	01 = 1.625MHz	1X = 0.8125MHz",N,
+1,0,00,2,fro_sel_1p625mhz,1,None,N,
+2,0,00,1,fro_sel,1,Frequency selection of ckg_froclk_muxed. 	The effective selection is = boot_done & REG00[1] &  OTP_FRO_SEL	0 = 13MHz	1 = divided version according to REG00[3:2],N,
+3,0,00,0,powerup,1,Power Up	0 = Power-down	1 = Normal operation,N,
+4,0,01,0,hard_reset,1,Software hard-reset.,P,
+5,0,02,3,general_fault_aon,1,Removing of gating on resyncs inside rfu_top	0 = resyncs are gated	1 = resyncs are always clocked,N,
+6,0,02,2,int_mask_mode,1,Interrupt mask mode	0 = flags are set if mask is 1	1 = flags are set but interrupt is output on line only if its mask is 1 (default),N,
+7,0,02,1,int_polarity,1,Interrupt polarity	0 = INTLINE active low (default)	1 = INTLINE active high,N,
+8,0,02,0,int_clear_mode,1,Interrupt clear mode	0 = clear on read	1 = clear on write (default),N,
+9,0,03,7,audio_en_int,1,"Audio enabled (that is, Audio processor can start with playback)",I,
+10,0,03,6,pa_ng_on_int,1,PA noise-gate ON,I,
+11,0,03,5,pa_ng_off_int,1,PA noise-gate OFF,J,
+12,0,03,4,fsyn_valid_fault,1,TDM FSYN fault,J,
+13,0,03,3,tdm_i_fault,1,TDM input fault,I,
+14,0,03,2,tsd_fault,1,TSD event,I,
+15,0,03,1,pwrok_fault,1,PWROK fault,J,
+16,0,03,0,clk_missing_fault,1,Clock monitor fault,I,
+17,0,04,7,audio_en_int_mask,1,Audio enable mask	0 = INTN is not affected (default)	1 = INTN is affected,N,
+18,0,04,6,pa_ng_on_int_mask,1,ClassD noise-gate ON mask	0 = INTN is not affected (default)	1 = INTN is affected,N,
+19,0,04,5,pa_ng_off_int_mask,1,ClassD noise-gate OFF mask	0 = INTN is not affected (default)	1 = INTN is affected,N,
+20,0,04,4,fsyn_valid_fault_mask,1,TDM FSYN fault mask	0 = INTN is not affected (default)	1 = INTN is affected,N,
+21,0,04,3,tdm_i_fault_mask,1,TDM input fault mask	0 = INTN is not affected (default)	1 = INTN is affected,N,
+22,0,04,2,tsd_fault_mask,1,TSD fault mask	0 = INTN is not affected (default)	1 = INTN is affected,N,
+23,0,04,1,pwrok_fault_mask,1,PWROK fault mask	0 = INTN is not affected (default)	1 = INTN is affected,N,
+24,0,04,0,clk_missing_fault_mask,1,Clock missing fault mask	0 = INTN is not affected (default)	1 = INTN is affected,N,
+25,0,05,6,fir4_clip_fault,1,Clip from FIR 4,I,
+26,0,05,5,fir3_clip_fault,1,Clip from FIR 3,I,
+27,0,05,4,fir2_clip_fault,1,Clip from FIR 2,I,
+28,0,05,3,fir1_clip_fault,1,Clip from FIR 1,I,
+29,0,05,2,bst_ocp_fault,1,BST OCP fault,I,
+30,0,05,1,bst_bias_ovp_fault,1,Over-voltage from BST,I,
+31,0,05,0,bst_bso_ovp_fault,1,Over-voltage from BST,I,
+32,0,06,6,fir4_clip_fault_mask,1,Clip from FIR 4 mask	0 = INTN is not affected (default)	1 = INTN is affected,N,
+33,0,06,5,fir3_clip_fault_mask,1,Clip from FIR 3 mask	0 = INTN is not affected (default)	1 = INTN is affected,N,
+34,0,06,4,fir2_clip_fault_mask,1,Clip from FIR 1 mask	0 = INTN is not affected (default)	1 = INTN is affected,N,
+35,0,06,3,fir1_clip_fault_mask,1,Clip from FIR 1 mask	0 = INTN is not affected (default)	1 = INTN is affected,N,
+36,0,06,2,bst_ocp_fault_mask,1,OCP from BST mask	0 = INTN is not affected (default)	1 = INTN is affected,N,
+37,0,06,1,bst_bias_ovp_fault_mask,1,Over-voltage from BST mask	0 = INTN is not affected (default)	1 = INTN is affected,N,
+38,0,06,0,bst_bso_ovp_fault_mask,1,Over-voltage from BST mask	0 = INTN is not affected (default)	1 = INTN is affected,N,
+39,0,0A,7,bst_byp_on,1,BYPASS detection	0 = boost not in bypass	1 = boost in bypass,R,
+40,0,0A,6,classd_ng_on,1,NG detection	0 = system in noise gate	1 = system in play,R,
+41,0,0A,4,fsyn_valid,1,FSYN detection	0 = fsyn not valid	1 = fsyn valid,R,
+42,0,0A,3,tdm_i,1,None,R,
+43,0,0A,2,tsd,1,TSD detection	0 = over-temperature detected	1 = temperature below level,R,
+44,0,0A,1,pwrok,1,PWROK status	0 = power is not OK	1 = power is OK	,R,
+45,0,0A,0,clk_missing,1,Clock monitor status	0 = clock error	1 = clock OK	,R,
+46,0,0B,7,audio_en,1,"Audio enabled (that is, Audio processor can start with playback)	0 = Processor must not play	1 = Processor can play",R,
+47,0,0B,1,bst_bias_ovp,1,Bst bias ovp status	0 = ovp not present	1 = ovp present	,R,
+48,0,0B,0,bst_bso_ovp,1,Bst bso ovp status	0 = ovp not present	1 = ovp present	,R,
+49,0,0C,4,mnt_fsyn_rate[2:0],3,TDM FYSN detected sample rate	000 = idle	001 = 48kHz	010 = 96kHz	011 = 192kHz	100 = 384kHz	101 = 768kHz,R,
+50,0,0C,0,mnt_bclk_osr[2:0],3,TDM detected BCLK OSR	000 = idle	001 = 20	010 = 32	011 = 40	100 = 48	101 = 64	,R,
+51,0,0D,4,platform[1:0],2,Detected platform (it drives effective otp fields)	00 = Platform 0	01 = Platform 1	00 = Platform 2	01 = Platform 3	,R,
+52,0,0D,0,boot_done,1,"Boot (otp loading, platform detection and i2c_load) status	0 = boot not completed	1 = boot completed	",R,
+53,0,0E,7,ext_offset_zero_sat,1,Saturation of zero calibration	0 = calibration not saturated	1 = calibration saturated,R,
+54,0,0E,6,ext_offset_idle_sat,1,Saturation of idle calibration	0 = calibration not saturated	1 = calibration saturated,R,
+55,0,0E,0,applied_offset[11:8],4,Applied calibration offset on data path. LSB = 28.61uV (15V/2^19),R,0F
+56,0,0F,0,applied_offset[7:0],8,Applied calibration offset on data path. LSB = 28.61uV (15V/2^19),R,0E
+57,0,10,7,en_ana_dc_mode,1,None,N,
+58,0,10,6,i3c_hs_en,1,None,N,
+59,0,10,4,tif_en,1,Enable of up-sample filters. This field is dynamically gated according to the scenario.	0 = disabled	1 = enabled (default),N,
+60,0,10,3,et_en,1,Enable of digital envelop tracking fsm. This field is dynamically gated according to the scenario.	0 = disabled	1 = enabled (default),N,
+61,0,10,2,refclk_en,1,Digital enable of refclk. Refclk is ungated according to the logic AND between this field and REG00[0].	0 = disabled	1 = enabled (default),N,
+62,0,10,1,mod_en,1,Enable of digital modulators. This field is dynamically gated according to the scenario.	0 = disabled	1 = enabled (default),N,
+63,0,10,0,tdm_en,1,Enable of tdm interface. This field is dynamically gated according to the scenario.	0 = disabled	1 = enabled (default),N,
+64,0,11,2,pdm_freq[1:0],2,"Select the PDM freq, it's only meaningful in PDM mode.	00 = 3.072MHz	01 = 6.144MHz	1X = 12.288MHz",N,
+65,0,11,0,input_mode[1:0],2,Select the input type. The default of this field is OTP dependent:	00 = TDM	01 = PDM	1X = Analog in,N,
+66,0,12,4,seq_step_time_cmem[1:0]  ,2,CMEM fast charge time.	00 = 50ms	01 = 100ms	10 = 150ms	11 = 200ms,N,
+67,0,12,2,seq_step_time_pd[1:0],2,Sequencer time during internal-feedback exit.	00 = 50us	01 = 100us	10 = 200us	11 = 300us,N,
+68,0,12,0,seq_step_time_pu[1:0],2,Sequencer time during internal-feedback entering.	00 = 50us	01 = 100us	10 = 200us	11 = 300us,N,
+69,0,13,7,clk_missing_rst_en,1,Enable of clock missing feature.	0 = disabled (default)	1 = enabled,N,
+70,0,13,5,clk_missing_rst_mode[1:0],2,"Clock missing reset mode selection.	00 = 200us resolution, 1.4 ms timeout	01 = 200us resolution, 2.8 ms timeout	10 = 1ms resolution, 7 ms timeout	11 = 1ms resolution, 14 ms timeout",N,
+71,0,13,4,seq_auto_cal_dis,1,Automatic offset calibration at path opening.	0 = enabled (default)	1 = disabled,N,
+72,0,13,3,seq_pd_mode,1,Spkear power-down mode.	0 = analog sequence after digital volume ramp (default)	1 = digital volume ramp only,N,
+73,0,13,1,seq_cmem_wait,1,CMEM charging mode.	0 = CMEM charged during play (default)	1 = waiting for CMEM charging before to enter in play,N,
+74,0,13,0,seq_bst_ovp_en,1,Enable of shutdown sequence according to a bst ovp.	0 = interrupt only (default)	1 = interrupt and shutdown,N,
+75,0,14,3,seq_ng_mode,1,Spkear noise-gate mode	0 = internal feedback	1 = dedicated noise-gate procedure (default),N,
+76,0,14,2,ng_tif_en,1,Enable of tif in noise-gate. It's meaningfull in TDM (below 768KHz) mode only.	0 = tif turned off in noise gate	1 = tif enabled in noise gate (default),N,
+77,0,14,1,ng_intfb_pa_en,1,"In internal feedback noise-gate, selects the pa status. It's meaningful only if REG14[3] = 0	0 = pa off in ng	1 = pa on in ng (dafault)",N,
+78,0,14,0,ng_intfb_clk_en,1,"In internal feedback noise-gate, selects the mod clocks status. It's meaningful only if REG14[3] = 0	0 = clk off in ng	1 = clk on in ng (dafault)",N,
+79,0,15,0,seq_ramp_offs_step_time[10:8],3,Step time used during offset ramps. It's the number of refclk periods for each step.,N,16
+80,0,16,0,seq_ramp_offs_step_time[7:0],8,Step time used during offset ramps. It's the number of refclk periods for each step.,N,15
+81,0,17,0,seq_state[4:0],5,Sequencer FSM state.		0_0000 = SPK_OFF            	0_0001 = BST_PWRUP          	0_0010 = WAIT_PA_EN         	0_0011 = WAIT_PA_EN_D       	0_0100 = MUTE               	0_0101 = INT_CAL            	0_0110 = EXT_CAL            	0_0111 = WAIT_INTFB_DN      	0_1000 = BST_BIAS_EN        	0_1001 = WAIT_VOL_PU        	0_1010 = PLAYBACK           	0_1011 = WAIT_VOL_PD        	0_1100 = WAIT_BST_BYP       	0_1101 = WAIT_BST_BIAS      	0_1110 = BST_BIAS_DN        	0_1111 = WAIT_INTFB_UP      	1_0000 = WAIT_PA_PD         	1_0001 = NG_WAIT_BST_BYP    	1_0010 = NG_MOD_BLK         	1_0011 = NG_CLK_OFF         	1_0100 = NOISE_GATE         	1_0101 = NG_CLK_ON          	1_0110 = NG_MOD_UNBLK       	1_0111 = NG_INTFB           	,R,
+82,0,19,1,spk_mute,1,Signal path mute	0 = Signal path un-muted	1 = Signal path muted,N,
+83,0,19,0,spk_en,1,Signal path enable	0 = Signal path disabled	1 = Signal path enabled,N,
+84,0,1A,0,ng_on,1,Setting of ng scenario. When set the sequencer enters in idle. It's meaningful only if REG50[0]=0.	0 = sequencer in play (default)	1 = sequencer in idle,N,
+85,0,1B,0,auto_mode_en,1,Enable of automatic platform (written during i2c_load).	0 = Manual platform	1 = Automatic platform,N,
+86,0,1C,0,force_et_seq_clock_on,1,Clock gating mode for sequencer and et digital blocks.	0 = Blocks dynamically gated (default)	1 = Blocks always on,N,
+87,0,1D,0,pdm_mode_low_freq,1,Low power mode for modulator in PDM mode (downsample of filter output).	0 = Downsample not present	1 = Downsample present (low power mode),N,
+88,0,20,4,ana_spare2[3:0],4,Spare i2c fields for analog purposes.,N,
+89,0,20,0,ana_spare1[3:0],4,Spare i2c fields for analog purposes.,N,
+90,0,30,7,tdm_resync,1,Re-start synchronization between TDM and audio path.,P,
+91,0,31,2,tdm_delay_mode,1,TDM interface delayed mode setting (To be set when TDM is disabled)	0 = serial data is valid starting from the first bit of the communication	1 = serial data is valid with one bitclk period delay after the first bit of the communication (default),N,
+92,0,31,1,tdm_fsyn_polarity,1,FSYN polarity (To be set when TDM is disabled)	0 = transmission starts at FSYN falling edge (default)	1 = transmission starts at FSYN rising edge,N,
+93,0,31,0,tdm_bclk_polarity,1,BCLK polarity (To be set when TDM is disabled)	0 = SDI sampled at BCLK rising edge and SDO transmitted at BCLK falling edge (default)	1 = SDI sampled at BCLK falling edge and SDO transmitted at BCLK rising edge	,N,
+94,0,32,4,tdm_fsyn_rate[2:0],3,TDM FYSN detected sample rate	000 = idle	001 = 48kHz	010 = 96kHz	011 = 192kHz	100 = 384kHz	101 = 768kHz,N,
+95,0,32,0,tdm_bclk_osr[2:0],3,TDM detected BCLK OSR	000 = idle	001 = 20	010 = 32	011 = 40	100 = 48	101 = 64	,N,
+96,0,33,0,tdm_i_skip_bclk[5:0],6,Number of BCLKs between FSYN edge and the first slot and between two slots (0-63) (needs tdm_apply_conf),N,
+97,0,35,6,tdm_i_slot_size[1:0],2,TDM interface slot size (needs tdm_apply_conf):	00 = 20 bits (default)	01 = 16 bits	10 = 24 bits	11 = 32 bits ,N,
+98,0,35,5,tdm_ch1i_dl,1,Channel 1 in data length (needs tdm_apply_conf)	0 = 20 bit  (default)	1 = 16 bit	,N,
+99,0,35,0,tdm_ch1i_slot[4:0],5,"TDM interface slot for channel 1 input (needs tdm_apply_conf, 0 means no slot assigned to channel 1)",N,
+100,0,39,7,tdm_fsyn_rate_mnt_en,1,TDM FSYN rate monitor enable	0 = disabled (default)	1 = enabled,N,
+101,0,39,6,tdm_fsyn_mnt_en,1,TDM FSYN monitor enable	0 = disabled	1 = enabled (default),N,
+102,0,39,4,tdm_fsyn_mnt_mode[1:0],2,TDM FSYN monitor mode	00 = only interrupt	01 = immediate shutdown	10 = audio chain reset (default)	11 = audio chain permanent disable,N,
+103,0,39,0,tdm_fsyn_mnt_mask_cnt[3:0],4,TDM FSYN monitor initial mask count (number of FSYN to skip),N,
+104,0,3A,2,tdm_sync_mode,1,TDM sync mode	0 = internal synchronisms not linked to TDM (default)	1 = internal synchronisms in phase with TDM,N,
+105,0,3A,1,tdm_bclk_mnt_mode,1,TDM BCLK monitor mode	0 = fault if OSR changes	1 = don't fault if OSR changes (default),N,
+106,0,3A,0,tdm_auto_fsyn_rate,1,TDM FSYN rate mode	0 = FSYN_RATE is programmed trough TDM_FSYN_RATE	1 = FSYN_RATE is detected by clock monitor (default),N,
+107,0,3B,0,fir1_m2db,1,Attenuation mode of FIR1 up-sample filter.	0 = 0dB	1 = -2dB	,N,
+108,0,3F,0,tif_spare[7:0],8,Spare register for digital tif block.	,R,
+109,0,50,6,ngif_filt_ratio[1:0],2,Select the ratio to be used by NGIF_FILT_SAMPLE	00 = 1 (default) 	01 = 2	10 = 4	11 = 8 ,N,
+110,0,50,4,ngif_filt_sample[1:0],2,Selects the time filter duration for automute to be issued.	Signal under threshold condition is deglitched with the selected timing before automute being issued.	Automute is released immediately as soon as audio signal returns above threshold. (R set by NGIF_FILT_RATIO)	00 = 6260xR sample (default)	01 = 3130xR sample	10 =   780xR sample 	11 =   130xR sample,N,
+111,0,50,3,ngif_hyst_en,1,Selects the audio signal hysteretic double threshold to be used for amutomute control.	0 = no hysteresis (default)	1 = 6dB,N,
+112,0,50,1,ngif_mask,1,Noise-gating mask:	0 = only interrupt (default)	1 = automatic mute,N,
+113,0,50,0,ngif_en,1,Noise-gating enable	0 = disabled	1 = enabled (default),N,
+114,0,51,0,ngif_thresh[12:8],5,Noise-gate interface threshold for channel 1. QS0.19,N,52
+115,0,52,0,ngif_thresh[7:0],8,Noise-gate interface threshold for channel 1. QS0.19,N,51
+116,0,70,7,sdm1_order,1,SDM1 order selection:	0: first order (default)	1: second order,N,
+117,0,70,6,sdm1_dith_type,1,SDM1 dither type:	0: high-pass filtered white noise (default)	1: white noise,N,
+118,0,70,4,sdm1_dith_div[1:0],2,SDM1 dithering division:	00: dither disabled (default)	01: dither / 1	10: dither / 2	11: dither / 4,N,
+119,0,70,0,sdm1_dith_strength[3:0],4,SDM1 dithering amplitude selection: -49dB + DITH_STRENGTH*1dB,N,
+120,0,71,7,sdm2_order,1,SDM2 order selection:	0: first order (default)	1: second order,N,
+121,0,71,6,sdm2_dith_type,1,SDM2 dither type:	0: high-pass filtered white noise (default)	1: white noise,N,
+122,0,71,4,sdm2_dith_div[1:0],2,SDM2 dithering division:	00: dither disabled (default)	01: dither / 1	10: dither / 2	11: dither / 4,N,
+123,0,71,0,sdm2_dith_strength[3:0],4,SDM2 dithering amplitude selection: -49dB + DITH_STRENGTH*1dB,N,
+124,0,72,7,sdm3_order,1,SDM3 order selection:	0: first order (default)	1: second order,N,
+125,0,72,6,sdm3_dith_type,1,SDM3 dither type:	0: high-pass filtered white noise (default)	1: white noise,N,
+126,0,72,4,sdm3_dith_div[1:0],2,SDM3 dithering division:	00: dither disabled (default)	01: dither / 1	10: dither / 2	11: dither / 4,N,
+127,0,72,0,sdm3_dith_strength[3:0],4,SDM3 dithering amplitude selection: -49dB + DITH_STRENGTH*1dB,N,
+128,0,75,6,dwa1_freq_sel[1:0],2,DWA1 frequency selection.	00: DAC clock (default)	01: DAC clock / 2	10: DAC clock / 4	11: DAC clock / 8,N,
+129,0,75,4,dwa1_level[1:0],2,DAC1 number of elements to be used.	00: 32 (default)	01: 30	1x: 28,N,
+130,0,75,3,dac_forcez3,1,DAC3 Force Zero.,N,
+131,0,75,2,dac_forcez2,1,DAC2 Force Zero.,N,
+132,0,75,1,dac_forcez1,1,DAC1 Force Zero.,N,
+133,0,75,0,dac_inv_dwa_data,1,DAC data inversion.	0: normal mode (default)	1: data is inverted,N,
+134,0,76,6,dwa3_freq_sel[1:0],2,DWA3 frequency selection.	00: DAC clock (default)	01: DAC clock / 2	10: DAC clock / 4	11: DAC clock / 8,N,
+135,0,76,4,dwa3_level[1:0],2,DAC3 number of elements to be used.	00: 64 (default)	01: 62	1x: 60,N,
+136,0,76,2,dwa2_freq_sel[1:0],2,DWA2 frequency selection.	00: DAC clock (default)	01: DAC clock / 2	10: DAC clock / 4	11: DAC clock / 8,N,
+137,0,76,0,dwa2_level[1:0],2,DAC2 number of elements to be used.	00: 32 (default)	01: 30	1x: 28,N,
+138,0,77,6,dwa1_mode[1:0],2,DAC1 randomizer type selection.	0x0: DI-DWA	0x1: DDI-DWA	0x2: SHIFTER (default)	0x3: OFF,N,
+139,0,77,0,dwa1_shift_sel[4:0],5,DAC1 shift selection.	SHIFT is DWA1_SHIFT_SEL+1 (default is 1),N,
+140,0,78,6,dwa2_mode[1:0],2,DAC2 randomizer type selection.	0x0: DI-DWA	0x1: DDI-DWA	0x2: SHIFTER (default)	0x3: OFF,N,
+141,0,78,0,dwa2_shift_sel[4:0],5,DAC2 shift selection.	SHIFT is DWA2_SHIFT_SEL+1 (default is 16),N,
+142,0,79,6,dwa3_mode[1:0],2,DAC3 randomizer type selection.	0x0: DI-DWA	0x1: DDI-DWA	0x2: SHIFTER (default)	0x3: OFF,N,
+143,0,79,0,dwa3_shift_sel[5:0],6,DAC2 shift selection.	SHIFT is DWA2_SHIFT_SEL+1 (default is 16),N,
+144,0,7A,7,dac1_dyc_en,1,Enable of dynamic compensation for DAC1.	0: disabled (default)	1: enabled,N,
+145,0,7A,0,dac1_dyc_target[5:0],6,Target od dynamic compensation feature for DAC1.,N,
+146,0,7B,7,dac2_dyc_en,1,Enable of dynamic compensation for DAC2.	0: disabled (default)	1: enabled,N,
+147,0,7B,0,dac2_dyc_target[5:0],6,Target od dynamic compensation feature for DAC2.,N,
+148,0,7C,7,dac3_dyc_en,1,Enable of dynamic compensation for DAC3.	0: disabled (default)	1: enabled,N,
+149,0,7C,0,dac3_dyc_target[5:0],6,Target od dynamic compensation feature for DAC3.,N,
+150,0,7F,0,mod_spare[7:0],8,Spare register for digital mod block.	,R,
+151,0,80,4,pa_zsel[3:0],4,Load resistance setting:	0000: 12 Ohm (default)	1000: 24 Ohm	1100: 48 Ohm	1110: 96 Ohm	1111: 120 Ohm	Others: not allowed			,N,
+152,0,80,3,tsd_pa_down_en,1,Not present in digital interface doc. To be completed by Maurizio,N,
+153,0,80,2,ref_dvddldo_mode,1,Use of internal LDO for 1.8V supply:	0: 1.8V externally provided	1: Use internal LDO,N,
+154,0,80,0,tsd_temp_sel[1:0],2,Not present in digital interface doc. To be completed by Maurizio,N,
+155,0,81,0,rfu_tsd_temp_sel[1:0],2,Thermal shut down setting:	00: 105 deg	01: 115 deg	10: 125 deg	11: 135 deg,N,
+156,0,83,0,dpa_ana_gain[2:0],3,Power Amplifier gain setting:	000: 12.25 dB	001: 14.93 dB	010: 18.18 dB	011: 21.30 dB	1xx: 23.41 dB,N,
+157,0,84,7,bst_fault,1,Enable of hiz setting of bst. It's meaningful only if REG84[4]=1.	0: bst not in hiz	1: bst in hiz after a pwrok falling edge (default),N,
+158,0,84,4,seq_pwrok_mode[2:0],3,PWROK mode selection (all actions remain active until software clear)	000 = MUTE sequence	001 = MUTE sequence and boost Hi-Z	010 = SDWN sequence 	011 = SDWN sequence and boost Hi-Z (default)	100 = interrupt only,N,
+159,0,84,0,seq_pwrok_deglitch_range,1,Range selection for PWROK deglitch time	0 = from 460ns to 59us	1 = from 59us to 15.124ms (default),N,
+160,0,85,0,seq_pwrok_deglitch_time[7:0],8,PWROK deglitch time (range scales wth SEQ_PWROK_DEGLITCH_RANGE),N,
+161,0,86,3,pa_rsk,1,rsk mode:	0: high stability/reliability (default)	1: low noise,N,
+162,0,86,2,pa_r300k_comp_dis,1,Internal 1.2MW resistor to improve clock&pop performance:	0: enabled (default)	1: diabled,N,
+163,0,86,1,pa_lp_en,1,Power Amplifier current control:	0: low noise	1: low current (default),N,
+164,0,86,0,pa_ocp_en,1,Reseved,N,
+165,0,87,0,pa_clamp_th[4:0],5,Not present in digital interface doc. To be completed by Maurizio,N,
+166,0,88,0,pa_nmos_clamp_th[4:0],5,Not present in digital interface doc. To be completed by Maurizio,N,
+167,0,8F,0,seq_spare[7:0],8,Spare register for digital sequencer block.	,R,
+168,0,B0,7,bst_byp_en,1,Enable of bypass mode:	1 enable	0 disable,N,
+169,0,B0,6,bst_zc_en,1,Enable of zerocross circuit:	1 enable	0 disable,N,
+170,0,B0,5,bst_bat_track_en,1,Enable of battery tracking circuit:	1 enable	0 disable,N,
+171,0,B0,4,bst_mfl_en,1,Enable of minimum frequency lock circuit:	1 enable	0 disable,N,
+172,0,B0,3,bst_env_track_en,1,Enable of envelope track circuit:	1 enable	0 disable	comparator that tells if the boost is tracking,N,
+173,0,B0,1,bst_ocp_en,1,Enable of ovr current protection circuit:	1 enable	0 disable,N,
+174,0,B0,0,bst_en,1,General boost enable:	1 enable	0 disable,N,
+175,0,B1,7,bst_env_err_en,1,Enable of envelope error circuit:	1 enable	0 disable	comparator that tells if the VBSO is too low,N,
+176,0,B1,6,bst_bootstrap_en,1,Enable of bootstrap circuit:	1 enable	0 disable,N,
+177,0,B1,5,bst_amp_bias_en,1,Enable of bias loop error amplifier circuit:	1 enable	0 disable,N,
+178,0,B1,4,bst_amp_bso_en,1,Enable of bso loop error amplifier circuit:	1 enable	0 disable,N,
+179,0,B1,3,bst_comp_bias_en,1,Enable of bias loop pwm comparator circuit:	1 enable	0 disable,N,
+180,0,B1,2,bst_comp_bso_en,1,Enable of bso loop pwm comparator circuit:	1 enable	0 disable,N,
+181,0,B1,1,bst_bias_ovp_en,1,Enable of bias over voltage comparator circuit:	1 enable	0 disable	,N,
+182,0,B1,0,bst_bso_ovp_en,1,Enable of bso over voltage comparator circuit:	1 enable	0 disable,N,
+183,0,B2,6,bst_mfl_sel[1:0],2,Selection bit for the lowest possible switching frequency:	00 - 20.5kHz	01 - 24.4kHz	10 - 28.2kHz	11 - 33.6kHz,N,
+184,0,B2,4,bst_ovp_bso_sel[1:0],2,Selection bits for the bias over voltage limit:	00: 21.45V	01: 22.55V	10: 23.65V	11: 24.47V,N,
+185,0,B2,2,bst_ovp_bias_th[1:0],2,Selection bit for the lowest possible switching frequency:	00: +0	01: +1	10: +2	11: +3,N,
+186,0,B2,1,bst_ls_sel,1,selct the state of the low side switch when the force mode is active:	1: on	0: off,N,
+187,0,B2,0,bst_power_force,1,Enable direct forcing of the power mos for testing:	1 enable	0 disable,N,
+188,0,B3,5,bst_lp_en,1,unused,N,
+189,0,B3,4,bst_clamp_bias_en,1,Enable of bias clamp circuit:	1 enable	0 disable,N,
+190,0,B3,3,bst_clamp_bso_en,1,Enable of  bso clamp circuit:	1 enable	0 disable,N,
+191,0,B3,0,bst_loop_cap_sel[2:0],3,Selection bit for the lowest possible switching frequency:	00: 300fF	01: 600fF default	10: 900fF	11: 1.2pF	other code not used,N,
+192,0,B4,3,force_bst_env_err,1,Not present in digital interface doc. To be completed by Maurizio,N,
+193,0,B4,2,bst_hsb_sel,1,selct the state of the high side b switch when the force mode is active:	1: on	0: off,N,
+194,0,B4,1,bst_hsa_sel,1,select the state of the high side a switch when the force mode is active:	1: on	0: off,N,
+195,0,B4,0,bst_byp_sel,1,select the state of the bypass switch when the force mode is active:	1: on	0: off,N,
+196,0,C0,0,bst_ocp_sel[2:0],3,None,N,
+197,0,C1,4,bst_att_step[2:0],3,Boost attack step. 	Step = 1 + BST_ATT_STEP[2:0],N,
+198,0,C1,0,bst_att_time[8],1,Boost attack time. 	Time for each step = Trefclk x BST_ATT_TIME[8:0],N,C2
+199,0,C2,0,bst_att_time[7:0],8,Boost attack time. 	Time for each step = Trefclk x BST_ATT_TIME[8:0],N,C1
+200,0,C3,4,bst_rel_step[2:0],3,Boost release step. 	The step is 1 + BST_REL_STEP[2:0],N,
+201,0,C3,0,bst_rel_time[11:8],4,Boost relase time. 	Time for each step = 2us x BST_REL_TIME[11:0],N,C4
+202,0,C4,0,bst_rel_time[7:0],8,Boost relase time. 	Time for each step = 2us x BST_REL_TIME[11:0],N,C3
+203,0,C5,4,bst_rel_time_pd_sel,1,BST release time for power-down	0 = same as playback (default)	1 = related to bst_rel_time_fault field,N,
+204,0,C5,0,bst_rel_time_fault[11:8],4,Boost relase time after a fault.	Time for each step = 2us x BST_REL_TIME[11:0],N,C6
+205,0,C6,0,bst_rel_time_fault[7:0],8,Boost relase time after a fault.	Time for each step = 2us x BST_REL_TIME[11:0],N,C5
+206,0,C7,4,bst_first_step[2:0],3,Boost attack first step. 	The step is 1 + BST_FIRST_STEP[2:0],N,
+207,0,C7,0,bst_byp_track_time[3:0],4,Battery tracking time in bypass mode.	Time for battery tracking = 200us x BST_BYP_TRACK_TIME[3:0],N,
+208,0,C8,0,bst_dgltch_byp[2:0],3,Deglitch on rising edge of bypass analog signal. It is gated when there's a boost request from input or when BSO dac is forced by means of reg0F[4] of page 1.	Deglitch = 10us x BST_DGLTCH_BYP,N,
+209,0,C9,0,bst_dc_bias[4:0],5,None,N,
+210,0,CA,0,bst_bso[6:0],7,Starting value for BSO dac loaded during sequencer power-on. This value is set in fixed way when BSO dac is forced by means of reg0F[4] of page 1.	BSO value = BST_BSO[6:0] * 0.275mV,N,
+211,0,CB,7,bst_bso_head_range_dis,1,Disable of BSO range-based headroom.	0 = headroom depends on BSO range	1 = headroom is set by BST_BSO_HEAD_HIGH_RANGE in dig mode and by BST_HEAD_TRACK_HIGH_RANGE in ana mode.,N,
+212,0,CB,0,bst_bso_head_range_sel[6:0],7,Range selection for BSO headroom.	BSO range threshold = BST_BSO_HEAD_RANGE_SEL[6:0] * 0.275mV,N,
+213,0,CC,0,bst_bso_head_low_range[4:0],5,"In dig mode, applied BSO headroom when current bst_bso is lower than BST_BSO_HEAD_RANGE_SEL.	BSO headroom = BST_BSO_HEAD_LOW_RANGE[4:0] * 0.275mV",N,
+214,0,CD,0,bst_bso_head_high_range[4:0],5,"In dig mode, applied BSO headroom when current bst_bso is higher than BST_BSO_HEAD_RANGE_SEL.	BSO headroom = BST_BSO_HEAD_HIGH_RANGE[4:0] * 0.275mV",N,
+215,0,CE,4,bst_head_track_high_range[2:0],3,"In ana mode, applied BSO headroom when current bst_bso is higher than BST_BSO_HEAD_RANGE_SEL.	BSO headroom = (1 + BST_HEAD_TRACK_HIGH_RANGE) x 0.5V",N,
+216,0,CE,0,bst_head_track_low_range[2:0],3,"In ana mode, applied BSO headroom when current bst_bso is higher than BST_BSO_HEAD_RANGE_SEL.	BSO headroom = (1 + BST_HEAD_TRACK_LOW_RANGE) x 0.5V",N,
+217,0,CF,0,et_state[3:0],4,ET FSM state.		0000 = ET_OFF     			0001 = BYPASS 				0010 = BYP_BATT_TRACK_DN     		0011 = BYP_BATT_TRACK_UP     		0100 = IN_TRACK_FIRST_STEP 		0101 = IN_TRACK  			0110 = IN_TRACK_UP  			0111 = HOLD 				1000 = RELEASE_WAIT_TRACK 		1001 = RELEASE 		,R,
+218,0,DF,0,et_spare[7:0],8,Spare register for digital et block.	,R,
+219,0,E0,4,dpa_inana_calib_dis,1,None,N,
+220,0,E0,2,azmode_time[1:0],2,Comparator Mesurement time:	00 = 300 us (default)	01 = 400 us	10 = 500 us	11 = 600 us,N,
+221,0,E0,0,cal_measure_time[1:0],2,Comparator Mesurement time:	00 = 600 us (default)	01 = 800 us	10 = 1 ms	11 = 1.2 ms,N,
+222,0,E1,4,offs_comp_en ,1,Add calculated offset to the audio path.	0 = offset not added	1 = offset added (default),N,
+223,0,E1,2,azcomp_isel1c[1:0],2,First stage current setting:	00: 800nA	01: 1.2uA	10: 1.4uA	11: 2.0uA	,N,
+224,0,E1,0,azcomp_isel2c[1:0],2,Second stage current setting:	00: 800nA	01: 1.2uA	10: 1.4uA	11: 2.0uA	,N,
+225,0,E2,1,ext_cal_offs,1,ATE External Offset Calibration,N,
+226,0,E2,0,int_cal_offs,1,ATE Internal Offset Calibration,N,
+227,0,E3,7,ana_idle_ext_cal_polarity,1,Polarity for comparator output:	0 = normal	1 = inverted,N,
+228,0,E3,6,ana_idle_int_cal_polarity,1,Polarity for comparator output:	0 = normal	1 = inverted,N,
+229,0,E3,5,ana_zero_ext_cal_polarity,1,Polarity for comparator output:	0 = normal	1 = inverted,N,
+230,0,E3,4,ana_zero_int_cal_polarity,1,Polarity for comparator output:	0 = normal	1 = inverted,N,
+231,0,E3,3,dig_idle_ext_cal_polarity,1,Polarity for comparator output:	0 = normal	1 = inverted,N,
+232,0,E3,2,dig_idle_int_cal_polarity,1,Polarity for comparator output:	0 = normal	1 = inverted,N,
+233,0,E3,1,dig_zero_ext_cal_polarity,1,Polarity for comparator output:	0 = normal	1 = inverted,N,
+234,0,E3,0,dig_zero_int_cal_polarity,1,Polarity for comparator output:	0 = normal	1 = inverted,N,
+235,0,E4,0,azcomp_trig,1,Test mode start for azcomp.	0 = idle (default)	1 = starting of test,P,
+236,0,E5,4,cal_offs_end,1,"End of last calibration, triggered by REGE2[1] or REGE2[0]. In functional mode, this field is set to 1 at the end of internal calibration if it is not skipped.",R,
+237,0,E5,3,azcomp_sat_zero,1,Saturation during last zero calibration.,R,
+238,0,E5,2,azcomp_sat_idle,1,Saturation during last idle calibration.,R,
+239,0,E5,1,azcomp_out ,1,"AZcomp_out value, triggered in test mode only (by REGE4[0])",R,
+240,0,E5,0,azcomp_ready,1,"AZcomp_out value is ready, triggered in test mode only (by REGE4[0])",R,
+241,0,EF,0,cal_spare[7:0],8,Spare register for digital cal block.	,R,
+242,0,FC,2,tdm_pad_di_en,1,TDM PADs input enable.	0 = disabled	1 = enabled,N,
+243,0,FE,0,i2c_page_sel[1:0],2,Selection of I2C page.	00 = page 0 (default)	01 = page 1	1X = not allowed,N,FE
+244,0,FF,3,device_id[4:0],5,Device ID.,R,FF
+245,0,FF,0,version_id[2:0],3,Version ID.,R,FF
+246,1,00,3,io_tst_en,1,Digital IO PADs test enable	0 = disabled (default)	1 = enabled,N,
+247,1,00,0,io_tst_mode[2:0],3,"Digital IO PADs test mode	000 = read test mode, value from PADs readable from IO_TST_RD	001 = write test mode, value to PADs writeable into IO_TST_WR	010 = Inout test 1 (FSYN -> SDI)	011 = Inout test 2 (SDI -> FSYN)	100 = Inout test 1 (BCLK -> SDI)	101 = Inout test 2 (SDI -> BCLK)	110 = Inout test 1 (SCL -> SDA)	111 = Inout test 2 (SDA -> SCL)",N,
+248,1,01,0,io_tst_wr[2:0],3,Value written on FSYN pad when REG00[3]=1 and REG00[2:0]=001.,N,
+249,1,02,0,io_tst_rd[4:0],5,None,R,
+250,1,03,0,dig_test_en[4:0],5,"Enable of SDA pad for TMUX. Note that after setting this bit to 1, a digital reset is needed.	0 = pad in funcional mode	1 = pad connected to TMUX",N,
+251,1,04,0,dig_test_sel[7:0],8,None,N,
+252,1,05,6,scan_exit_dis,1,Disable of procedure to exit from scan. 	0 = Procedure to exit from scan enabled	1 = Procedure to exit from scan disabled,N,
+253,1,05,5,resume_from_scan,1,Disable of platform detection when digital part exits from scan.	0 = Standard powerup	1 = Platform detection disabled during powerup following the scan,N,
+254,1,05,4,tdm_pad_dsr,1,None,N,
+255,1,05,3,dig_pad_dsr,1,None,N,
+256,1,05,1,scan_enh,1,None,N,
+257,1,05,0,scanx_enh,1,None,N,
+258,1,06,5,bist_end,1,End of bist.	0 = bist not finished	1 = bist finished,R,
+259,1,06,4,bist_result,1,"Result of bist, its polarity depends on REG06[1], it's meaningful only if REG06[5]=1.	0 = bist passed if REG06[1]=0, bist failed otherwise	1 = bist passed if REG06[1]=1, bist failed otherwise",R,
+260,1,06,1,bist_polarity,1,Set polarity of bist_result bit.	0 = bist passed if REG06[4]=0	1 = bist passed if REG06[4]=1,N,
+261,1,06,0,bist_en,1,Start of bist.	0 = bist not started	1 = bist started,N,
+262,1,07,0,tmux_cnt_sel[1:0],2,None,N,
+263,1,08,7,tst_dac,1,None,N,
+264,1,08,0,tst_data_dwa[6:0],7,None,N,
+265,1,09,0,tst_idx_pos_dwa[5:0],6,None,N,
+266,1,0A,0,tst_idx_neg_dwa[5:0],6,None,N,
+267,1,0C,0,seq_prog_latch_dis,1,Disable SEQ programming latching at powerup	0 = no (default)	1 = yes,N,
+268,1,0D,3,cal_dac_clk_polarity,1,"During calibration, set the polarity of dac_clk compared with modulator FSM clock	0 = not inverted	1 = inverted  (default)",N,
+269,1,0D,2,pdm_dac_clk_polarity,1,"In PDM mode, set the polarity of dac_clk compared with pdm_clk	0 = not inverted	1 = inverted  (default)",N,
+270,1,0D,0,tdm_dac_clk_delay[1:0],2,"In TDM mode, set the bclk number between dac data and clock edge to dac	00 = 0 bits 	01 = 1 bits (default)	10 = 2 bits	11 = 3 bits ",N,
+271,1,0E,1,pdm_fro_mux_en,1,None,N,
+272,1,0E,0,tdm_fro_mux_en,1,None,N,
+273,1,0F,7,force_otp_clock_on,1,None,N,
+274,1,0F,6,force_mod_clock_on,1,None,N,
+275,1,0F,5,force_bst_bias,1,None,N,
+276,1,0F,4,force_bst_bso,1,None,N,
+277,1,0F,3,force_ref_sdwn_b_dis,1,None,N,
+278,1,0F,2,force_intfb_en,1,None,N,
+279,1,0F,1,force_pa_pd_d,1,None,N,
+280,1,0F,0,force_pa_pd,1,None,N,
+281,1,10,7,force_dac3_frz,1,None,N,
+282,1,10,6,force_dac2_frz,1,None,N,
+283,1,10,5,force_dac1_frz,1,None,N,
+284,1,10,4,force_dac3_clk_en,1,None,N,
+285,1,10,3,ref_sdwn_b_dis_m,1,None,N,
+286,1,10,2,intfb_en_m,1,None,N,
+287,1,10,1,pa_pd_d_m,1,None,N,
+288,1,10,0,pa_pd_m,1,None,N,
+289,1,11,0,bst_bias_m[5:0],6,None,N,
+290,1,13,7,force_pa_clamp_dis,1,None,N,
+291,1,13,6,force_fd_res,1,None,N,
+292,1,13,5,force_en_ana_dc_mode,1,None,N,
+293,1,13,4,force_en_dig_path,1,None,N,
+294,1,13,3,force_en_ana_path,1,None,N,
+295,1,13,2,force_en_dac3,1,None,N,
+296,1,13,1,force_en_dac2,1,None,N,
+297,1,13,0,force_en_dac1,1,None,N,
+298,1,14,7,pa_clamp_dis_m,1,None,N,
+299,1,14,6,fd_res_m,1,None,N,
+300,1,14,5,force_bst_fault,1,None,N,
+301,1,14,4,en_dig_path_m,1,None,N,
+302,1,14,3,en_ana_path_m,1,None,N,
+303,1,14,2,en_dac3_m,1,None,N,
+304,1,14,1,en_dac2_m,1,None,N,
+305,1,14,0,en_dac1_m,1,None,N,
+306,1,15,7,force_pa_ocp_en,1,None,N,
+307,1,15,6,force_bst_bat_track_en,1,None,N,
+308,1,15,5,force_bst_mfl_en,1,None,N,
+309,1,15,4,force_bst_en,1,None,N,
+310,1,15,3,force_bst_byp_en,1,None,N,
+311,1,15,2,force_bst_ocp_en,1,None,N,
+312,1,15,1,force_bst_env_err_en,1,None,N,
+313,1,15,0,force_bst_env_track_en,1,None,N,
+314,1,16,7,force_bst_zc_en,1,None,N,
+315,1,16,6,force_bst_bootstrap_en,1,None,N,
+316,1,16,5,force_bst_amp_bias_en,1,None,N,
+317,1,16,4,force_bst_amp_bso_en,1,None,N,
+318,1,16,3,force_bst_comp_bias_en,1,None,N,
+319,1,16,2,force_bst_comp_bso_en,1,None,N,
+320,1,16,1,force_bst_bias_ovp_en,1,None,N,
+321,1,16,0,force_bst_bso_ovp_en,1,None,N,
+322,1,17,7,force_dig_fast_charge_cmem,1,None,N,
+323,1,17,6,force_dig_bst_mirror_en,1,None,N,
+324,1,17,5,force_bst_clamp_bias_en,1,None,N,
+325,1,17,4,force_bst_clamp_bso_en,1,None,N,
+326,1,17,3,force_dig_azcomp_en_del,1,None,N,
+327,1,17,2,force_dig_offs_zero_idle,1,None,N,
+328,1,17,1,force_dig_azcomp_en,1,None,N,
+329,1,17,0,force_dig_azcomp_az,1,None,N,
+330,1,18,7,dig_fast_charge_cmem_m,1,None,N,
+331,1,18,6,dig_bst_mirror_en_m,1,None,N,
+332,1,18,5,et_datai_unmask,1,None,N,
+333,1,18,4,force_pa_nmos_clamp_dis,1,None,N,
+334,1,18,3,dig_azcomp_en_del_m,1,None,N,
+335,1,18,2,dig_offs_zero_idle_m,1,None,N,
+336,1,18,1,dig_azcomp_en_m,1,None,N,
+337,1,18,0,dig_azcomp_az_m,1,None,N,
+338,1,19,7,ana_tst_mode_en,1,None,N,
+339,1,19,4,pa_nmos_clamp_dis_m,1,None,N,
+340,1,19,3,azcomp_test_en,1,None,N,
+341,1,19,2,dacpa_test_en,1,None,N,
+342,1,19,1,bst_test_en,1,None,N,
+343,1,19,0,ref_test_en,1,None,N,
+344,1,1A,0,ana_test_sel[7:0],8,None,N,
+345,1,1E,4,internal_sin_gain[3:0],4,Set amplitude of internal sin generator.	0x0-0x9: -1dB - INTERNAL_SIN_GAIN * 6dB 	0xA-0xF = -61dB	,N,
+346,1,1E,3,internal_sin_en,1,Enable of of internal sin generator.	0: disabled (default)	1: enabled ,N,
+347,1,1E,0,internal_sin_freq[2:0],3,Set frequency of internal sin generator.	0x0: 1KHz	0x1: 2KHz	0x2: 4KHz	0x3: 8KHz	0x4-0x7 = 16KHz,N,
+348,1,1F,0,internal_sin_offset[7:0],8,Set offset of internal sin generator (from -14.65mV to 14.53mV)	Applied offset = INTERNAL_SIN_OFFSET * 114.44uV,N,
+349,1,20,0,debug_in_en[8],1,None,N,21
+350,1,21,0,debug_in_en[7:0],8,None,N,20
+351,1,22,0,debug_in[8],1,None,N,23
+352,1,23,0,debug_in[7:0],8,None,N,22
+353,1,24,0,debug_en,1,None,N,
+354,1,2F,0,unlock_tst_addr,1,Test page unlock status. To unlock test page write first 0xAA and then 0xBB in this address. To lock test page write 0x00 in this address.	0 = test page locked	1 = test page unlocked,R,
+355,1,30,6,ifir_coeff_nr[1:0],2,Set number of coefficients:	00 = 10 coefficients	01 = 20 coefficients	10 = 30 coefficients	11 = 40 coefficients (default)	,N,
+356,1,30,4,ifir_mode[1:0],2,Set configuration of second fixed-coeff fir:	00 = 13 taps (default)	01 = 10 taps	10 = 4 taps	11 = bypassed	,N,
+357,1,30,0,ifir_shift[3:0],4,Set the shift applied to the output of second fixed-coeff fir:	0000 = /128 	0001 = /64	0010 = /32	0011 = /16 	0100 = /8 	0101 = /4	0110 = /2 	0111 = 1	1000 = x2 (default)	1001 = x4	1010 = x8	1011 = x16	1100 = x32 	1101 = x64	1110 = x128	1111 = x128										,N,
+358,1,31,0,ifir_coeff_loader_start,1,Reload of default values for all ifir coefficientes.,P,
+359,1,32,0,ifir_coeff_0[9:8],2,None,N,33
+360,1,33,0,ifir_coeff_0[7:0],8,None,N,32
+361,1,34,0,ifir_coeff_1[9:8],2,None,N,35
+362,1,35,0,ifir_coeff_1[7:0],8,None,N,34
+363,1,36,0,ifir_coeff_2[9:8],2,None,N,37
+364,1,37,0,ifir_coeff_2[7:0],8,None,N,36
+365,1,38,0,ifir_coeff_3[9:8],2,None,N,39
+366,1,39,0,ifir_coeff_3[7:0],8,None,N,38
+367,1,3A,0,ifir_coeff_4[9:8],2,None,N,3B
+368,1,3B,0,ifir_coeff_4[7:0],8,None,N,3A
+369,1,3C,0,ifir_coeff_5[9:8],2,None,N,3D
+370,1,3D,0,ifir_coeff_5[7:0],8,None,N,3C
+371,1,3E,0,ifir_coeff_6[9:8],2,None,N,3F
+372,1,3F,0,ifir_coeff_6[7:0],8,None,N,3E
+373,1,40,0,ifir_coeff_7[9:8],2,None,N,41
+374,1,41,0,ifir_coeff_7[7:0],8,None,N,40
+375,1,42,0,ifir_coeff_8[9:8],2,None,N,43
+376,1,43,0,ifir_coeff_8[7:0],8,None,N,42
+377,1,44,0,ifir_coeff_9[9:8],2,None,N,45
+378,1,45,0,ifir_coeff_9[7:0],8,None,N,44
+379,1,46,0,ifir_coeff_10[9:8],2,None,N,47
+380,1,47,0,ifir_coeff_10[7:0],8,None,N,46
+381,1,48,0,ifir_coeff_11[9:8],2,None,N,49
+382,1,49,0,ifir_coeff_11[7:0],8,None,N,48
+383,1,4A,0,ifir_coeff_12[9:8],2,None,N,4B
+384,1,4B,0,ifir_coeff_12[7:0],8,None,N,4A
+385,1,4C,0,ifir_coeff_13[9:8],2,None,N,4D
+386,1,4D,0,ifir_coeff_13[7:0],8,None,N,4C
+387,1,4E,0,ifir_coeff_14[9:8],2,None,N,4F
+388,1,4F,0,ifir_coeff_14[7:0],8,None,N,4E
+389,1,50,0,ifir_coeff_15[9:8],2,None,N,51
+390,1,51,0,ifir_coeff_15[7:0],8,None,N,50
+391,1,52,0,ifir_coeff_16[9:8],2,None,N,53
+392,1,53,0,ifir_coeff_16[7:0],8,None,N,52
+393,1,54,0,ifir_coeff_17[9:8],2,None,N,55
+394,1,55,0,ifir_coeff_17[7:0],8,None,N,54
+395,1,56,0,ifir_coeff_18[9:8],2,None,N,57
+396,1,57,0,ifir_coeff_18[7:0],8,None,N,56
+397,1,58,0,ifir_coeff_19[9:8],2,None,N,59
+398,1,59,0,ifir_coeff_19[7:0],8,None,N,58
+399,1,5A,0,ifir_coeff_20[9:8],2,None,N,5B
+400,1,5B,0,ifir_coeff_20[7:0],8,None,N,5A
+401,1,5C,0,ifir_coeff_21[9:8],2,None,N,5D
+402,1,5D,0,ifir_coeff_21[7:0],8,None,N,5C
+403,1,5E,0,ifir_coeff_22[9:8],2,None,N,5F
+404,1,5F,0,ifir_coeff_22[7:0],8,None,N,5E
+405,1,60,0,ifir_coeff_23[9:8],2,None,N,61
+406,1,61,0,ifir_coeff_23[7:0],8,None,N,60
+407,1,62,0,ifir_coeff_24[9:8],2,None,N,63
+408,1,63,0,ifir_coeff_24[7:0],8,None,N,62
+409,1,64,0,ifir_coeff_25[9:8],2,None,N,65
+410,1,65,0,ifir_coeff_25[7:0],8,None,N,64
+411,1,66,0,ifir_coeff_26[9:8],2,None,N,67
+412,1,67,0,ifir_coeff_26[7:0],8,None,N,66
+413,1,68,0,ifir_coeff_27[9:8],2,None,N,69
+414,1,69,0,ifir_coeff_27[7:0],8,None,N,68
+415,1,6A,0,ifir_coeff_28[9:8],2,None,N,6B
+416,1,6B,0,ifir_coeff_28[7:0],8,None,N,6A
+417,1,6C,0,ifir_coeff_29[9:8],2,None,N,6D
+418,1,6D,0,ifir_coeff_29[7:0],8,None,N,6C
+419,1,6E,0,ifir_coeff_30[9:8],2,None,N,6F
+420,1,6F,0,ifir_coeff_30[7:0],8,None,N,6E
+421,1,70,0,ifir_coeff_31[9:8],2,None,N,71
+422,1,71,0,ifir_coeff_31[7:0],8,None,N,70
+423,1,72,0,ifir_coeff_32[9:8],2,None,N,73
+424,1,73,0,ifir_coeff_32[7:0],8,None,N,72
+425,1,74,0,ifir_coeff_33[9:8],2,None,N,75
+426,1,75,0,ifir_coeff_33[7:0],8,None,N,74
+427,1,76,0,ifir_coeff_34[9:8],2,None,N,77
+428,1,77,0,ifir_coeff_34[7:0],8,None,N,76
+429,1,78,0,ifir_coeff_35[9:8],2,None,N,79
+430,1,79,0,ifir_coeff_35[7:0],8,None,N,78
+431,1,7A,0,ifir_coeff_36[9:8],2,None,N,7B
+432,1,7B,0,ifir_coeff_36[7:0],8,None,N,7A
+433,1,7C,0,ifir_coeff_37[9:8],2,None,N,7D
+434,1,7D,0,ifir_coeff_37[7:0],8,None,N,7C
+435,1,7E,0,ifir_coeff_38[9:8],2,None,N,7F
+436,1,7F,0,ifir_coeff_38[7:0],8,None,N,7E
+437,1,80,0,ifir_coeff_39[9:8],2,None,N,81
+438,1,81,0,ifir_coeff_39[7:0],8,None,N,80
+439,1,8F,0,ifir_spare[7:0],8,None,R,
+440,1,AE,7,otp_status,1,High when OTP controller has successfully completed the burn/load/test sequence depending on the command issued.,R,
+441,1,AE,6,otp_result,1,High when OTP controller has successfully completed the read margin test.,R,
+442,1,AE,2,otp_margin_read,1,OTP margin read test command,N,
+443,1,AE,1,otp_burn,1,OTP burn command,N,
+444,1,AE,0,otp_load,1,OTP load command,N,
+445,1,AF,7,otp_single_byte,1,OTP single byte mode	0 = all addresses are burned/read (default)	1 = only address defined by OTP_ADDR is burned/read,N,
+446,1,AF,6,otp_margin_read_mode,1,OTP margin read mode	0 = expected OTP data is 0xFF (default)	1 = expected OTP data is the ones from I2C addresses 0x6B-0x8A,N,
+447,1,AF,0,otp_addr[5:0],6,None,N,
+448,1,B0,4,vbgr_adj[3:0],4,None,N,
+449,1,B0,3,i3c_instance_id,1,None,N,
+450,1,B0,2,i2c_slave_id,1,None,N,
+451,1,B0,1,i3c_dis,1,None,N,
+452,1,B0,0,otp_burnt_b,1,0 = otp section burnt ( this bit must be set to 0 in otp burning procedure) 	1 = otp section not burnt ,N,
+453,1,B1,4, otp_vbg_curv_adj[3:0],4,None,N,
+454,1,B1,0,bst_ocp_trim[3:0],4,None,N,B2
+455,1,B2,6,platf_pdm_freq_p0[1:0],2,"Select the PDM freq, it's only meaningful in PDM mode.	00 = 3.072MHz	01 = 6.144MHz	1X = 12.288MHz",N,
+456,1,B2,5,bst_ocp_trim[4],1,None,N,B1
+457,1,B2,0,bst_zc_trim[4:0],5,None,N,
+458,1,B3,5,tsd_pvt_adj[2:0],3,None,N,
+459,1,B3,4,spare1[3],1,None,N,EE
+460,1,B3,0,spare2[3:0],4,None,N,
+461,1,B4,6,platf_input_mode_p0[1:0],2,"Select the input type. If this platform is detected, this field change the default of REG09[1:0] in base page.	00 = TDM	01 = PDM	1X = Analog in",N,
+462,1,B4,0,otp_bst_comp_bso_trim[5:0],6,None,N,
+463,1,B5,6,platf_input_mode_p1[1:0],2,"Select the input type. If this platform is detected, this field change the default of REG09[1:0] in base page.	00 = TDM	01 = PDM	1X = Analog in",N,
+464,1,B5,0,otp_bst_comp_bias_trim[5:0],6,None,N,
+465,1,B6,6,platf_input_mode_p2[1:0],2,"Select the input type. If this platform is detected, this field change the default of REG09[1:0] in base page.	00 = TDM	01 = PDM	1X = Analog in",N,
+466,1,B6,3,platf_tdm_fsyn_rate_p0[2:0],3,"Select the TDM rate. If this platform is detected, this field change the default of REG51[6:4] in base page.	000 = idle	001 = 48kHz	010 = 96kHz	011 = 192kHz	100 = 384kHz	101 = 768kHz",N,
+467,1,B6,0,platf_tdm_bclk_osr_p0[2:0] ,3,"Select the BCLK frequency. If this platform is detected, this field change the default of REG51[2:0] in base page.	000 = idle	001 = 20	010 = 32	011 = 40	100 = 48	101 = 64	",N,
+468,1,B7,6,platf_input_mode_p3[1:0],2,"Select the input type. If this platform is detected, this field change the default of REG09[1:0] in base page.	00 = TDM	01 = PDM	1X = Analog in",N,
+469,1,B7,3,platf_tdm_fsyn_rate_p1[2:0],3,"Select the TDM rate. If this platform is detected, this field change the default of REG51[6:4] in base page.	000 = idle	001 = 48kHz	010 = 96kHz	011 = 192kHz	100 = 384kHz	101 = 768kHz",N,
+470,1,B7,0,platf_tdm_bclk_osr_p1[2:0],3,"Select the BCLK frequency. If this platform is detected, this field change the default of REG51[2:0] in base page.	000 = idle	001 = 20	010 = 32	011 = 40	100 = 48	101 = 64	",N,
+471,1,B8,7,bst_loop_res_force,1,None,N,
+472,1,B8,4,platf_dpa_ana_gain_p0[2:0],3,None,N,
+473,1,B8,3,platf_pdm_mode_low_freq,1,None,N,
+474,1,B8,0,platf_dpa_ana_gain_p1[2:0],3,None,N,
+475,1,B9,7,i3c_remapping_page_sel_3,1,I2C page of remapped register 3. It's meaningfull only if i3c_remapping_en_3 = 1.	0= page 0	1 = page 1,N,
+476,1,B9,6,i3c_remapping_en_3,1,Remapping en of register 3.	0= register 3 not over-written during i2c_load	1 = register 3 over-written during i2c_load,N,
+477,1,B9,5,i3c_remapping_page_sel_2,1,I2C page of remapped register 2. It's meaningfull only if i3c_remapping_en_2 = 1.	0= page 0	1 = page 1,N,
+478,1,B9,4,i3c_remapping_en_2,1,Remapping en of register 2.	0= register 2 not over-written during i2c_load	1 = register 2 over-written during i2c_load,N,
+479,1,B9,3,i3c_remapping_page_sel_1,1,I2C page of remapped register 1. It's meaningfull only if i3c_remapping_en_1 = 1.	0= page 0	1 = page 1,N,
+480,1,B9,2,i3c_remapping_en_1,1,Remapping en of register 1.	0= register 1 not over-written during i2c_load	1 = register 1 over-written during i2c_load,N,
+481,1,B9,1,i3c_remapping_page_sel_0,1,I2C page of remapped register 0. It's meaningfull only if i3c_remapping_en_0 = 1.	0= page 0	1 = page 1,N,
+482,1,B9,0,i3c_remapping_en_0,1,Remapping en of register 0.	0= register 0 not over-written during i2c_load	1 = register 0 over-written during i2c_load,N,
+483,1,BA,6,platf_pdm_freq_p1[1:0],2,"Select the PDM freq, it's only meaningful in PDM mode.	00 = 3.072MHz	01 = 6.144MHz	1X = 12.288MHz",N,
+484,1,BA,5,i3c_remapping_page_sel_6,1,I2C page of remapped register 6. It's meaningfull only if i3c_remapping_en_6 = 1.	0= page 0	1 = page 1,N,
+485,1,BA,4,i3c_remapping_en_6,1,Remapping en of register 6.	0= register 6 not over-written during i2c_load	1 = register 6 over-written during i2c_load,N,
+486,1,BA,3,i3c_remapping_page_sel_5,1,I2C page of remapped register 5. It's meaningfull only if i3c_remapping_en_5 = 1.	0= page 0	1 = page 1,N,
+487,1,BA,2,i3c_remapping_en_5,1,Remapping en of register 5.	0= register 5 not over-written during i2c_load	1 = register 5 over-written during i2c_load,N,
+488,1,BA,1,i3c_remapping_page_sel_4,1,I2C page of remapped register 4. It's meaningfull only if i3c_remapping_en_4 = 1.	0= page 0	1 = page 1,N,
+489,1,BA,0,i3c_remapping_en_4,1,Remapping en of register 4.	0= register 4 not over-written during i2c_load	1 = register 4 over-written during i2c_load,N,
+490,1,BB,0,i3c_remapping_add_0[7:0],8,I2C address of remapped register 0. It's meaningfull only if i3c_remapping_en_0 = 1.	,N,
+491,1,BC,0,i3c_remapping_data_0[7:0],8,None,N,
+492,1,BD,0,i3c_remapping_add_1[7:0],8,I2C address of remapped register 1. It's meaningfull only if i3c_remapping_en_1 = 1.	,N,
+493,1,BE,0,i3c_remapping_data_1[7:0],8,None,N,
+494,1,BF,0,i3c_remapping_add_2[7:0],8,I2C address of remapped register 2. It's meaningfull only if i3c_remapping_en_2 = 1.	,N,
+495,1,C0,0,i3c_remapping_data_2[7:0],8,None,N,
+496,1,C1,0,i3c_remapping_add_3[7:0],8,I2C address of remapped register 3. It's meaningfull only if i3c_remapping_en_3 = 1.	,N,
+497,1,C2,0,i3c_remapping_data_3[7:0],8,None,N,
+498,1,C3,0,i3c_remapping_add_4[7:0],8,I2C address of remapped register 4. It's meaningfull only if i3c_remapping_en_4 = 1.	,N,
+499,1,C4,0,i3c_remapping_data_4[7:0],8,None,N,
+500,1,C5,0,i3c_remapping_add_5[7:0],8,I2C address of remapped register 5. It's meaningfull only if i3c_remapping_en_5 = 1.	,N,
+501,1,C6,0,i3c_remapping_data_5[7:0],8,None,N,
+502,1,C7,0,i3c_remapping_add_6[7:0],8,I2C address of remapped register 6. It's meaningfull only if i3c_remapping_en_6 = 1.	,N,
+503,1,C8,0,i3c_remapping_data_6[7:0],8,None,N,
+504,1,C9,7,bst_loop_res[1],1,None,N,C9
+505,1,C9,4,platf_dpa_ana_gain_p2[2:0],3,None,N,
+506,1,C9,3,bst_loop_res[0],1,None,N,C9
+507,1,C9,0,platf_dpa_ana_gain_p3[2:0],3,None,N,
+508,1,CA,0,int_dig_zero_off[11:4],8,None,N,CB
+509,1,CB,4,int_dig_zero_off[3:0],4,None,N,CA
+510,1,CB,0,int_dig_idle_off[11:8],4,None,N,CC
+511,1,CC,0,int_dig_idle_off[7:0],8,None,N,CB
+512,1,CD,0,diff_dig_zero_off[11:4],8,None,N,CE
+513,1,CE,4,diff_dig_zero_off[3:0],4,None,N,CD
+514,1,CE,0,diff_dig_idle_off[11:8],4,None,N,CF
+515,1,CF,0,diff_dig_idle_off[7:0],8,None,N,CE
+516,1,D0,0,int_ana_zero_off_gain0[11:4],8,None,N,D1
+517,1,D1,4,int_ana_zero_off_gain0[3:0],4,None,N,D0
+518,1,D1,0,int_ana_idle_off_gain0[11:8],4,None,N,D2
+519,1,D2,0,int_ana_idle_off_gain0[7:0],8,None,N,D1
+520,1,D3,0,diff_ana_zero_off_gain0[11:4],8,None,N,D4
+521,1,D4,4,diff_ana_zero_off_gain0[3:0],4,None,N,D3
+522,1,D4,0,diff_ana_idle_off_gain0[11:8],4,None,N,D5
+523,1,D5,0,diff_ana_idle_off_gain0[7:0],8,None,N,D4
+524,1,D6,0,int_ana_zero_off_gain1[11:4],8,None,N,D7
+525,1,D7,4,int_ana_zero_off_gain1[3:0],4,None,N,D6
+526,1,D7,0,int_ana_idle_off_gain1[11:8],4,None,N,D8
+527,1,D8,0,int_ana_idle_off_gain1[7:0],8,None,N,D7
+528,1,D9,0,diff_ana_zero_off_gain1[11:4],8,None,N,DA
+529,1,DA,4,diff_ana_zero_off_gain1[3:0],4,None,N,D9
+530,1,DA,0,diff_ana_idle_off_gain1[11:8],4,None,N,DB
+531,1,DB,0,diff_ana_idle_off_gain1[7:0],8,None,N,DA
+532,1,DC,0,int_ana_zero_off_gain2[11:4],8,None,N,DD
+533,1,DD,4,int_ana_zero_off_gain2[3:0],4,None,N,DC
+534,1,DD,0,int_ana_idle_off_gain2[11:8],4,None,N,DE
+535,1,DE,0,int_ana_idle_off_gain2[7:0],8,None,N,DD
+536,1,DF,0,diff_ana_zero_off_gain2[11:4],8,None,N,E0
+537,1,E0,4,diff_ana_zero_off_gain2[3:0],4,None,N,DF
+538,1,E0,0,diff_ana_idle_off_gain2[11:8],4,None,N,E1
+539,1,E1,0,diff_ana_idle_off_gain2[7:0],8,None,N,E0
+540,1,E2,0,int_ana_zero_off_gain3[11:4],8,None,N,E3
+541,1,E3,4,int_ana_zero_off_gain3[3:0],4,None,N,E2
+542,1,E3,0,int_ana_idle_off_gain3[11:8],4,None,N,E4
+543,1,E4,0,int_ana_idle_off_gain3[7:0],8,None,N,E3
+544,1,E5,0,diff_ana_zero_off_gain3[11:4],8,None,N,E6
+545,1,E6,4,diff_ana_zero_off_gain3[3:0],4,None,N,E5
+546,1,E6,0,diff_ana_idle_off_gain3[11:8],4,None,N,E7
+547,1,E7,0,diff_ana_idle_off_gain3[7:0],8,None,N,E6
+548,1,E8,0,int_ana_zero_off_gain4[11:4],8,None,N,E9
+549,1,E9,4,int_ana_zero_off_gain4[3:0],4,None,N,E8
+550,1,E9,0,int_ana_idle_off_gain4[11:8],4,None,N,EA
+551,1,EA,0,int_ana_idle_off_gain4[7:0],8,None,N,E9
+552,1,EB,0,diff_ana_zero_off_gain4[11:4],8,None,N,EC
+553,1,EC,4,diff_ana_zero_off_gain4[3:0],4,None,N,EB
+554,1,EC,0,diff_ana_idle_off_gain4[11:8],4,None,N,ED
+555,1,ED,0,diff_ana_idle_off_gain4[7:0],8,None,N,EC
+556,1,EE,5,spare1[2:0],3,None,N,B3
+557,1,EE,4,auto_mode_retry_en,1,None,N,
+558,1,EE,3,auto_mode_i2c_dis,1,None,N,
+559,1,EE,2,auto_mode_fault_en,1,None,N,
+560,1,EE,1,platf_ref_dvddldo_mode,1,Use of internal LDO for 1.8V supply:	0: 1.8V externally provided	1: Use internal LDO,N,
+561,1,EE,0,auto_mode_dis,1,OTP option to automatically turn on the path as soon as digital rstb is de-asserted	0 = path tuned on rstb	1 = path turned on by I2C,N,
+562,1,EF,7,otp_fro_sel_0p8125mhz,1,None,N,
+563,1,EF,6,otp_fro_sel_1p625mhz,1,None,N,
+564,1,EF,5,otp_fro_sel,1,None,N,
+565,1,EF,0,fro_freq_adj[4:0],5,FRO frequency adjustment:	00000: default	form 00001 to 00111 frquency increases	from 01000 to 01111 frequency decreases	MSB has a boost function	,N,
+566,1,FE,0,i2c_page_sel[1:0],2,Selection of I2C page.	00 = page 0 (default)	01 = page 1	1X = not allowed,N,FE
+567,1,FF,3,device_id[4:0],5,Device ID.,R,FF
+568,1,FF,0,version_id[2:0],3,Version ID.,R,FF

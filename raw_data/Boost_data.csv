@@ -1,0 +1,1076 @@
+Parameters,BST_MIRR,BST_RON_LS,BST_RON_HS,BST_RON_BYP,BST_LS_DRIVE,BST_BYP,BST_LOGIC_COMP_BSO,BST_LOGIC_COMP_BIAS,BST_IL_FILT,BST_ERRAMP_BSO,BST_ERR_AMP_BIAS,BST_CLAMP_VBAT_REF,BST_BSO_BIAS_PAR,BST_MFL,BST_DAC_BSO,BST_DAC_BIAS,BST_OCP_TRIM,BST_OVP_BSO,BST_BIAS_OVP,BST_ENV_TRACK,BST_ZC,BST_NORMAL_OPERATION_BSO (DA RIVEDERE),BST_NORMAL_OPERATION_BIAS (DA RIVEDERE),BST_BOOTSTRAP,BST_ENV_ERR,BST_OCP
+Test_Name,BST_MIRR,BST_RON_LS,BST_RON_HS,BST_RON_BYP,BST_LS_DRIVE,BST_BYP,BST_LOGIC_COMP_BSO,BST_LOGIC_COMP_BIAS,BST_IL_FILT,BST_ERRAMP_BSO,BST_ERR_AMP_BIAS,BST_CLAMP_VBAT_REF,BST_BSO_BIAS_PAR,BST_MFL,BST_DAC_BSO,BST_DAC_BIAS,BST_OCP_TRIM,BST_OVP_BSO,BST_BIAS_OVP,BST_ENV_TRACK,BST_ZC,BST_NORMAL_OPERATION_BSO (DA RIVEDERE),BST_NORMAL_OPERATION_BIAS (DA RIVEDERE),BST_BOOTSTRAP,BST_ENV_ERR,BST_OCP
+Test_Description,"Run_startup
+
+Force__VBIAS__5V
+Force__VBSO__3.6V
+Force__SW__3.6V
+
+0xFE_0x00 ""Select page 0""
+0xB0_0x00 ""en 1 bst low""
+0xB1_0x00 ""en 2 bst low""
+0xB3[4:3]_0x00 ""en 3 bst low""
+0xFE_0x01 ""Select page 1""
+0x1A_0x00 ""TSW_Mirr test""
+0x18[6]_0x01 ""Enable Mirr""
+0x17[6]_0x01 ""Force Mirr""
+
+Wait__delay__0.1ms
+
+0x19[1]_0x01 ""bst_test_en 1""
+
+Wait__delay__0.1ms
+
+Measure__Current__SDWN ""tswitch mirr measure""
+
+0x1A_0x00
+0x19_0x00
+
+
+
+","Run_startup
+Force__VBIAS__5V
+Force__VBSO__3.6V
+
+0xFE_0x00 ""Select page 0""
+0xB0_0x00 ""en 1 bst low""
+0xB1_0x00 ""en 2 bst low""
+0xB3[4:3]_0x00 ""en 3 bst low""
+0x18[6]_0x01 ""Enable Mirr""
+0xB1[6]_0x01 ""Bootstrap en""
+0xB2[1]_0x00 ""ls_sel off""
+0xB4[2:0]_0x00 ""hsa_hsb_byp off""
+0xFE_0x01 ""Select page 1""
+0x17[6]_0x01 ""Force Mirr""
+0x16[6]_0x01 ""Force Bootstrap""
+
+Wait__delay__0.1ms
+
+0x1A_0x01 ""TSwitch SW""
+0xFE_0x00 ""Select page 0""
+0xB2[1]_0x01 ""ls_sel on""
+0xB2[0]_0x01 ""Power Force en""
+0xFE_0x01 ""Select page 1""
+
+Wait__delay__0.1ms
+
+0x19[1]_0x01 ""bst_test en""
+Force_Current__SW__400mA ""chiedere comando corrente""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__SDWN
+
+0x1A_0x02 ""TSwitch PGND""
+
+Measure__Voltage__SDWN
+
+0x1A_0x00
+0x19_0x00
+
+
+
+
+","Force__VBAT__5V
+Force__VDDIO__1.8V
+Force__VDD__1.8V
+Force__VBIAS__5V
+Force__VBSO__5V
+Force__SDWN__1.8V
+
+0x00_0x0F ""Power-up""
+0xB0_0x00 ""en 1 bst low""
+0xB1_0x00 ""en 2 bst low""
+0xB3[4:3]_0x00 ""en 3 bst low""
+
+0xFE_0x01 ""Select page 1""
+0x2F_0xAA ""Unlock test page""
+0x2F_0xBB ""Unlock test page""
+
+0x18[6]_0x01 ""Enable Mirr""
+0xFE_0x00 ""Select page 0""
+0xB1[6]_0x01 ""Bootstrap en""
+0xB2[1]_0x00 ""ls_sel off""
+0xB4[2:0]_0x06 ""hsa_hsb on byp off""
+0xFE_0x01 ""Select page 1""
+0x1A_0x01 ""TSwitch SW""
+0x17[6]_0x01 ""Force Mirr""
+0x16[6]_0x01 ""Force Bootstrap""
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB2[0]_0x01 ""Power Force en""
+0xFE_0x01 ""Select page 1""
+
+Wait__delay__0.1ms
+
+0x19[1]_0x01 ""bst_test en""
+
+Wait__delay__0.1ms
+
+Force_Current__SW__-400mA ""sink current -400mA""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__SDWN
+
+0x1A_0x00
+0x19_0x00","Run_startup
+Force__VBIAS__5V
+Force__SW__3.6V
+
+0xB0_0x00 ""en 1 bst low""
+0xB1_0x00 ""en 2 bst low""
+0xB3[4:3]_0x00 ""en 3 bst low""
+0xFE_0x01 ""Select page 1""
+0x18[6]_0x01 ""Enable Mirr""
+0xFE_0x00 ""Select page 0""
+0xB1[6]_0x01 ""Bootstrap en""
+0xB2[1]_0x00 ""ls_sel off""
+0xB4[2:0]_0x01 ""hsa_hsb off byp on""
+0xFE_0x01 ""Select page 1""
+0x17[6]_0x01 ""Force Mirr""
+0x16[6]_0x01 ""Force Bootstrap""
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB2[0]_0x01 ""Power Force en""
+0xFE_0x01 ""Select page 1""
+
+Wait__delay__0.1ms
+
+0x19[1]_0x01 ""bst_test en""
+
+Wait__delay__0.1ms
+
+Force_Current__VBSO__-400mA ""sink""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__VBSO
+
+0x1A_0x00
+0x19_0x00","Run_startup
+Boost_test_default
+
+Wait__delay__0.01ms
+
+0x03_0x04 ""FSYN TMUX""
+0x04_0x03 ""Test EN FSYN=bst_gls""
+0xFE_0x00 ""Select page 0""
+0xB2[0]_0x01 ""Power Force en""
+0xFE_0x01 ""Select page 1""
+
+Wait__delay__0.1ms
+
+0x19[1]_0x01 ""bst_test en""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__FSYN ""it should be 0""
+0xFE_0x00 ""Select page 0""
+0xB2[1]_0x01 ""ls_sel on""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__FSYN ""it should be 1""
+
+0x03_0x00 
+0x04_0x00
+0x19_0x00","Run_startup
+Boost_test_default
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB0[0]_0x01 ""bst general en""
+0xFE_0x01 ""Select page 1""
+0x03_0x05 ""FSYN and SDI TMUX""
+0x04_0x07 ""dig test EN FSYN=byp_go SDI=byp_off""
+
+Wait__delay__0.1ms
+
+0x15[4]_0x01 ""Force bst general en""
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB2[0]_0x01 ""Power Force en""
+0xFE_0x01 ""Select page 1""
+
+0x19[1]_0x01 ""bst_test en""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__FSYN
+Measure__Voltage__SDI ""FSYN should be 0 and SDI 1""
+
+0xB0[7]_0x01 ""byp_en on""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__FSYN
+Measure__Voltage__SDI ""FSYN should be 1 and SDI 0""
+
+0x03_0x00 
+0x04_0x00
+0x19_0x00
+
+","Run_startup
+Boost_test_default
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xCA_0x00 ""VREF basso così l'uscita del comparatore è 0""
+0xB3[3]_0x01 ""clamp bso en""
+0xB1[4]_0x01 ""err amp bso en""
+0xB1[2]_0x01 ""comp bso en""
+0xB0[0]_0x01 ""bst general en""
+0xFE_0x01 ""Select page 1""
+0x03_0x05 ""FSYN and SDI TMUX""
+0x04_0x10 ""dig test EN FSYN=da SDI=a""
+
+Wait__delay__0.1ms
+
+0x15[4]_0x01 ""Force bst general en""
+0xFE_0x00 ""Select page 0""
+0xB2[0]_0x01 ""Power Force en""
+
+Wait__delay__0.1ms
+
+0xFE_0x01 ""Select page 1""
+0x16[4]_0x01 ""force err amp bso""
+0x16[2]_0x01 ""force comp bso""
+0x17[4]_0x01 ""force clamp bso""
+0x19[1]_0x01 ""bst_test en""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__FSYN
+Measure__Voltage_SDI ""da and a, FSYN should be 0 and SDI 0""
+0x04_0x0B ""dig test EN FSYN=outcomp""
+Measure__Voltage__FSYN ""out_comp, it should be 0""
+
+0xFE_0x00 ""Select page 0""
+0xCA_0x11 ""VREF high so comparator output should be 1""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__FSYN ""out_comp, it should be 1""
+0xFE_0x01 ""Select page 1""
+0x04_0x10 ""dig test EN FSYN=da SDI=a""
+Measure__Voltage__FSYN ""da and a, it should be 0""
+Measure__Voltage__SDI ""FSYN should remain 0 since vbias is not enabled and SDI 1""
+
+0x03_0x00 
+0x04_0x00
+0x19_0x00","Run_startup
+Boost_test_default
+
+Wait__delay__0.1ms
+
+0x11_0x00 ""VREF basso così l'uscita del comparatore è 0""
+0xFE_0x00 ""Select page 0""
+0xB3[4]_0x01 ""clamp bias en""
+0xB1[5]_0x01 ""err amp bias en""
+0xB1[3]_0x01 ""comp bias en""
+0xB0[0]_0x01 ""bst general en""
+0xFE_0x01 ""Select page 1""
+0x03_0x05 ""FSYN and SDI TMUX""
+0x04_0x11 ""dig test EN FSYN=db SDI=b""
+
+Wait__delay__0.1ms
+
+0x15[4]_0x01 ""Force bst general en""
+0xFE_0x00 ""Select page 0""
+0xB2[0]_0x01 ""Power Force en""
+
+Wait__delay__0.1ms
+
+0xFE_0x01 ""Select page 1""
+0x16[5]_0x01 ""force err amp bias""
+0x16[3]_0x01 ""force comp bias""
+0x17[3]_0x01 ""force clamp bias""
+0x19[1]_0x01 ""bst_test en""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__FSYN
+Measure__Voltage_SDI ""db and b, FSYN should be 0 and SDI 0""
+0x04_0x0B ""dig test EN FSYN=outcomp""
+Measure__Voltage__FSYN ""out_comp, it should be 0""
+
+0x11_0x0A ""VREF high so comparator output should be 1""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__FSYN ""out_comp, it should be 1""
+0x04_0x11 ""dig test EN FSYN=db SDI=b""
+Measure__Voltage__FSYN ""db and b, it should be 0""
+Measure__Voltage__SDI ""FSYN should be 0 and SDI 1""
+
+0x03_0x00 
+0x04_0x00
+0x19_0x00","Run_startup
+Boost_test_default
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB0[0]_0x01 ""bst general en""
+0xFE_0x01 ""Select page 1""
+0x1A_0x04 ""TSW VF""
+
+Wait__delay__0.1ms
+
+0x15[4]_0x01 ""Force bst general en""
+0xFE_0x00 ""Select page 0""
+0xB2[0]_0x01 ""Power Force en""
+
+Wait__delay__0.1ms
+
+0x19[1]_0x01 ""bst_test en""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__SDWN ""it should be approximately 2.4V""
+
+0x1A_0x00
+0x19_0x00","Run_startup
+Boost_test_default
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xCA_0x00 ""VREF lower than VBSO_PAR so the output should clamp high""
+0xB3[3]_0x01 ""clamp bso en""
+0xB1[4]_0x01 ""err amp bso en""
+0xB0[0]_0x01 ""bst general en""
+0xFE_0x01 ""Select page 1""
+0x1A_0x07 ""ana test TSW VREGBSO""
+
+Wait__delay__0.1ms
+
+0x15[4]_0x01 ""Force bst general en""
+0xFE_0x00 ""Select page 0""
+0xB2[0]_0x01 ""Power Force en""
+
+Wait__delay__0.1ms
+
+0xFE_0x01 ""Select page 1""
+0x16[4]_0x01 ""force err amp bso""
+0x17[4]_0x01 ""force clamp bso""
+0x19[1]_0x01 ""bst_test en""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__SDWN ""should be clamped high (3V)""
+0xFE_0x00 ""Select page 0""
+0xCA_0x11 ""VREF higher than VBSO_PAR so the output should clamp low""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__SDWN ""should be clamped low (1.5V)""
+
+0xFE_0x01 ""Select page 1""
+
+0x1A_0x00
+0x19_0x00
+
+","Run_startup
+Boost_test_default
+
+Wait__delay__0.1ms
+
+0x11_0x00 ""VREF BIAS low so the output clamps high""
+0xFE_0x00 ""Select page 0""
+0xB3[4]_0x01 ""clamp bias en""
+0xB1[5]_0x01 ""err amp bias en""
+0xB0[0]_0x01 ""bst general en""
+0xFE_0x01 ""Select page 1""
+0x1A_0x08 ""ana test TSW VREGBIAS""
+
+Wait__delay__0.1ms
+
+0x15[4]_0x01 ""Force bst general en""
+0xFE_0x00 ""Select page 0""
+0xB2[0]_0x01 ""Power Force en""
+
+Wait__delay__0.1ms
+
+0xFE_0x01 ""Select page 1""
+0x16[5]_0x01 ""force err amp bias""
+0x17[3]_0x01 ""force clamp bias""
+0x19[1]_0x01 ""bst_test en""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__SDWN ""should be clamped high (3V)""
+0x11_0x07 ""VREF higher than VBIAS_PAR so output shoulkd be clamped low""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__SDWN ""should be clamped low (1,5V)""
+
+0x1A_0x00
+0x19_0x00
+
+","Run_startup
+Boost_test_default
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB0[0]_0x01 ""bst general en""
+0xFE_0x01 ""Select page 1""
+0x1A_0x09 ""ana test TSW CLAMP REF H""
+
+Wait__delay__0.1ms
+
+0x15[4]_0x01 ""Force bst general en""
+0xFE_0x00 ""Select page 0""
+0xB2[0]_0x01 ""Power Force en""
+
+Wait__delay__0.1ms
+
+0xFE_0x01 ""Select page 1""
+0x19[1]_0x01 ""bst_test en""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__SDWN ""should be 3V""
+0x1A_0x0A ""ana test TSW CLAMP REF L""
+Measure__Voltage__SDWN ""should be 1,5V""
+0x1A_0x0B ""ana test TSW VREF_VBAT""
+Measure__Voltage__SDWN ""should be 0,26V""
+
+0x1A_0x00
+0x19_0x00
+
+","Run_startup
+Boost_test_default
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB0[0]_0x01 ""bst general en""
+0xFE_0x01 ""Select page 1""
+0x1A_0x05 ""ana test TSW VBSO PAR""
+
+Wait__delay__0.1ms
+
+0x15[4]_0x01 ""Force bst general en""
+0xFE_0x00 ""Select page 0""
+0xB2[0]_0x01 ""Power Force en""
+
+Wait__delay__0.1ms
+
+0xFE_0x01 ""Select page 1""
+0x19[1]_0x01 ""bst_test en""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__SDWN ""Misura VBSO PAR, should be 0,263V more or less"" 
+0x1A_0x06 ""ana test TSW VBIAS PAR""
+Measure__Voltage__SDWN ""Misura VBIAS PAR, should be 0,18V more or less""
+
+0x1A_0x00
+0x19_0x00
+
+","Run_startup
+Boost_test_default
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB0[4]_0x01 ""mfl_en""
+0xB2[7:6]_0x00 ""mfl 00 -> 20.5kHz""
+0xFE_0x01 ""Select page 1""
+0x03_0x04 ""FSYN TMUX""
+0x04_0x1F ""dig test EN FSYN=mfl""
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB2[0]_0x01 ""Power Force en""
+0xFE_0x01 ""Select page 1""
+0x15[5]_0x01 ""Force mfl""
+0x19[1]_0x01 ""bst_test en""
+
+Measure__Voltage__FSYN ""as soon as trigger, need command""
+
+0xFE_0x00 ""Select page 0""
+0xB0[4]_0x00 ""mfl_en""
+
+Wait__delay__0.1ms
+
+0xB2[7:6]_0x01 ""mfl 01 -> 24.4kHz""
+0xB0[4]_0x01 ""mfl_en""
+
+Measure__Voltage__FSYN ""as soon as trigger, need command""
+
+0xB0[4]_0x00 ""mfl_en""
+
+Wait__delay__0.1ms
+
+0xB2[7:6]_0x02 ""mfl 02 -> 28.2kHz""
+0xB0[4]_0x01 ""mfl_en""
+
+Measure__Voltage__FSYN ""as soon as trigger, need command""
+
+0xB0[4]_0x00 ""mfl_en""
+
+Wait__delay__0.1ms
+
+0xB2[7:6]_0x03 ""mfl 02 -> 33.6kHz""
+0xB0[4]_0x01 ""mfl_en""
+
+Measure__Voltage__FSYN ""as soon as trigger, need command""
+
+0xFE_0x01 ""Select page 1""
+0x03_0x00 
+0x04_0x00
+0x19_0x00","Run_startup
+Boost_test_default
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB2[5:4]_0x00 ""00 code for OVP ref, approximately 9V""
+0xCA_0x00 ""correspond to a VREF BSO of 0V""
+0xFE_0x01 ""Select page 1""
+0x1A_0x0C ""TSW to VREF_OVP_BSO""
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB2[0]_0x01 ""Power Force en""
+0xFE_0x01 ""Select page 1""
+0x19[1]_0x01 ""bst_test en""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__SDWN ""it should be corresponding to the 9.9V threshold approximately (0.72V)""
+
+0xFE_0x00 ""Select page 0""
+0xB2[5:4]_0x01 ""01 code for OVP ref, approximately 22.55V""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__SDWN ""it should be corresponding to the 22.55V threshold approximately (1.64V)""
+
+0xFE_0x01 ""Select page 1""
+0x1A_0x0E ""TSW to VREF_BSO""
+
+Measure__Voltage__SDWN ""should be 0V""
+
+0xFE_0x00 ""Select page 0""
+0xCA_0x0B ""correspond to a Virtual VREF BSO of 0.22V and a VREF_BSO of 3.025V""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__SDWN ""should be 0.22V""
+
+0xCA_0x16 ""correspond to a Virtual VREF BSO of 0.44V and a VREF_BSO of 6.05V""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__SDWN ""should be 0.44V""
+
+0xCA_0x21 ""correspond to a Virtual VREF BSO of 0.66V and a VREF_BSO of 9.075V""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__SDWN ""should be 0.66V""
+
+0xCA_0x45 ""correspond to a Virtual VREF BSO of 1.38V and a VREF_BSO of 18.975V""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__SDWN ""should be 1.38V""
+
+0xFE_0x01 ""Select page 1""
+0x1A_0x00
+0x19_0x00","Run_startup
+Boost_test_default
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB2[3:2]_0x01 ""01 code for OVP BIAS ref, this corresponds to +1 to threshold""
+0xFE_0x01 ""Select page 1""
+0x11_0x00 ""correspond to a VREF BIAS of 0.22V, that corresponds to a VBIAS of 6.05V""
+0x1A_0x0D ""TSW to VREF_OVP_BIAS""
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB2[0]_0x01 ""Power Force en""
+0xFE_0x01 ""Select page 1""
+0x19[1]_0x01 ""bst_test en""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__SDWN ""it should be 0.24V, which is the +1 threshold of VREF_BIAS""
+
+0x1A_0x0F ""TSW to VREF_BIAS""
+
+Measure__Voltage__SDWN ""should be 0.22V""
+
+
+0x11_0x10 ""correspond to a Virtual VREF BIAS of 0.54V that corresponds to a VBIAS of 14.85V""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__SDWN ""should be 0.54V""
+
+0x1A_0x0D ""TSW to VREF_OVP_BIAS ""
+
+Measure__Voltage__SDWN ""should be 0.56V,which is the +1 threshold""
+
+0x11_0x21 ""correspond to a Virtual VREF BIAS of 0.88V that corresponds to a VBIAS of 24.2V""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__SDWN ""should be 0.9V, which is the +1 threshold""
+
+0x1A_0x0F ""TSW to VREF_BIAS""
+
+Measure__Voltage__SDWN ""should be 0.88V""
+
+0x1A_0x00
+0x19_0x01","Run_startup
+Boost_test_default
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB0[1]_0x01 ""ocp en
+0xB2[1]_0x01 ""ls_sel on""
+0xC0[2:0]_0x01 ""OCP threshold set to 200mA""
+0xFE_0x01 ""Select page 1""
+0x1A_0x10 ""TSW to OCP Sense""
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB2[0]_0x01 ""Power Force en""
+0xFE_0x01 ""Select page 1""
+
+Wait__delay__0.1ms
+
+0x15[2]_0x01 ""Force ocp""
+0x19[1]_0x01 ""bst_test en""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__SDWN
+TrimSweep - 0xB2[5]_0xB1[3:0] ""trim in 2 different registers, what is the correct command""
+
+Calculate__MinError
+Trim - 0xB2[5]0xB1[3:0]
+
+0x1A_0x00
+0x19_0x00
+
+","Run_startup
+Boost_test_default
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB1[0]_0x01 ""OVP_BSO_en""
+0xB2[5:4]_0x00 ""ovp ref bso sel set to 9V""
+0xCA_0x00 ""correspond to a VREF BSO of 0V""
+0xB0[0]_0x01 ""bst general en""
+0xFE_0x01 ""Select page 1""
+0x1A_0x0C ""TSW to VREF_OVP_BSO""
+0x03_0x04 ""FSYN en""
+0x04_0x1B ""FSYN=ovp_bso""
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB2[0]_0x01 ""Power Force en""
+0xFE_0x01 ""Select page 1""
+0x15[4]_0x01 ""Force bst general en""
+
+Wait__delay__0.1ms
+
+0x16[1]_0x01  ""Force ovp bso""
+0x19[1]_0x01 ""bst_test en""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__SDWN ""threshold measure vref_ovp, it should be corresponding to the 9V threshold""
+Measure__Voltage__FSYN ""OVP_BSO output, it should be 0 since BSO 3.6V<9V""
+
+Force__VBIAS__12V
+Force__VBSO__11V
+
+Wait__delay__0.1ms
+
+Measure__Voltage__FSYN ""OVP_BSO output, it should be 1, since we force the VBSO the discharge should be on but never dischargin VBSO""
+
+0x1A_0x00
+0x19_0x00
+0x03_0x00
+0x04_0x00","Run_startup
+Boost_test_default
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB1[1]_0x01 ""OVP_BIAS_en""
+0xB2[3:2]_0x00 ""ovp ref bias sel set to threshold +0""
+0xB0[0]_0x01 ""bst general en""
+0xFE_0x01 ""Select page 1""
+0x11_0x06 ""correspond to a VREF BIAS of 9.36V""
+0x1A_0x0D ""TSW to VREF_OVP_BIAS""
+0x03_0x04 ""FSYN en""
+0x04_0x1C ""FSYN=ovp_bias""
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB2[0]_0x01 ""Power Force en""
+0xFE_0x01 ""Select page 1""
+0x15[4]_0x01 ""Force bst general en""
+
+Wait__delay__0.1ms
+
+0x16[1]_0x01  ""Force ovp bias""
+0x19[1]_0x01 ""bst_test en""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__SDWN ""threshold measure vref_bias, it should be corresponding to the 9,36V""
+Measure__Voltage__FSYN ""OVP_BIAS output, it should be 0 since Bias 6V<9V""
+
+Force__VBIAS__11V
+
+Wait__delay__0.1ms
+
+Measure__Voltage__FSYN ""OVP_BIAS output, it should be 1, since we force the VBIAS the discharge should be on but never dischargin VBIAS""
+
+0x1A_0x00
+0x19_0x00
+0x03_0x00
+0x04_0x00","Run_startup
+Boost_test_default
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB0[3]_0x01 ""env_track en""
+0xCA_0x00 ""vref_bso to 0V that corresponds to 0V on BSO""
+0xB0[0]_0x01 ""bst general en""
+0xFE_0x01 ""Select page 1""
+0x03_0x04 ""FSYN en""
+0x04_0x0A ""FSYN=bst_env_track""
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB2[0]_0x01 ""Power Force en""
+0xFE_0x01 ""Select page 1""
+0x15[4]_0x01 ""Force bst general en""
+
+Wait__delay__0.1ms
+
+0x15[0]_0x01 ""force env_track""
+0x19[1]_0x01 ""bst_test en""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__FSYN ""it should be 0 since the ref is higher than the VBSOPAR so the system is not in tracking""
+
+0xFE_0x00 ""Select page 0""
+0xCA_0x12 ""vref_bso to 0.36V that corresponds to 4.95V on BSO""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__FSYN ""now it should be 1 since the VBSO Partition is higher than the ref, so the system results in tracking""
+
+0xFE_0x01 ""Select page 1""
+
+0x19_0x00
+0x03_0x00
+0x04_0x00","Run_startup
+Force__VBIAS__5V
+Force__VBSO__3.6V
+
+0xFE_0x00 ""Select page 0""
+0xB0_0x00 ""en 1 bst low""
+0xB1_0x00 ""en 2 bst low""
+0xB3[4:3]_0x00 ""en 3 bst low""
+0x18[6]_0x01 ""Enable Mirr""
+0xB1[6]_0x01 ""Bootstrap en""
+0xB2[1]_0x00 ""ls_sel off""
+0xB4[2:0]_0x00 ""hsa_hsb_byp off""
+0xFE_0x01 ""Select page 1""
+0x17[6]_0x01 ""Force Mirr""
+0x16[6]_0x01 ""Force Bootstrap""
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB0[6]_0x01 ""zc en""
+0xB0[0]_0x01 ""bst general en""
+0xFE_0x01 ""Select page 1""
+0x03_0x04 ""FSYN en""
+0x04_0x16 ""FSYN=bst_zc1 ""
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB2[0]_0x01 ""Power Force en""
+0xFE_0x01 ""Select page 1""
+0x15[4]_0x01 ""Force bst general en""
+Force_Current__SW__-100mA ""sink""
+
+Wait__delay__0.1ms
+
+0x16[7]_0x01 ""force zc""
+0x19[1]_0x01 ""bst_test en""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__FSYN ""it should be 1""
+Force_Current__SW__100mA ""inject""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__FSYN ""it should be 0""
+
+0x19_0x00
+0x03_0x00
+0x04_0x01","Run_startup
+Force__VBIAS__5V
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0x19[0]_0x01 ""spk_en 1, boost should be in bypass after this command""
+
+Wait__delay__0.1ms
+
+Force__extsignal ""with a voltage lower than vbat (also 0 should be fine) so that the boost remains in bypass""
+
+0xCA_0x21 ""ref BSO set to 660mV -> 9,075V BSO""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__VBSO ""should be 9,075V""
+0xCA_0x33 ""ref BSO set to 1.02V -> 14,025V BSO""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__VBSO ""should be 14,025V""
+0xCA_0x49 ""ref BSO set to 1.46V -> 20,075V BSO""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__VBSO ""should be 20,075V""","Run_startup
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0x19[0]_0x01 ""spk_en 1, boost should be in bypass after this command""
+
+Wait__delay__0.1ms
+
+Force__extsignal ""with a voltage lower than vbat (also 0 should be fine) so that the boost remains in bypass""
+
+0xFE_0x01 ""Select page 1""
+0x11_0x06""ref BIAS set to 340mV -> 9,35V BIAS""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__BIAS ""should be 9,35V""
+0x11_0x11 ""ref BIAS set to 560mV -> 15,4V BIAS""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__BIAS ""should be 15,4V""
+0x11_0x21 ""ref BIAS set to 880mV -> 24,2V BIAS""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__BIAS ""should be 24,2V""","Force__VBAT__5V
+Force__VDDIO__1.8V
+Force__VDD__1.8V
+Force__VBIAS__5V
+Force__VBSO__5V
+Force__SW__5V
+
+0x00_0x0F ""Power-up""
+0xB0_0x00 ""en 1 bst low""
+0xB1_0x00 ""en 2 bst low""
+0xB3[4:3]_0x00 ""en 3 bst low""
+
+0xFE_0x01 ""Select page 1""
+0x2F_0xAA ""Unlock test page""
+0x2F_0xBB ""Unlock test page""
+
+0x18[6]_0x01 ""Enable Mirr""
+0xFE_0x00 ""Select page 0""
+0xB1[6]_0x01 ""Bootstrap en""
+0xB2[1]_0x00 ""ls_sel off""
+0xB4[2:0]_0x04 ""hsb on hsa_byp off""
+0xB0[0]_0x01 ""bst general en""
+0xFE_0x01 ""Select page 1""
+0x1A_0x03 ""ana test TSW drive""
+0x03_0x05 ""FSYN and SDI TMUX""
+0x04_0x14 ""dig test EN FSYN=bst_bootstrap_comp_out SDI=low_on""
+0x17[6]_0x01 ""Force Mirr""
+0x16[6]_0x01 ""Force Bootstrap""
+0xFE_0x00 ""Select page 0""
+
+Wait__delay__0.1ms
+
+0xB2[0]_0x01 ""Power Force en""
+0xFE_0x01 ""Select page 1""
+0x15[4]_0x01 ""Force bst general en""
+
+Wait__delay__0.1ms
+
+0x19[1]_0x01 ""bst_test en""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__SDWN ""should be 1V more or less""
+Measure__Voltage__FSYN ""should be 0""
+Measure__Voltage__SDI ""should be 0""
+
+Force__Ramp ""da 4.5V con step di 50mV in discesa finchè non commuta 3-4 volte per capire la threshold""
+
+Wait__delay__0.1ms ""after comparator triggers""
+
+Measure__Voltage__SDWN ""should be 0""
+Measure__Voltage__FSYN ""should be 1""
+Measure__Voltage__SDI ""should be 1""
+
+0x03_0x00 
+0x04_0x00
+
+0x1A_0x00
+0x19_0x00","Run_startup
+Boost_test_default
+Force__VPAP_OUT__ 0V ""PA positive output""
+Force__VPAN_OUT__0V ""PA negative output""
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB1[7]_0x01 ""env_err en""
+0xB0[0]_0x01 ""bst general en""
+0xFE_0x01 ""Select page 1""
+0x03_0x04 ""FSYN en""
+0x04_0x09 ""FSYN=bst_env_err""
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB2[0]_0x01 ""Power Force en""
+0xFE_0x01 ""Select page 1""
+0x15[4]_0x01 ""Force bst general en""
+
+Wait__delay__0.1ms
+
+0x15[1]_0x01 ""force env_err""
+0x19[1]_0x01 ""bst_test en""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__FSYN ""it should be 0 since the ref is higher than the PA OUTPUT""
+
+Force__VPAP_OUT__3.6V ""PA positive output""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__FSYN ""now it should be 1 since the PA output should be higher than the ref""
+
+0xFE_0x01 ""Select page 1""
+
+0x19_0x00
+0x03_0x00
+0x04_0x00","Run_startup
+Force__VBIAS__5V
+Force__VBSO__3.6V
+
+0xFE_0x00 ""Select page 0""
+0xB0_0x00 ""en 1 bst low""
+0xB1_0x00 ""en 2 bst low""
+0xB3[4:3]_0x00 ""en 3 bst low""
+0x18[6]_0x01 ""Enable Mirr""
+0xB1[6]_0x01 ""Bootstrap en""
+0xB2[1]_0x01 ""ls_sel on""
+0xB4[2:0]_0x00 ""hsa_hsb_byp off""
+0xFE_0x01 ""Select page 1""
+0x17[6]_0x01 ""Force Mirr""
+0x16[6]_0x01 ""Force Bootstrap""
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB0[1]_0x01 ""ocp en""
+0xB0[0]_0x01 ""bst general en""
+0xC0[2:0]_0x01 ""ocp threshold set to 200 mA""
+0xFE_0x01 ""Select page 1""
+0x03_0x04 ""FSYN en""
+0x04_0x09 ""FSYN=bst_env_err""
+
+Wait__delay__0.1ms
+
+0xFE_0x00 ""Select page 0""
+0xB2[0]_0x01 ""Power Force en""
+0xFE_0x01 ""Select page 1""
+0x15[4]_0x01 ""Force bst general en""
+
+Wait__delay__0.1ms
+
+0x15[2]_0x01 ""force ocp""
+0x19[1]_0x01 ""bst_test en""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__FSYN ""it should be 0 ""
+
+Wait__delay__0.1ms
+
+Force__Current__SW__300mA ""inject""
+
+Wait__delay__0.1ms
+
+Measure__Voltage__FSYN ""it should be 1 since the current flowing is higher than the selected threshold (200mA)""
+
+0x19_0x00
+0x03_0x00
+0x04_0x01"
+Min,,"0,7",2,,0,0,0,0,,"1,5","1,5","0,26","0,27",0,0,"0,24",,0,0,0,0,9075,"9,35",0,0,0
+Min Value/%,,,,,,,,,,,,,,,,,,,,,,,,,,
+Typ,200n,"0,9",4,,DVDD,DVDD,DVDD,DVDD,"2,4",,,,,DVDD,,,,,,,,,,,,
+Max,,"1,1",6,,DVDD,DVDD,DVDD,DVDD,,3,3,3,4,DVDD,"1,64","0,9",,DVDD,DVDD,DVDD,DVDD,20075,"24,2",DVDD,DVDD,DVDD
+Max Value/%,,,,,,,,,,,,,,,,,,,,,,,,,,
+Unit ,A,Ohm,Ohm,,V,V,V,V,V,V,V,V,V,V,V,V,,V,V,V,V,V,V,V,V,V
+Name,,,,,,,,,,,,,,,,,,,,,,,,,,
+VBAT ,3.6V,3.6V,5V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V
+SW ,3.6V,Force to a certain current,Sink a certain current,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,,,,5V,3.6V,Force Current
+VDDIO ,"1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V"
+VDD ,1.8V,1.8V,1.8V,1.8V,1.8V,1.8V,1.8V,1.8V,1.8V,1.8V,1.8V,1.8V,1.8V,1.8V,1.8V,1.8V,1.8V,1.8V,1.8V,1.8V,1.8V,1.8V,1.8V,1.8V,1.8V,1.8V
+SDWN ,Measure Current,Measure Voltage,Measure Voltage,Measure Voltage,,,,,Measure Voltage,Measure Voltage,Measure Voltage,Measure Voltage,Measure Voltage,,Measure Voltage,Measure Voltage,Measure Voltage,Measure Voltage,Measure Voltage,Measure Voltage,,,,Measure Voltage,,
+SDA ,,,,,,,,,,,,,,,,,,,,,,,,,,
+SCL ,,,,,,,,,,,,,,,,,,,,,,,,,,
+FSYN ,,,,,Measure Voltage,Measure Voltage,Measure Voltage,Measure Voltage,,,,,,Measure Trigger Time,,,,,,,Measure Voltage,,,Measure Voltage,Measure Voltage,Measure Voltage
+SDI / PDMIN / ANAINP ,,,,,,Measure Voltage,Measure Voltage,Measure Voltage,,,,,,,,,,,,,,,,Measure Voltage,,
+BCLK / PDMCLK / ANAINN ,,,,,,,,,,,,,,,,,,,,,,,,,,
+VBSO ,3.6V,3.6V,5V,Sink Current,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V,3.6V to 11V,3.6V,3.6V,3.6V,Measure Voltage,,5V,5V,3.6V
+BIAS ,5V,5V,5V,5V,5V,5V,5V,5V,5V,5V,5V,5V,5V,5V,5V,5V,5V,5V to 12V,5V to 12V,5V,5V,,Measure Voltage,5V,5V,5V
+CMEM ,,,,,,,,,,,,,,,,,,,,,,,,,,
+OUTP ,,,,,,,,,,,,,,,,,,,,,,,,,0V-3.6V,
+OUTN ,,,,,,,,,,,,,,,,,,,,,,,,,0V,
+PGND ,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND
