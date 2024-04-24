@@ -1,10 +1,16 @@
-Parameters,AZ COMPARATOR WORKING,3rd STG Current ,2nd STG Current ,1st STG Current ,Ground AZCOMP,(NO ATE),,,,
-Test_Name,AZ COMPARATOR WORKING,3rd STG Current ,2nd STG Current ,1st STG Current ,Ground AZCOMP,(NO ATE),,,,
+Parameters,AZ COMPARATOR WORKING,,3rd STG Current ,2nd STG Current ,1st STG Current ,Ground AZCOMP,(NO ATE),,,,
+Test_Name,AZ COMPARATOR WORKING,,3rd STG Current ,2nd STG Current ,1st STG Current ,Ground AZCOMP,(NO ATE),,,,
 Test_Description,"DAC-PA ANALOG_IN_DC_COUPLED
 ForceANA__-6_0                                                  0x03_0x04 ""Enable digital test FSYN""                               0x04_0x112 ""Enable digital test ana_azcomp_out""                                                          0x17_0x01 "" force_dig_azcomp_en""                                 0x17_0x00 "" force _dig_azcomp_az""  0xFE_0x00 ""Return page 0""                                                                                                                                                            Measure__Voltage__FSYN 
 
-","Run_startup                                                                  0x19_0x03 ""Enable AZCOMP analog test""
-0x1A_0x00 ""AZCOMP I1U_STG3""       0x17_0x01 "" force_dig_azcomp_en""    0xFE_0x00 ""Return page 0"" 
+","DAC-PAANALOG_IN_DC_COUPLED
+ForceANA__-6_00x03_0x04""EnabledigitaltestFSYN""0x04_0x112""Enabledigitaltestana_azcomp_out""0x17_0x01""force_dig_azcomp_en""0x17_0x00""force_dig_azcomp_az""0xFE_0x00""Returnpage0""Measure__Voltage__FSYN
+
+","Run_startup                                                                  
+0x19_0x03 ""Enable AZCOMP analog test""
+0x1A_0x00 ""AZCOMP I1U_STG3""      
+ 0x17_0x01 "" force_dig_azcomp_en""   
+ 0xFE_0x00 ""Return page 0"" 
 Measure__Current__SDWN                                                                                                                                                          ","Run_startup                                                                  0x19_0x03 ""Enable AZCOMP analog test""
 0x1A_0x01 ""AZCOMP I1U_STG3""                      0x17_0x01 "" force_dig_azcomp_en""        0xFE_0x00 ""Return page 0""                  Measure__Current__SDWN  ","Run_startup                                                                  0x19_0x03 ""Enable AZCOMP analog test""
 0x1A_0x02 ""AZCOMP I1U_STG3""                 0x17_0x01 "" force_dig_azcomp_en""    0xFE_0x00 ""Return page 0""                         Measure__Current__SDWN  ","Run_startup                                                                  0x19_0x03 ""Enable AZCOMP analog test""
@@ -17,26 +23,26 @@ ForceANA__10_0                                                        0x19_0x03 
 ForceANA__10_0                                                          0x19_0x03 ""Enable AZCOMP analog test"" 0x0F_0x02 ""Force Internal Feedback enable"" 0x17_0x01 "" force_dig_azcomp_en""    
 0x1A_0x14 """"OUTP_INT_PRT""""                                               0xFE_0x00 ""Return page 0""   Measure__Voltage__SDWN ","Run_startup                                                                                0x19_0x03 ""Enable AZCOMP analog test""
 0x1A_0x15 ""VCM""                                       0x17_0x01 "" force_dig_azcomp_en""                                             0xFE_0x00 ""Return page 0""   Measure__Voltage__SDWN "
-Min,,,,,,,,,,
-Min Value/%,,,,,,,,,,
-Typ,DVDD,1u,800n,800n,0,<6.6,<6.6,<6.6,<6.6,VBAT/2
-Max,,,,,,,,,,
-Max Value/%,,,,,,,,,,
-Unit ,V,A,A,A,V,V,V,V,V,V
-Name,,,,,,,,,,
-VBAT ,"3,6V","3,6V","3,6V","3,6V","3,6V","3,6V","3,6V","3,6V","3,6V","3,6V"
-SW ,"3,6V","3,6V","3,6V","3,6V","3,6V","3,6V","3,6V","3,6V","3,6V","3,6V"
-VDDIO ,"1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V"
-VDD ,"1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V"
-SDWN ,,Measure Current,Measure Current,Measure Current,Measure V,Measure V,Measure V,Measure V,Measure V,Measure V
-SDA ,,,,,,,,,,
-SCL ,,,,,,,,,,
-FSYN ,Measure V,,,,,,,,,
-SDI / PDMIN / ANAINP ,,,,,,,,,,
-BCLK / PDMCLK / ANAINN ,,,,,,,,,,
-VBSO ,,,,,,,,,,
-BIAS ,,,,,,,,,,
-CMEM ,,,,,,,,,,
-OUTP ,,,,,,,,,,
-OUTN ,,,,,,,,,,
-PGND ,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND
+Min,,,,,,,,,,,
+Min Value/%,,,,,,,,,,,
+Typ,DVDD,,1u,800n,800n,0,<6.6,<6.6,<6.6,<6.6,VBAT/2
+Max,,,,,,,,,,,
+Max Value/%,,,,,,,,,,,
+Unit ,V,,A,A,A,V,V,V,V,V,V
+Name,,,,,,,,,,,
+VBAT ,"3,6V",,"3,6V","3,6V","3,6V","3,6V","3,6V","3,6V","3,6V","3,6V","3,6V"
+SW ,"3,6V",,"3,6V","3,6V","3,6V","3,6V","3,6V","3,6V","3,6V","3,6V","3,6V"
+VDDIO ,"1,8V",,"1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V"
+VDD ,"1,8V",,"1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V","1,8V"
+SDWN ,Measure Current/Mid/Low,,Measure Current,Measure Current,Measure Current,Measure V,Measure V,Measure V,Measure V,Measure V,Measure V
+SDA ,,,,,,,,,,,
+SCL ,,,,,,,,,,,
+FSYN ,Measure V,,,,,,,,,,
+SDI / PDMIN / ANAINP ,,,,,,,,,,,
+BCLK / PDMCLK / ANAINN ,,,,,,,,,,,
+VBSO ,,,,,,,,,,,
+BIAS ,,,,,,,,,,,
+CMEM ,,,,,,,,,,,
+OUTP ,,,,,,,,,,,
+OUTN ,,,,,,,,,,,
+PGND ,GND,,GND,GND,GND,GND,GND,GND,GND,GND,GND
