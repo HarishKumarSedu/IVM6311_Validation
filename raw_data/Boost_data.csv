@@ -668,7 +668,7 @@ Wait__delay__0.1ms
 Wait__delay__0.1ms
 
 Measure__Voltage__SDWN
-TrimSweep - 0xB2[5]_0xB1[3:0] ""trim in 2 different registers, what is the correct command""
+TrimSweep - 0xB2[5]0xB1[3:0] ""trim in 2 different registers, what is the correct command""
 
 Calculate__MinError
 Trim - 0xB2[5]0xB1[3:0]
@@ -935,7 +935,7 @@ Wait__delay__0.1ms
 0xB2[0]_0x01 ""Power Force en""
 0xFE_0x01 ""Select page 1""
 0x15[4]_0x01 ""Force bst general en""
-
+ 
 Wait__delay__0.1ms
 
 0x19[1]_0x01 ""bst_test en""
