@@ -76,10 +76,10 @@ Copy__0xCA[3:0]__0xCC[7:4] ""int/ext zero copied in int/ext idle""
 
 Measure__EXT_ZERO_OFFSET__diff__OUTP__OUTM
 "" we've measured the offset when the part will has zero signal""
-Restore_varCB_CB ""int offset idle""
-Restore_varCC_CC ""int offset idle""
-Restore_varCE_CE ""diff. ext-int in idle""
-Restore_varCF_CF ""diff. ext-int in idle""
+Restore__varCB__0xCB ""int offset idle""
+Restore__varCC__0x+D5CC ""int offset idle""
+Restore__varCE__0xCE ""diff. ext-int in idle""
+Restore__varCF__0xCF ""diff. ext-int in idle""
 
 ","DAC-PA TDM_768_IN
 ForceTDM__-6_1000

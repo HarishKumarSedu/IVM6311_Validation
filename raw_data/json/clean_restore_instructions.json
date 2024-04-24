@@ -1,0 +1,66 @@
+{
+  "0": {
+    "set": {
+      "page": "DAC+PA",
+      "dft": "DAC-PA OFFSET CALIBRATION DIGITAL_IN (both PDM, TDM)\nThis procedure has the aim to measure the offset when the part will be in idle mode\n",
+      "ins": "Restore__varCB__0xCB \"int offset idle\""
+    },
+    "clean": {
+      "restoreReg": {
+        "RegAddr": "0x0",
+        "MSB": "0x7",
+        "LSB": "0x1",
+        "Data": null
+      },
+      "var": "varCB"
+    }
+  },
+  "1": {
+    "set": {
+      "page": "DAC+PA",
+      "dft": "DAC-PA OFFSET CALIBRATION DIGITAL_IN (both PDM, TDM)\nThis procedure has the aim to measure the offset when the part will be in idle mode\n",
+      "ins": "Restore__varCC__0x+D5CC \"int offset idle\""
+    },
+    "clean": {
+      "restoreReg": {
+        "RegAddr": "0x0",
+        "MSB": "0x7",
+        "LSB": "0x1",
+        "Data": null
+      },
+      "var": "varCC"
+    }
+  },
+  "2": {
+    "set": {
+      "page": "DAC+PA",
+      "dft": "DAC-PA OFFSET CALIBRATION DIGITAL_IN (both PDM, TDM)\nThis procedure has the aim to measure the offset when the part will be in idle mode\n",
+      "ins": "Restore__varCE__0xCE \"diff. ext-int in idle\""
+    },
+    "clean": {
+      "restoreReg": {
+        "RegAddr": "0x0",
+        "MSB": "0x7",
+        "LSB": "0x1",
+        "Data": null
+      },
+      "var": "varCE"
+    }
+  },
+  "3": {
+    "set": {
+      "page": "DAC+PA",
+      "dft": "DAC-PA OFFSET CALIBRATION DIGITAL_IN (both PDM, TDM)\nThis procedure has the aim to measure the offset when the part will be in idle mode\n",
+      "ins": "Restore__varCF__0xCF \"diff. ext-int in idle\""
+    },
+    "clean": {
+      "restoreReg": {
+        "RegAddr": "0x0",
+        "MSB": "0x7",
+        "LSB": "0x1",
+        "Data": null
+      },
+      "var": "varCF"
+    }
+  }
+}
