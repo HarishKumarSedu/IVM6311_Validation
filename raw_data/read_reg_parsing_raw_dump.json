@@ -1,0 +1,57 @@
+{
+  "0": {
+    "page": "Digital",
+    "dft": "BIST",
+    "ins": "READ_REG 0x06[5:4], expected value=0x3"
+  },
+  "1": {
+    "page": "DAC+PA",
+    "dft": "DAC-PA OFFSET CALIBRATION ANALOG_IN\nTO BE REPEATED FOR ALL 5 ANALOG GAINS (12-15-18-21-24dB)",
+    "ins": "Read__E5 \"bit[4] =1 indicates end of calibration\""
+  },
+  "2": {
+    "page": "DAC+PA",
+    "dft": "DAC-PA OFFSET CALIBRATION ANALOG_IN\nTO BE REPEATED FOR ALL 5 ANALOG GAINS (12-15-18-21-24dB)",
+    "ins": "Read__D0-D2 \"OTP cal registers D0-D2 in page 1 are written, not possible to measure analog value\""
+  },
+  "3": {
+    "page": "DAC+PA",
+    "dft": "DAC-PA OFFSET CALIBRATION ANALOG_IN\nTO BE REPEATED FOR ALL 5 ANALOG GAINS (12-15-18-21-24dB)",
+    "ins": "Read__E5 \"bit[4] =1 indicates end of calibration\""
+  },
+  "4": {
+    "page": "DAC+PA",
+    "dft": "DAC-PA OFFSET CALIBRATION ANALOG_IN\nTO BE REPEATED FOR ALL 5 ANALOG GAINS (12-15-18-21-24dB)",
+    "ins": "Read__D3-D5 \"OTP cal registers D3-D5 in page 1 are written (difference btw ext-int values), it is possible to measure analog value\""
+  },
+  "5": {
+    "page": "DAC+PA",
+    "dft": "DAC-PA OFFSET CALIBRATION ANALOG_IN\nTO BE REPEATED FOR ALL 5 ANALOG GAINS (12-15-18-21-24dB)",
+    "ins": "Read__17 \"check result 0x0A to be in playback mode\""
+  },
+  "6": {
+    "page": "DAC+PA",
+    "dft": "DAC-PA OFFSET CALIBRATION DIGITAL_IN (both PDM, TDM)\nThis procedure has the aim to measure the offset when the part will be in idle mode\n",
+    "ins": "Read__E5 \"bit[4] =1 indicates end of calibration\""
+  },
+  "7": {
+    "page": "DAC+PA",
+    "dft": "DAC-PA OFFSET CALIBRATION DIGITAL_IN (both PDM, TDM)\nThis procedure has the aim to measure the offset when the part will be in idle mode\n",
+    "ins": "Read__CA-CC \"OTP cal registers CA-CC in page 1 are written, not possible to measure analog value\""
+  },
+  "8": {
+    "page": "DAC+PA",
+    "dft": "DAC-PA OFFSET CALIBRATION DIGITAL_IN (both PDM, TDM)\nThis procedure has the aim to measure the offset when the part will be in idle mode\n",
+    "ins": "Read__E5 \"bit[4] =1 indicates end of calibration\""
+  },
+  "9": {
+    "page": "DAC+PA",
+    "dft": "DAC-PA OFFSET CALIBRATION DIGITAL_IN (both PDM, TDM)\nThis procedure has the aim to measure the offset when the part will be in idle mode\n",
+    "ins": "Read__CD-CF \"OTP cal registers CD-CF in page 1 are written, (difference btw ext-int values), it is possible to measure analog value\""
+  },
+  "10": {
+    "page": "DAC+PA",
+    "dft": "DAC-PA OFFSET CALIBRATION DIGITAL_IN (both PDM, TDM)\nThis procedure has the aim to measure the offset when the part will be in idle mode\n",
+    "ins": "Read__17 \"check result 0x0A to be in playback mode\""
+  }
+}
