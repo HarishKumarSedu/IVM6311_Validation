@@ -28,6 +28,6 @@ class MCP2221:
 
 if __name__ == '__main__':
 
-    mcp=MCP()
+    mcp=MCP2221()
     mcp.mcpWrite([00])
     print(mcp.mcpRead(0,Nobytes=10))
