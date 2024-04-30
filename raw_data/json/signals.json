@@ -1,0 +1,19 @@
+{
+  "": [
+    "VBAT",
+    "SDWN",
+    "VBIAS",
+    "VBSO",
+    "SW",
+    "VDDIO",
+    "VDD",
+    "VPAP_OUT",
+    "VPAN_OUT",
+    "FSYN",
+    "SDI",
+    "AP",
+    "BIAS",
+    "IDLE",
+    "ZERO"
+  ]
+}

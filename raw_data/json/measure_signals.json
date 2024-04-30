@@ -1,0 +1,15 @@
+{
+  "": [
+    "SDWN",
+    "FSYN",
+    "VBAT",
+    "VBSO",
+    "SDI",
+    "AP",
+    "VDDIO",
+    "BIAS",
+    "IDLE",
+    "ZERO",
+    "VDD"
+  ]
+}
