@@ -59,10 +59,10 @@ Trim - 0xEF[4:0]
 
 
 0xFE_0x00 ""Return page 0"""
-Min,,1793,,,,1796,"12,5"
+Min,,1.793,,,,1.796,12.5
 Min Value/%,,min %,,,,,
-Typ,VBAT,"1,799",820m,520n,"0,542","1,799",13
-Max,,1804,,,,1802,"13,5"
+Typ,VBAT,1.799,820m,520n,0.542,1.799,13
+Max,,1.804,,,,1.802,13.5
 Max Value/%,,max %,,,,,
 Unit ,V,V,V,A,V,V,MHz
 Name,Condition,Condition,,,Condition,Condition,Condition

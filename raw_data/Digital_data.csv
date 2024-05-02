@@ -22,10 +22,10 @@ READ_REG 0x06[5:4], expected value=0x3
 0x05_0x01 ""Set scan mode""
 
 "
-Min,1793,1793,1793
+Min,1.793,1.793,1.793
 Min Value/%,min %,min %,min %
 Typ,1.799,1.799,1.799
-Max,1804,1804,1804
+Max,1.804,1.804,1.804
 Max Value/%,max %,max %,max %
 Unit ,V,V,V
 Name,Condition,Condition,Condition
