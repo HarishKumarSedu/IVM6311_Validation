@@ -13,10 +13,10 @@ from PyQt5.QtWidgets import QDialog
 
 
 class Matrix(QtWidgets.QWidget):
-    def __init__(self,deviceAddress):
+    def __init__(self,deviceAddress, locked=True):
         super(Matrix, self).__init__()
         self.deviceAddress = deviceAddress
-        
+        self.locked = locked
         self.matrixFrame = QtWidgets.QFrame()
         self.matrixFrame.setMinimumSize(QtCore.QSize(1175, 725))
         self.matrixFrame.setMaximumSize(QtCore.QSize(1175, 725))
@@ -978,6 +978,8 @@ class Matrix(QtWidgets.QWidget):
         self.RL87.clicked.connect(lambda : self.buttonCheckedStatus(row=8, col=7, obj=self.RL87))
         self.RL88.clicked.connect(lambda : self.buttonCheckedStatus(row=8, col=8, obj=self.RL88))
         
+        self.freezeLineEdit()
+        
     def buttonCheckedStatus(self,obj,row=1,col=1 ):
         if  1 <= row  < 3:
             device_addr = self.deviceAddress +  0
@@ -987,9 +989,340 @@ class Matrix(QtWidgets.QWidget):
             device_addr = self.deviceAddress  + 2
         elif 7 <= row  < 9:
             device_addr = self.deviceAddress + 3
-            
-        if Enable := obj.isChecked() : 
+        if not(self.locked):
+            print(f'checked status {self.locked}')
+
+            if Enable := obj.isChecked() : 
+                print(f'row:{row}, col:{col} , Enable: {Enable}, deviceAddress: {hex(device_addr)}')
+            else:
+                print(f'row:{row}, col:{col} , Enable: {Enable}, deviceAddress: {hex(device_addr)}')
+        else:         
+            Enable = False
             print(f'row:{row}, col:{col} , Enable: {Enable}, deviceAddress: {hex(device_addr)}')
-        else:
-            print(f'row:{row}, col:{col} , Enable: {Enable}')
+            
         
+    
+    def freezeLineEdit(self):
+        self.RL11.setChecked(not (self.locked))
+        self.RL12.setChecked(not (self.locked))
+        self.RL13.setChecked(not (self.locked))
+        self.RL14.setChecked(not (self.locked))
+        self.RL15.setChecked(not (self.locked))
+        self.RL16.setChecked(not (self.locked))
+        self.RL17.setChecked(not (self.locked))
+        self.RL18.setChecked(not (self.locked))
+        self.RL21.setChecked(not (self.locked))
+        self.RL22.setChecked(not (self.locked))
+        self.RL23.setChecked(not (self.locked))
+        self.RL24.setChecked(not (self.locked))
+        self.RL25.setChecked(not (self.locked))
+        self.RL26.setChecked(not (self.locked))
+        self.RL27.setChecked(not (self.locked))
+        self.RL28.setChecked(not (self.locked))
+        self.RL31.setChecked(not (self.locked))
+        self.RL32.setChecked(not (self.locked))
+        self.RL33.setChecked(not (self.locked))
+        self.RL34.setChecked(not (self.locked))
+        self.RL35.setChecked(not (self.locked))
+        self.RL36.setChecked(not (self.locked))
+        self.RL37.setChecked(not (self.locked))
+        self.RL38.setChecked(not (self.locked))
+        self.RL41.setChecked(not (self.locked))
+        self.RL42.setChecked(not (self.locked))
+        self.RL43.setChecked(not (self.locked))
+        self.RL44.setChecked(not (self.locked))
+        self.RL45.setChecked(not (self.locked))
+        self.RL46.setChecked(not (self.locked))
+        self.RL47.setChecked(not (self.locked))
+        self.RL48.setChecked(not (self.locked))
+        self.RL51.setChecked(not (self.locked))
+        self.RL52.setChecked(not (self.locked))
+        self.RL53.setChecked(not (self.locked))
+        self.RL54.setChecked(not (self.locked))
+        self.RL55.setChecked(not (self.locked))
+        self.RL56.setChecked(not (self.locked))
+        self.RL57.setChecked(not (self.locked))
+        self.RL58.setChecked(not (self.locked))
+        self.RL61.setChecked(not (self.locked))
+        self.RL62.setChecked(not (self.locked))
+        self.RL63.setChecked(not (self.locked))
+        self.RL64.setChecked(not (self.locked))
+        self.RL65.setChecked(not (self.locked))
+        self.RL66.setChecked(not (self.locked))
+        self.RL67.setChecked(not (self.locked))
+        self.RL68.setChecked(not (self.locked))
+        self.RL71.setChecked(not (self.locked))
+        self.RL72.setChecked(not (self.locked))
+        self.RL73.setChecked(not (self.locked))
+        self.RL74.setChecked(not (self.locked))
+        self.RL75.setChecked(not (self.locked))
+        self.RL76.setChecked(not (self.locked))
+        self.RL77.setChecked(not (self.locked))
+        self.RL78.setChecked(not (self.locked))
+        self.RL81.setChecked(not (self.locked))
+        self.RL82.setChecked(not (self.locked))
+        self.RL83.setChecked(not (self.locked))
+        self.RL84.setChecked(not (self.locked))
+        self.RL85.setChecked(not (self.locked))
+        self.RL86.setChecked(not (self.locked))
+        self.RL87.setChecked(not (self.locked))
+        self.RL88.setChecked(not (self.locked))
+        self.RL11.setCheckable(not (self.locked))
+        self.RL12.setCheckable(not (self.locked))
+        self.RL13.setCheckable(not (self.locked))
+        self.RL14.setCheckable(not (self.locked))
+        self.RL15.setCheckable(not (self.locked))
+        self.RL16.setCheckable(not (self.locked))
+        self.RL17.setCheckable(not (self.locked))
+        self.RL18.setCheckable(not (self.locked))
+        self.RL21.setCheckable(not (self.locked))
+        self.RL22.setCheckable(not (self.locked))
+        self.RL23.setCheckable(not (self.locked))
+        self.RL24.setCheckable(not (self.locked))
+        self.RL25.setCheckable(not (self.locked))
+        self.RL26.setCheckable(not (self.locked))
+        self.RL27.setCheckable(not (self.locked))
+        self.RL28.setCheckable(not (self.locked))
+        self.RL31.setCheckable(not (self.locked))
+        self.RL32.setCheckable(not (self.locked))
+        self.RL33.setCheckable(not (self.locked))
+        self.RL34.setCheckable(not (self.locked))
+        self.RL35.setCheckable(not (self.locked))
+        self.RL36.setCheckable(not (self.locked))
+        self.RL37.setCheckable(not (self.locked))
+        self.RL38.setCheckable(not (self.locked))
+        self.RL41.setCheckable(not (self.locked))
+        self.RL42.setCheckable(not (self.locked))
+        self.RL43.setCheckable(not (self.locked))
+        self.RL44.setCheckable(not (self.locked))
+        self.RL45.setCheckable(not (self.locked))
+        self.RL46.setCheckable(not (self.locked))
+        self.RL47.setCheckable(not (self.locked))
+        self.RL48.setCheckable(not (self.locked))
+        self.RL51.setCheckable(not (self.locked))
+        self.RL52.setCheckable(not (self.locked))
+        self.RL53.setCheckable(not (self.locked))
+        self.RL54.setCheckable(not (self.locked))
+        self.RL55.setCheckable(not (self.locked))
+        self.RL56.setCheckable(not (self.locked))
+        self.RL57.setCheckable(not (self.locked))
+        self.RL58.setCheckable(not (self.locked))
+        self.RL61.setCheckable(not (self.locked))
+        self.RL62.setCheckable(not (self.locked))
+        self.RL63.setCheckable(not (self.locked))
+        self.RL64.setCheckable(not (self.locked))
+        self.RL65.setCheckable(not (self.locked))
+        self.RL66.setCheckable(not (self.locked))
+        self.RL67.setCheckable(not (self.locked))
+        self.RL68.setCheckable(not (self.locked))
+        self.RL71.setCheckable(not (self.locked))
+        self.RL72.setCheckable(not (self.locked))
+        self.RL73.setCheckable(not (self.locked))
+        self.RL74.setCheckable(not (self.locked))
+        self.RL75.setCheckable(not (self.locked))
+        self.RL76.setCheckable(not (self.locked))
+        self.RL77.setCheckable(not (self.locked))
+        self.RL78.setCheckable(not (self.locked))
+        self.RL81.setCheckable(not (self.locked))
+        self.RL82.setCheckable(not (self.locked))
+        self.RL83.setCheckable(not (self.locked))
+        self.RL84.setCheckable(not (self.locked))
+        self.RL85.setCheckable(not (self.locked))
+        self.RL86.setCheckable(not (self.locked))
+        self.RL87.setCheckable(not (self.locked))
+        self.RL88.setCheckable(not (self.locked))
+        self.row1HlineEdit.setEnabled(self.locked)
+        self.row1LlineEdit.setEnabled(self.locked)
+        self.col1HlineEdit.setEnabled(self.locked)
+        self.col1LlineEdit.setEnabled(self.locked)
+        self.row2HlineEdit.setEnabled(self.locked)
+        self.row2LlineEdit.setEnabled(self.locked)
+        self.col2HlineEdit.setEnabled(self.locked)
+        self.col2LlineEdit.setEnabled(self.locked)
+        self.row3HlineEdit.setEnabled(self.locked)
+        self.row3LlineEdit.setEnabled(self.locked)
+        self.col3HlineEdit.setEnabled(self.locked)
+        self.col3LlineEdit.setEnabled(self.locked)
+        self.row4HlineEdit.setEnabled(self.locked)
+        self.row4LlineEdit.setEnabled(self.locked)
+        self.col4HlineEdit.setEnabled(self.locked)
+        self.col4LlineEdit.setEnabled(self.locked)
+        self.row5HlineEdit.setEnabled(self.locked)
+        self.row5LlineEdit.setEnabled(self.locked)
+        self.col5HlineEdit.setEnabled(self.locked)
+        self.col5LlineEdit.setEnabled(self.locked)
+        self.row6HlineEdit.setEnabled(self.locked)
+        self.row6LlineEdit.setEnabled(self.locked)
+        self.col6HlineEdit.setEnabled(self.locked)
+        self.col6LlineEdit.setEnabled(self.locked)
+        self.row7HlineEdit.setEnabled(self.locked)
+        self.row7LlineEdit.setEnabled(self.locked)
+        self.col7HlineEdit.setEnabled(self.locked)
+        self.col7LlineEdit.setEnabled(self.locked)
+        self.row8HlineEdit.setEnabled(self.locked)
+        self.row8LlineEdit.setEnabled(self.locked)
+        self.col8HlineEdit.setEnabled(self.locked)
+        self.col8LlineEdit.setEnabled(self.locked)
+
+        self.buttonCheckedStatus(row=1, col=1, obj=self.RL11)
+        self.buttonCheckedStatus(row=1, col=2, obj=self.RL12)
+        self.buttonCheckedStatus(row=1, col=3, obj=self.RL13)
+        self.buttonCheckedStatus(row=1, col=4, obj=self.RL14)
+        self.buttonCheckedStatus(row=1, col=5, obj=self.RL15)
+        self.buttonCheckedStatus(row=1, col=6, obj=self.RL16)
+        self.buttonCheckedStatus(row=1, col=7, obj=self.RL17)
+        self.buttonCheckedStatus(row=1, col=8, obj=self.RL18)
+        self.buttonCheckedStatus(row=2, col=1, obj=self.RL21)
+        self.buttonCheckedStatus(row=2, col=2, obj=self.RL22)
+        self.buttonCheckedStatus(row=2, col=3, obj=self.RL23)
+        self.buttonCheckedStatus(row=2, col=4, obj=self.RL24)
+        self.buttonCheckedStatus(row=2, col=5, obj=self.RL25)
+        self.buttonCheckedStatus(row=2, col=6, obj=self.RL26)
+        self.buttonCheckedStatus(row=2, col=7, obj=self.RL27)
+        self.buttonCheckedStatus(row=2, col=8, obj=self.RL28)
+        self.buttonCheckedStatus(row=3, col=1, obj=self.RL31)
+        self.buttonCheckedStatus(row=3, col=2, obj=self.RL32)
+        self.buttonCheckedStatus(row=3, col=3, obj=self.RL33)
+        self.buttonCheckedStatus(row=3, col=4, obj=self.RL34)
+        self.buttonCheckedStatus(row=3, col=5, obj=self.RL35)
+        self.buttonCheckedStatus(row=3, col=6, obj=self.RL36)
+        self.buttonCheckedStatus(row=3, col=7, obj=self.RL37)
+        self.buttonCheckedStatus(row=3, col=8, obj=self.RL38)
+        self.buttonCheckedStatus(row=4, col=1, obj=self.RL41)
+        self.buttonCheckedStatus(row=4, col=2, obj=self.RL42)
+        self.buttonCheckedStatus(row=4, col=3, obj=self.RL43)
+        self.buttonCheckedStatus(row=4, col=4, obj=self.RL44)
+        self.buttonCheckedStatus(row=4, col=5, obj=self.RL45)
+        self.buttonCheckedStatus(row=4, col=6, obj=self.RL46)
+        self.buttonCheckedStatus(row=4, col=7, obj=self.RL47)
+        self.buttonCheckedStatus(row=4, col=8, obj=self.RL48)
+        self.buttonCheckedStatus(row=5, col=1, obj=self.RL51)
+        self.buttonCheckedStatus(row=5, col=2, obj=self.RL52)
+        self.buttonCheckedStatus(row=5, col=3, obj=self.RL53)
+        self.buttonCheckedStatus(row=5, col=4, obj=self.RL54)
+        self.buttonCheckedStatus(row=5, col=5, obj=self.RL55)
+        self.buttonCheckedStatus(row=5, col=6, obj=self.RL56)
+        self.buttonCheckedStatus(row=5, col=7, obj=self.RL57)
+        self.buttonCheckedStatus(row=5, col=8, obj=self.RL58)
+        self.buttonCheckedStatus(row=6, col=1, obj=self.RL61)
+        self.buttonCheckedStatus(row=6, col=2, obj=self.RL62)
+        self.buttonCheckedStatus(row=6, col=3, obj=self.RL63)
+        self.buttonCheckedStatus(row=6, col=4, obj=self.RL64)
+        self.buttonCheckedStatus(row=6, col=5, obj=self.RL65)
+        self.buttonCheckedStatus(row=6, col=6, obj=self.RL66)
+        self.buttonCheckedStatus(row=6, col=7, obj=self.RL67)
+        self.buttonCheckedStatus(row=6, col=8, obj=self.RL68)
+        self.buttonCheckedStatus(row=7, col=1, obj=self.RL71)
+        self.buttonCheckedStatus(row=7, col=2, obj=self.RL72)
+        self.buttonCheckedStatus(row=7, col=3, obj=self.RL73)
+        self.buttonCheckedStatus(row=7, col=4, obj=self.RL74)
+        self.buttonCheckedStatus(row=7, col=5, obj=self.RL75)
+        self.buttonCheckedStatus(row=7, col=6, obj=self.RL76)
+        self.buttonCheckedStatus(row=7, col=7, obj=self.RL77)
+        self.buttonCheckedStatus(row=7, col=8, obj=self.RL78)
+        self.buttonCheckedStatus(row=8, col=1, obj=self.RL81)
+        self.buttonCheckedStatus(row=8, col=2, obj=self.RL82)
+        self.buttonCheckedStatus(row=8, col=3, obj=self.RL83)
+        self.buttonCheckedStatus(row=8, col=4, obj=self.RL84)
+        self.buttonCheckedStatus(row=8, col=5, obj=self.RL85)
+        self.buttonCheckedStatus(row=8, col=6, obj=self.RL86)
+        self.buttonCheckedStatus(row=8, col=7, obj=self.RL87)
+        self.buttonCheckedStatus(row=8, col=8, obj=self.RL88)
+    
+    def getConfig(self):
+        rowH=[
+        self.row1HlineEdit.text(),
+        self.row2HlineEdit.text(),
+        self.row3HlineEdit.text(),
+        self.row4HlineEdit.text(),
+        self.row5HlineEdit.text(),
+        self.row6HlineEdit.text(),
+        self.row7HlineEdit.text(),
+        self.row8HlineEdit.text(),]
+
+        rowL=[
+        self.row1LlineEdit.text(),
+        self.row2LlineEdit.text(),
+        self.row3LlineEdit.text(),
+        self.row4LlineEdit.text(),
+        self.row5LlineEdit.text(),
+        self.row6LlineEdit.text(),
+        self.row7LlineEdit.text(),
+        self.row8LlineEdit.text(),
+        ]
+
+        colH=[
+        self.col1HlineEdit.text(),
+        self.col2HlineEdit.text(),
+        self.col3HlineEdit.text(),
+        self.col4HlineEdit.text(),
+        self.col5HlineEdit.text(),
+        self.col6HlineEdit.text(),
+        self.col7HlineEdit.text(),
+        self.col8HlineEdit.text(),
+        ]
+
+        colL = [
+            self.col1LlineEdit.text(),
+            self.col2LlineEdit.text(),
+            self.col3LlineEdit.text(),
+            self.col4LlineEdit.text(),
+            self.col5LlineEdit.text(),
+            self.col6LlineEdit.text(),
+            self.col7LlineEdit.text(),
+            self.col8LlineEdit.text(),
+
+        ]
+        
+        def sortHL(high,low):
+            Highlist = {}
+            Lowlist = {}
+            for index,h in enumerate(high):
+                if h and (l:=low[index]):
+                    Highlist.update(
+                        {
+                            index+1:h
+                        }
+                    )
+                    Lowlist.update(
+                        {
+                            index+1:l
+                        }
+                    )
+            return Highlist, Lowlist
+        
+        rowH,rowL = sortHL(rowH,rowL) 
+        colH,colL = sortHL(colH,colL)
+        signalroot={}
+        # print(rowH,rowL)
+        # print(colH,colL)
+        for row, rowSignal in rowH.items():
+                # if row == 0:
+                #     row = row + 1
+                for col, colSignal in colH.items(): 
+                    
+                    # if col == 0:
+                    #     col = col + 1
+                        
+                    if  1 <= row  < 3:
+                        device_addr = self.deviceAddress 
+                    elif 3 <= row  < 5:
+                        device_addr = self.deviceAddress  + 1 
+                    elif 5 <= row  < 7:
+                        device_addr = self.deviceAddress  + 2
+                    elif 7 <= row  < 9:
+                        device_addr = self.deviceAddress   + 3
+                    signalroot.update(
+                        {
+                            str({"Source":{"High":rowSignal,"Low":rowL.get(row)}, "Destination" : {"High":colSignal,"Low":colL.get(col) }}) : {
+                            "deviceAddr" : hex(device_addr),
+                            "relay":{
+                                "row" : row ,
+                                "col":col                    
+                                }
+                            }
+                        }
+                    )
+
+        return signalroot
+                

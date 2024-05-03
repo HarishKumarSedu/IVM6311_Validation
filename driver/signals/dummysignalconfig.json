@@ -1,0 +1,68 @@
+{
+  "0": {
+    "{'Source': {'High': '1', 'Low': '2'}, 'Destination': {'High': '0', 'Low': '11'}}": {
+      "deviceAddr": "0x20",
+      "relay": { "row": 1, "col": 1 }
+    },
+    "{'Source': {'High': '1', 'Low': '2'}, 'Destination': {'High': '22', 'Low': '0'}}": {
+      "deviceAddr": "0x20",
+      "relay": { "row": 1, "col": 2 }
+    },
+    "{'Source': {'High': '1', 'Low': '2'}, 'Destination': {'High': '33', 'Low': '0'}}": {
+      "deviceAddr": "0x20",
+      "relay": { "row": 1, "col": 4 }
+    },
+    "{'Source': {'High': '1', 'Low': '2'}, 'Destination': {'High': '88', 'Low': '0'}}": {
+      "deviceAddr": "0x20",
+      "relay": { "row": 1, "col": 8 }
+    },
+    "{'Source': {'High': '3', 'Low': '4'}, 'Destination': {'High': '0', 'Low': '11'}}": {
+      "deviceAddr": "0x20",
+      "relay": { "row": 2, "col": 1 }
+    },
+    "{'Source': {'High': '3', 'Low': '4'}, 'Destination': {'High': '22', 'Low': '0'}}": {
+      "deviceAddr": "0x20",
+      "relay": { "row": 2, "col": 2 }
+    },
+    "{'Source': {'High': '3', 'Low': '4'}, 'Destination': {'High': '33', 'Low': '0'}}": {
+      "deviceAddr": "0x20",
+      "relay": { "row": 2, "col": 4 }
+    },
+    "{'Source': {'High': '3', 'Low': '4'}, 'Destination': {'High': '88', 'Low': '0'}}": {
+      "deviceAddr": "0x20",
+      "relay": { "row": 2, "col": 8 }
+    },
+    "{'Source': {'High': '5', 'Low': '6'}, 'Destination': {'High': '0', 'Low': '11'}}": {
+      "deviceAddr": "0x21",
+      "relay": { "row": 4, "col": 1 }
+    },
+    "{'Source': {'High': '5', 'Low': '6'}, 'Destination': {'High': '22', 'Low': '0'}}": {
+      "deviceAddr": "0x21",
+      "relay": { "row": 4, "col": 2 }
+    },
+    "{'Source': {'High': '5', 'Low': '6'}, 'Destination': {'High': '33', 'Low': '0'}}": {
+      "deviceAddr": "0x21",
+      "relay": { "row": 4, "col": 4 }
+    },
+    "{'Source': {'High': '5', 'Low': '6'}, 'Destination': {'High': '88', 'Low': '0'}}": {
+      "deviceAddr": "0x21",
+      "relay": { "row": 4, "col": 8 }
+    },
+    "{'Source': {'High': '8', 'Low': '9'}, 'Destination': {'High': '0', 'Low': '11'}}": {
+      "deviceAddr": "0x23",
+      "relay": { "row": 8, "col": 1 }
+    },
+    "{'Source': {'High': '8', 'Low': '9'}, 'Destination': {'High': '22', 'Low': '0'}}": {
+      "deviceAddr": "0x23",
+      "relay": { "row": 8, "col": 2 }
+    },
+    "{'Source': {'High': '8', 'Low': '9'}, 'Destination': {'High': '33', 'Low': '0'}}": {
+      "deviceAddr": "0x23",
+      "relay": { "row": 8, "col": 4 }
+    },
+    "{'Source': {'High': '8', 'Low': '9'}, 'Destination': {'High': '88', 'Low': '0'}}": {
+      "deviceAddr": "0x23",
+      "relay": { "row": 8, "col": 8 }
+    }
+  }
+}
