@@ -60,3 +60,5 @@ TestBench:
     - REF_LDO
     - FRO_CLOCK
 ```
+
+* Every time you add new test in ```IVM6311_Testing_scripts.xlsx``` you have to run the ```dump_test_names``` method in testCreate.py script to generate the configuration file 
