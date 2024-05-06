@@ -4,9 +4,9 @@ before generating the test scripts we have to generate the which are tests exist
 
 <h3>Generate the Test Scripts configuration yaml file </h3>
 
-* run method ``` dump_test_names(self,testscripts_generate_config_file_path:Path) ``` from testCreate.py 
+* Run method ``` dump_test_names(self,testscripts_generate_config_file_path:Path) ``` from testCreate.py 
 
-* provide testscripts_generate_config_file_path yaml file path as input to store all the tests 
+* Provide testscripts_generate_config_file_path yaml file path as input to store all the tests 
 * If you run the following dump_test_names from testCreate.py  you can see test scripts config file under the test bench repository <br>
  ``` 
     if __name__ == '__main__': 
@@ -14,3 +14,5 @@ before generating the test scripts we have to generate the which are tests exist
     testCreate.dump_test_names('TestBench/testscript_generate_config.yaml') 
 ``` 
 </br>
+
+* Run testCreate script from terminal ``` python testCreate.py```
