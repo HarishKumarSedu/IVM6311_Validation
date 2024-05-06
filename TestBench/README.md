@@ -75,6 +75,7 @@ if __name__ == '__main__':
 ```
 
 - you can write the test template according to  the requiremnt example:
+![alt text](image-1.png)
 ``` 
  class {test_name}:
 
