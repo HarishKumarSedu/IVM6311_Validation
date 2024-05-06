@@ -154,7 +154,7 @@
                 </size>
                </property>
                <property name="text">
-                <string>Inventvm :~ Realy Matrix</string>
+                <string>Inventvm :~ Relay Matrix</string>
                </property>
               </widget>
              </item>
@@ -301,6 +301,9 @@
         <widget class="QPushButton" name="lockConfigPushButton">
          <property name="text">
           <string>Lock Config</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
          </property>
         </widget>
        </item>

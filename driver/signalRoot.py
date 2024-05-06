@@ -1,11 +1,11 @@
 import json 
 from ast import literal_eval
-from pathlib import Path
 from typing import List 
 import json 
 import warnings
 import sys
-from logs.logger import log 
+# from logs.logger import log 
+from logger import log 
 
 class SignalRoot:
     
@@ -14,7 +14,7 @@ class SignalRoot:
         
     
     def signalPathMapping(self,signalConfig_path='driver\signals\SignalConfig.json', signalMapfile_path='driver/signals/signalroot_matrix.json'):
-        with open(Path(signalConfig_path), 'r') as file :
+        with open(signalConfig_path, 'r') as file :
             data = json.load(file)
             log.info(f'SignalMapping configurations loaded from {signalMapfile_path} file')
         signalMatrix = {}
@@ -47,13 +47,13 @@ class SignalRoot:
             signalMatrix.update({
                 matrix : signalroot
             })
-        with open(Path(signalMapfile_path),'w') as file :
+        with open(signalMapfile_path,'w') as file :
             json.dump(signalMatrix ,file,)
             log.info(f'Signal Mapping Dumped into {signalMapfile_path}')
 
     def signalConfig(self,Source={'High': 'BCLK', 'Low': 'SDI'}, Destination={'High': 'FSYN AP', 'Low': 'GND'}, Signalroot_file='driver/signals/signalroot_matrix.json'): 
         signal_root ={}
-        with open(Path(Signalroot_file),'r') as file :
+        with open(Signalroot_file,'r') as file :
             signals = json.load(file,)
         for  matrix, path_data in signals.items():
             for signal, data in path_data.items():

@@ -120,6 +120,7 @@ class Ui_MainWindow(object):
         self.generateConfigPushButton.setObjectName("generateConfigPushButton")
         self.horizontalLayout_4.addWidget(self.generateConfigPushButton)
         self.lockConfigPushButton = QtWidgets.QPushButton(self.footFrame)
+        self.lockConfigPushButton.setCheckable(True)
         self.lockConfigPushButton.setObjectName("lockConfigPushButton")
         self.horizontalLayout_4.addWidget(self.lockConfigPushButton)
         self.addMatrixPushButton = QtWidgets.QPushButton(self.footFrame)

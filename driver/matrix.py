@@ -1297,13 +1297,7 @@ class Matrix(QtWidgets.QWidget):
         # print(rowH,rowL)
         # print(colH,colL)
         for row, rowSignal in rowH.items():
-                # if row == 0:
-                #     row = row + 1
                 for col, colSignal in colH.items(): 
-                    
-                    # if col == 0:
-                    #     col = col + 1
-                        
                     if  1 <= row  < 3:
                         device_addr = self.deviceAddress 
                     elif 3 <= row  < 5:
@@ -1323,6 +1317,5 @@ class Matrix(QtWidgets.QWidget):
                             }
                         }
                     )
-
         return signalroot
                 
