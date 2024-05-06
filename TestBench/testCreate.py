@@ -71,3 +71,4 @@ class TestCreate:
 if __name__ == '__main__':
     testCreate = TestCreate(sheets = ['Digital','Reference','Boost'])
     testCreate.dump_test_names('TestBench/testscript_generate_config.yaml')
+    testCreate.create_test_scripts('TestBench/testscript_generate_config.yaml')
