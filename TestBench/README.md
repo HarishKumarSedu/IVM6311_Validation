@@ -16,3 +16,47 @@ before generating the test scripts we have to generate the which are tests exist
 </br>
 
 * Run testCreate script from terminal ``` python testCreate.py```
+
+* ```testscript_generate_config.yaml``` : <br>
+```
+TestBench:
+  Boost:
+    - BST_MIRR
+    - BST_RON_LS
+    - BST_RON_HS
+    - BST_RON_BYP
+    - BST_LS_DRIVE
+    - BST_BYP
+    - BST_LOGIC_COMP_BSO
+    - BST_LOGIC_COMP_BIAS
+    - BST_IL_FILT
+    - BST_ERRAMP_BSO
+    - BST_ERR_AMP_BIAS
+    - BST_CLAMP_VBAT_REF
+    - BST_BSO_BIAS_PAR
+    - BST_MFL
+    - BST_DAC_BSO
+    - BST_DAC_BIAS
+    - BST_OCP_TRIM
+    - BST_OVP_BSO
+    - BST_BIAS_OVP
+    - BST_ENV_TRACK
+    - BST_ZC
+    - BST_NORMAL_OPERATION_BSO__DA_RIVEDERE_
+    - BST_NORMAL_OPERATION_BIAS__DA_RIVEDERE_
+    - BST_BOOTSTRAP
+    - BST_ENV_ERR
+    - BST_OCP
+  Digital:
+    - BIST
+    - PAD_LOOPBACK
+    - SCAN
+  Reference:
+    - UVLO
+    - VBGR_ADJ_TRIM
+    - OUT_TEST_FRO_VVCO
+    - OUT_TEST_FRO_IMSB
+    - TSDN
+    - REF_LDO
+    - FRO_CLOCK
+```
