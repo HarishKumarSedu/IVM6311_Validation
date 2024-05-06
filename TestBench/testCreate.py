@@ -67,3 +67,7 @@ class TestCreate:
                                 pass 
             except yaml.YAMLError as exc:
                 print(exc)
+                
+if __name__ == '__main__':
+    testCreate = TestCreate(sheets = ['Digital','Reference','Boost'])
+    testCreate.dump_test_names('TestBench/testscript_generate_config.yaml')
