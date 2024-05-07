@@ -30,7 +30,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     
     def mainWindowClosing(self):
         for _,matrix in self.matrixLayout.items():
-            sleep(2)
+            sleep(1)
             matrix.locked = True
             matrix.freezeLineEdit()
         self.close()
