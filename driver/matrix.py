@@ -1318,4 +1318,99 @@ class Matrix(QtWidgets.QWidget):
                         }
                     )
         return signalroot
-                
+    
+    def setSignalText(self,data:dict, relay: dict):
+        if relay.get('row') == 1:
+            rowHigh = data.get("Source").get("High")
+            rowLow = data.get("Source").get("Low")
+            self.row1HlineEdit.setText(rowHigh)
+            self.row1LlineEdit.setText(rowLow) 
+        if relay.get('col') == 1:
+            colHigh = data.get("Destination").get("High")
+            colLow = data.get("Destination").get("Low")
+            self.col1HlineEdit.setText(colHigh)
+            self.col1LlineEdit.setText(colLow) 
+        
+    
+        if relay.get('row') == 2:
+            rowHigh = data.get("Source").get("High")
+            rowLow = data.get("Source").get("Low")
+            self.row2HlineEdit.setText(rowHigh)
+            self.row2LlineEdit.setText(rowLow) 
+        if relay.get('col') == 2:
+            colHigh = data.get("Destination").get("High")
+            colLow = data.get("Destination").get("Low")
+            self.col2HlineEdit.setText(colHigh)
+            self.col2LlineEdit.setText(colLow) 
+        
+    
+        if relay.get('row') == 3:
+            rowHigh = data.get("Source").get("High")
+            rowLow = data.get("Source").get("Low")
+            self.row3HlineEdit.setText(rowHigh)
+            self.row3LlineEdit.setText(rowLow) 
+        if relay.get('col') == 3:
+            colHigh = data.get("Destination").get("High")
+            colLow = data.get("Destination").get("Low")
+            self.col3HlineEdit.setText(colHigh)
+            self.col3LlineEdit.setText(colLow) 
+        
+    
+        if relay.get('row') == 4:
+            rowHigh = data.get("Source").get("High")
+            rowLow = data.get("Source").get("Low")
+            self.row4HlineEdit.setText(rowHigh)
+            self.row4LlineEdit.setText(rowLow) 
+        if relay.get('col') == 4:
+            colHigh = data.get("Destination").get("High")
+            colLow = data.get("Destination").get("Low")
+            self.col4HlineEdit.setText(colHigh)
+            self.col4LlineEdit.setText(colLow) 
+        
+    
+        if relay.get('row') == 5:
+            rowHigh = data.get("Source").get("High")
+            rowLow = data.get("Source").get("Low")
+            self.row5HlineEdit.setText(rowHigh)
+            self.row5LlineEdit.setText(rowLow) 
+        if relay.get('col') == 5:
+            colHigh = data.get("Destination").get("High")
+            colLow = data.get("Destination").get("Low")
+            self.col5HlineEdit.setText(colHigh)
+            self.col5LlineEdit.setText(colLow) 
+        
+    
+        if relay.get('row') == 6:
+            rowHigh = data.get("Source").get("High")
+            rowLow = data.get("Source").get("Low")
+            self.row6HlineEdit.setText(rowHigh)
+            self.row6LlineEdit.setText(rowLow) 
+        if relay.get('col') == 6:
+            colHigh = data.get("Destination").get("High")
+            colLow = data.get("Destination").get("Low")
+            self.col6HlineEdit.setText(colHigh)
+            self.col6LlineEdit.setText(colLow) 
+        
+    
+        if relay.get('row') == 7:
+            rowHigh = data.get("Source").get("High")
+            rowLow = data.get("Source").get("Low")
+            self.row7HlineEdit.setText(rowHigh)
+            self.row7LlineEdit.setText(rowLow) 
+        if relay.get('col') == 7:
+            colHigh = data.get("Destination").get("High")
+            colLow = data.get("Destination").get("Low")
+            self.col7HlineEdit.setText(colHigh)
+            self.col7LlineEdit.setText(colLow) 
+        
+    
+        if relay.get('row') == 8:
+            rowHigh = data.get("Source").get("High")
+            rowLow = data.get("Source").get("Low")
+            self.row8HlineEdit.setText(rowHigh)
+            self.row8LlineEdit.setText(rowLow) 
+        if relay.get('col') == 8:
+            colHigh = data.get("Destination").get("High")
+            colLow = data.get("Destination").get("Low")
+            self.col8HlineEdit.setText(colHigh)
+            self.col8LlineEdit.setText(colLow) 
