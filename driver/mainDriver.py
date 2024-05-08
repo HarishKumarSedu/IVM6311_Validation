@@ -25,7 +25,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.closeButton.clicked.connect(self.mainWindowClosing) # type: ignore
         self.matrixLayout = {}
         self.matrixIndex = 0
-        with open(f'styles/scrollAreaFrame.qss', 'r') as file:
+        with open('styles/scrollAreaFrame.qss', 'r') as file:
             self.scrollArea.setStyleSheet(file.read())
     
     def mainWindowClosing(self):
