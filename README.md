@@ -8,3 +8,9 @@
 ```python -m pip install --upgrade pip```
 ### Install the requirements 
 ```pip install -r requirements.txt``` 
+### for any changes in repository add the file/dir to the git local 
+```git add test.txt```
+### update commit message 
+```git commit -m "text file added"```
+### push the git 
+```git push origin flare```
