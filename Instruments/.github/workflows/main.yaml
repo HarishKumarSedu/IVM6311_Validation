@@ -1,0 +1,37 @@
+name: Build Package and Deploy 
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    
+jobs:
+  Setup-and-Deploy:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install twine
+
+    - name: Build and publish
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.PY_PI_TOKEN }}
+      run: |
+        pip list 
+        python setup.py sdist bdist_wheel
+        python -m twine  check dist/*
+        python -m twine upload dist/*
+        
+  Verify-Deployment:
+    needs : [Setup-and-Deploy]
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Install pypi Package IvmInstruments
+        run: |
+          pip install -U IvmInstruments
