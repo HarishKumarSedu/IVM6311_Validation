@@ -2,3 +2,6 @@ IvmInstruments
 IvmDriver
 pandas
 pyYAML
+pathlib
+python-box 
+tqdm

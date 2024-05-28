@@ -17,14 +17,20 @@ class BandGap:
     
     def __init__(self) -> None:
         self.supply = N670x(Instruments().ID.PowerSupply)
-        self.supply.setVoltage(channel=2,voltage=1.8)
         self.multimeter = mul_34401A(Instruments().ID.Multimeter1)
         log.info('........... BandGap ........')
         self.mcp = MCP2221()
         self.mcp.ConfigGPIO0(True)
         self.mcp.GPIO0(True)
         sleep(0.5)
-        Startup(mcp=self.mcp)
+        # Startup(mcp=self.mcp)
+        self.supply.setVoltage(channel=1,voltage=0)
+        self.supply.setVoltage(channel=2,voltage=0)
+        self.supply.setVoltage(channel=3,voltage=0)
+        sleep(0.3)
+        self.supply.setVoltage(channel=1,voltage=4)
+        self.supply.setVoltage(channel=2,voltage=1.8)
+        self.supply.setVoltage(channel=3,voltage=5)
         sleep(0.1)
         self.mcp.GPIO0(False)
         sleep(0.5)
@@ -39,7 +45,7 @@ class BandGap:
         for instruction in BandGapInstructions:
             self.mcp.mcpWrite(SlaveAddress=0x6c, data=instruction)
             sleep(1)
-        # input('>')
+        input('>')
         sleep(0.5)
         if self.mcp.mcpRead(SlaveAddress=0x6c, data=[0x1A]):
             log.info('BandGap Brought in SWDN pin ....!')

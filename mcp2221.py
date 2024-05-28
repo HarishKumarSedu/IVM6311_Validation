@@ -71,5 +71,5 @@ class MCP2221:
 if __name__ == '__main__':
 
     mcp=MCP2221()
-    mcp.mcpWrite(SlaveAddress=0x20,data=[00,0x01])
-    print(mcp.mcpRead(SlaveAddress=0x20,data=[00],Nobytes=1))
+    mcp.mcpWrite(SlaveAddress=0x6C,data=[00,0x0F])
+    print(mcp.mcpRead(SlaveAddress=0x6C,data=[00],Nobytes=1))
