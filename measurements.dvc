@@ -1,0 +1,6 @@
+outs:
+- md5: a237ef9b8328d664321d906d36e75695.dir
+  size: 16124
+  nfiles: 21
+  hash: md5
+  path: measurements

@@ -5,3 +5,5 @@ pyYAML
 pathlib
 python-box 
 tqdm
+dvc
+dvc-gdrive
