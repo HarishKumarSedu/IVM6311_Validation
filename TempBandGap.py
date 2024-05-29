@@ -21,14 +21,14 @@ class BandGap:
         self.chamber = su_241(Instruments().ID.TempChamber)
         self.multimeter = mul_34401A(Instruments().ID.Multimeter1)
         # reset power supply Vbat, VDDIO, and Realy VCC
-        # self.supply.setVoltage(channel=1,voltage=0)
-        # self.supply.setVoltage(channel=2,voltage=0)
-        # self.supply.setVoltage(channel=3,voltage=0)
-        # sleep(0.3)
-        # self.supply.setVoltage(channel=1,voltage=4)
-        # self.supply.setVoltage(channel=2,voltage=3.3)
-        # self.supply.setVoltage(channel=3,voltage=5)
-        sleep(0.5)
+        self.supply.setVoltage(channel=1,voltage=0)
+        self.supply.setVoltage(channel=2,voltage=0)
+        self.supply.setVoltage(channel=3,voltage=0)
+        sleep(0.3)
+        self.supply.setVoltage(channel=1,voltage=4)
+        self.supply.setVoltage(channel=2,voltage=3.3)
+        self.supply.setVoltage(channel=3,voltage=5)
+        sleep(2)
         log.info('........... BandGap ........')
         self.mcp = MCP2221()
         self.mcp.ConfigGPIO0(True)
@@ -36,7 +36,7 @@ class BandGap:
         sleep(0.5)
         Startup(mcp=self.mcp)
         self.mcp.GPIO0(False)
-        sleep(0.5)
+        # sleep(1)
         EnableAnalogTestPoint(mcp=self.mcp)
         BandGapInstructions = [ 
             [0xFE,0x01],
@@ -47,8 +47,9 @@ class BandGap:
         for instruction in BandGapInstructions:
             self.mcp.mcpWrite(SlaveAddress=0x6c, data=instruction)
             sleep(0.3)
+        # input('>')
         # let the Analog Voltage settle down for while 
-        sleep(0.5)
+        # sleep(0.5)
         if self.mcp.mcpRead(SlaveAddress=0x6c, data=[0x1A]):
             log.info('BandGap Brought in SWDN pin ....!')
             log.warning(self.mcp.mcpRead(SlaveAddress=0x6c, data=[0xB0]))
@@ -69,8 +70,9 @@ class BandGap:
                 self.chamber.set_temp(temp=temp)
 
                 log.warning(f'Set Temperature {temp}:> Chamber temperature {self.chamber.read_temp()}')
-                while ( float(temp) !=  self.chamber.read_temp()):
-                    log.warning(f'Reading temperature from chamber:> {self.chamber.read_temp()}')
+                while ( float(temp) !=    (temperature := self.chamber.read_temp())):
+                    log.warning(f'Reading temperature from chamber:> {temperature}')
+                    sleep(10)
                     ...
                 sleep(300)
                 for i in tqdm(range(15,7,-1)):

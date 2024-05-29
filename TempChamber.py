@@ -36,4 +36,4 @@ if __name__ == '__main__':
     chamber = su_241()
     chamber.set_temp(temp=25)
     print(chamber.read_temp())
-    chamber.powerOff()
+    # chamber.powerOff()
