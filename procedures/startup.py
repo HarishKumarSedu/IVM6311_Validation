@@ -7,7 +7,7 @@ class Startup:
     def __init__(self,mcp):
         self.mcp = mcp
         startupInstructions = [
-            [0xFE,0x00],
+            # [0xFE,0x00],
             [0x00,0x0F], 
             [0xFE,0x01],
             [0x2F,0xAA],

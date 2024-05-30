@@ -47,7 +47,6 @@ class BandGap:
         for instruction in BandGapInstructions:
             self.mcp.mcpWrite(SlaveAddress=0x6c, data=instruction)
             sleep(0.3)
-        # input('>')
         # let the Analog Voltage settle down for while 
         # sleep(0.5)
         if self.mcp.mcpRead(SlaveAddress=0x6c, data=[0x1A]):
@@ -72,7 +71,7 @@ class BandGap:
                 log.warning(f'Set Temperature {temp}:> Chamber temperature {self.chamber.read_temp()}')
                 while ( float(temp) !=    (temperature := self.chamber.read_temp())):
                     log.warning(f'Reading temperature from chamber:> {temperature}')
-                    sleep(10)
+                    sleep(30)
                     ...
                 sleep(300)
                 for i in tqdm(range(15,7,-1)):
@@ -96,11 +95,11 @@ class BandGap:
                     BandGapValue.append(self.multimeter.meas_V())
                     # erro_percentage.append((abs(BandGapValue[-1]) - 1.799)/BandGapValue[-1] *100)
                 #Reset the Chip and Vddio powersupply
-                if not os.path.exists(Path('measurements/TempBandgap1')):
-                    os.makedirs(Path('measurements/TempBandgap1/'))
+                if not os.path.exists(Path('measurements/TempBandgap3')):
+                    os.makedirs(Path('measurements/TempBandgap3/'))
                 data = pd.DataFrame({'SetCode':setCode,'BandGapValue':BandGapValue})
                 data['error_percentage']  = data['BandGapValue'].apply(lambda x : abs(((x-1.799)/1.799)*100))
-                data.to_csv(f'measurements/TempBandgap1/Bandgap_{temp}C.csv')
+                data.to_csv(f'measurements/TempBandgap3/Bandgap_{temp}C.csv')
 
                 trimmingCode_index = data[['error_percentage']].idxmin()
                 optimal_value = data.loc[trimmingCode_index,"BandGapValue"].to_list()[-1]
