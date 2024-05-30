@@ -1,6 +1,162 @@
 outs:
-- md5: a237ef9b8328d664321d906d36e75695.dir
-  size: 16124
-  nfiles: 21
-  hash: md5
+- hash: md5
   path: measurements
+  files:
+  - relpath: BandGapCurve/BandGapCurves.csv
+    md5: 0cc0cddd12e0c6570b54368f32f8548c
+  - relpath: BandGapCurve/Device2/BandgapCurve.csv
+    md5: 6916ab4cfc98a9efaea9f47bc550c5f0
+  - relpath: BandGapCurve/Device2/BandgapCurve_-10C.csv
+    md5: 87afc855009b541d73e2f277b5e99c08
+  - relpath: BandGapCurve/Device2/BandgapCurve_-20C.csv
+    md5: 59650ec601c4fcdf762167567f94ddd4
+  - relpath: BandGapCurve/Device2/BandgapCurve_-30C.csv
+    md5: cd279bfd1fe8c8337f62ad6a03cc0b2c
+  - relpath: BandGapCurve/Device2/BandgapCurve_-40C.csv
+    md5: 676841869298dfa8ecc8143aeb420a63
+  - relpath: BandGapCurve/Device2/BandgapCurve_0C.csv
+    md5: c39c0dec9153d5d5ff2bc07f4e5084e0
+  - relpath: BandGapCurve/Device2/BandgapCurve_100C.csv
+    md5: 4da12e4138629b7a4afb8842a075513c
+  - relpath: BandGapCurve/Device2/BandgapCurve_10C.csv
+    md5: eb90f73fc61735a5d1a4b29535290488
+  - relpath: BandGapCurve/Device2/BandgapCurve_110C.csv
+    md5: 3817b03e43ed53eac79310cf6349fdf5
+  - relpath: BandGapCurve/Device2/BandgapCurve_120C.csv
+    md5: 564857f0b0f54fd39aa0a30599da1297
+  - relpath: BandGapCurve/Device2/BandgapCurve_125C.csv
+    md5: 0ea2701bd13c208ec22a1a1be75c1788
+  - relpath: BandGapCurve/Device2/BandgapCurve_20C.csv
+    md5: 60bb02b9d247c3e5f20cfe981f267bb3
+  - relpath: BandGapCurve/Device2/BandgapCurve_30C.csv
+    md5: 7479f0bdad5ca565e758d83ef459c868
+  - relpath: BandGapCurve/Device2/BandgapCurve_40C.csv
+    md5: 203cb3d92d80fb1778c1f6913fcc7caa
+  - relpath: BandGapCurve/Device2/BandgapCurve_50C.csv
+    md5: 368b2e081a380e075a1ef2620b26a5ee
+  - relpath: BandGapCurve/Device2/BandgapCurve_60C.csv
+    md5: fab90861cbca34c5bf04744448dd7905
+  - relpath: BandGapCurve/Device2/BandgapCurve_70C.csv
+    md5: 9aa5c8c3c54f4af30aa6727d2d875a3c
+  - relpath: BandGapCurve/Device2/BandgapCurve_80C.csv
+    md5: bbe511a1b3e7ef0e158a9b56b0e1c6e7
+  - relpath: BandGapCurve/Device2/BandgapCurve_90C.csv
+    md5: 956d3d453e80a6d598f8d96813ed522d
+  - relpath: BandGapCurve/Device3/BandgapCurve.csv
+    md5: 9c01db975e74bc36fc8c552747f2d799
+  - relpath: BandGapCurve/Device3/BandgapCurve_-10C.csv
+    md5: 3072435a1fff8bc4936cc038df692094
+  - relpath: BandGapCurve/Device3/BandgapCurve_-20C.csv
+    md5: a355a39a0968273ba900be0669cd7040
+  - relpath: BandGapCurve/Device3/BandgapCurve_-30C.csv
+    md5: 5f578adc4fdd039dbd6756a729574516
+  - relpath: BandGapCurve/Device3/BandgapCurve_-40C.csv
+    md5: 05bd30519d3869a43420277a8a5ec7d6
+  - relpath: BandGapCurve/Device3/BandgapCurve_0C.csv
+    md5: db6f3c8a86dbcc996c94be9456889699
+  - relpath: BandGapCurve/Device3/BandgapCurve_100C.csv
+    md5: e8a36351bd601c53fdf6cea95030412b
+  - relpath: BandGapCurve/Device3/BandgapCurve_10C.csv
+    md5: ba2062b0e92775110eb3ba0d8b5bb30a
+  - relpath: BandGapCurve/Device3/BandgapCurve_110C.csv
+    md5: 21b5a487f5a846ba3837365191935b01
+  - relpath: BandGapCurve/Device3/BandgapCurve_120C.csv
+    md5: 11c66354769bcdb00245f19c4f63dfd8
+  - relpath: BandGapCurve/Device3/BandgapCurve_125C.csv
+    md5: 3950abb1af3bfd83364a47dd2dd12621
+  - relpath: BandGapCurve/Device3/BandgapCurve_20C.csv
+    md5: a4fc8e3c4bf4620b2a509610f6401938
+  - relpath: BandGapCurve/Device3/BandgapCurve_30C.csv
+    md5: 082c8ead2ac1c41640a185686e3ef16b
+  - relpath: BandGapCurve/Device3/BandgapCurve_40C.csv
+    md5: a8f61cd66997617fbef38788e4e0c7e2
+  - relpath: BandGapCurve/Device3/BandgapCurve_50C.csv
+    md5: eb61111d16cedf138d7e4902803f131f
+  - relpath: BandGapCurve/Device3/BandgapCurve_60C.csv
+    md5: e58ec32408da3239ee4baa43f8c046fe
+  - relpath: BandGapCurve/Device3/BandgapCurve_70C.csv
+    md5: 48f58bd306b458d9a1b6e17c1a87ff17
+  - relpath: BandGapCurve/Device3/BandgapCurve_80C.csv
+    md5: 026ce1b4db76eb9ce151486abd272c70
+  - relpath: BandGapCurve/Device3/BandgapCurve_90C.csv
+    md5: 68cba2c3d336b626cb7816b17d6306ea
+  - relpath: Bandgap/Bandgap.csv
+    md5: e5338038fcc758c40a40879b1e335a98
+  - relpath: TempBandgap/Bandgap_-10C.csv
+    md5: d9bdb7cfc067bd1933ac07529632be34
+  - relpath: TempBandgap/Bandgap_-20C.csv
+    md5: 733d578e36df9cf613f9869b3c9f2a93
+  - relpath: TempBandgap/Bandgap_-30C.csv
+    md5: b766e0308453a872f16fb712991838a0
+  - relpath: TempBandgap/Bandgap_-40C.csv
+    md5: 4210b22b615066a0a1dab40e2e67f127
+  - relpath: TempBandgap/Bandgap_0C.csv
+    md5: cdce394ae2ada01788f0c4dfb19ea10e
+  - relpath: TempBandgap/Bandgap_100C.csv
+    md5: 67252afe2410651faf142c7f6c97b94f
+  - relpath: TempBandgap/Bandgap_10C.csv
+    md5: 405f5bb8ee121f62f343f5eac22ef2ca
+  - relpath: TempBandgap/Bandgap_110C.csv
+    md5: d986bd537de80dd63f950e4c0e0a51e1
+  - relpath: TempBandgap/Bandgap_120C.csv
+    md5: ed2eecf2975fbd833993abe1abb7392c
+  - relpath: TempBandgap/Bandgap_125C.csv
+    md5: 416c0558550600950d9484fed5d74011
+  - relpath: TempBandgap/Bandgap_20C.csv
+    md5: ceb28d49fe83a17a12af4d5b86f23a94
+  - relpath: TempBandgap/Bandgap_30C.csv
+    md5: c1edbef35215fa4d7b781437b5e9df8a
+  - relpath: TempBandgap/Bandgap_40C.csv
+    md5: 7a9ed47b0d9e9477e46457b179c77596
+  - relpath: TempBandgap/Bandgap_50C.csv
+    md5: f0718dfddf3092d4b3b1a2a1ed880609
+  - relpath: TempBandgap/Bandgap_60C.csv
+    md5: a96600b97700579b3cb8aa8fab94e49c
+  - relpath: TempBandgap/Bandgap_70C.csv
+    md5: 3e1eb05e2ecb629b314b9d4743a14108
+  - relpath: TempBandgap/Bandgap_80C.csv
+    md5: c3be8a4e60cb2a817e1615f7827c3b3a
+  - relpath: TempBandgap/Bandgap_90C.csv
+    md5: d6f973976ad615ec3f6a2f815103a971
+  - relpath: TempBandgap/Device0_TempBandgap.csv
+    md5: c4a65d57a8ddda6582a8531772191f95
+  - relpath: TempBandgap1/Bandgap_-10C.csv
+    md5: 2c1d8fe95e528f5fa0922ffd092976a4
+  - relpath: TempBandgap1/Bandgap_-20C.csv
+    md5: 1a3c6bf16dc55d71fc14ee19c888b709
+  - relpath: TempBandgap1/Bandgap_-30C.csv
+    md5: 04c1a09e3b3790be93b5bda04717a8d1
+  - relpath: TempBandgap1/Bandgap_-40C.csv
+    md5: b87f9d835bb73d9c71047e47be7bc03c
+  - relpath: TempBandgap1/Bandgap_0C.csv
+    md5: 0653faa5cfff3e8f5c027f5f568ef5ac
+  - relpath: TempBandgap1/Bandgap_100C.csv
+    md5: cdf9321f9c7068786962656949ba0682
+  - relpath: TempBandgap1/Bandgap_10C.csv
+    md5: c005f5c974c828d8dcfd80f017cb2c6a
+  - relpath: TempBandgap1/Bandgap_110C.csv
+    md5: b4f81248c3706ca790bb752a32003fd2
+  - relpath: TempBandgap1/Bandgap_120C.csv
+    md5: 8c3a8ac4d4e9f1498d3b884b9c1894f6
+  - relpath: TempBandgap1/Bandgap_125C.csv
+    md5: 4745bdc3c2f0f44d19509f9ccb9d120a
+  - relpath: TempBandgap1/Bandgap_20C.csv
+    md5: 7f33732158f792bd6bad2877306d460d
+  - relpath: TempBandgap1/Bandgap_30C.csv
+    md5: 3500e3a1d37e0bdd21fce2654ca28318
+  - relpath: TempBandgap1/Bandgap_40C.csv
+    md5: 09490dea8af976543e21ee3576e99d29
+  - relpath: TempBandgap1/Bandgap_50C.csv
+    md5: 82c4a8d15d0681f16aa99b2ae7d13b20
+  - relpath: TempBandgap1/Bandgap_60C.csv
+    md5: 81025123bda999a1067049d044b61e82
+  - relpath: TempBandgap1/Bandgap_70C.csv
+    md5: 0b6b86cf6f1d99e191b57bafe5217c5b
+  - relpath: TempBandgap1/Bandgap_80C.csv
+    md5: 280d7f6f4a4cf87dd4c81615b3f3ff66
+  - relpath: TempBandgap1/Bandgap_90C.csv
+    md5: 7440157813e6b5363fd6a5f6227c8d3e
+  - relpath: TempBandgap1/Device2_TempBandgap.csv
+    md5: 41b9aa9b6ea33cf7e616d6aa05eb28e1
+  - relpath: Tsdn/Tsdn1.csv
+    md5: 086b783537957385da1470bd12e774a1
