@@ -47,7 +47,7 @@ class BandGapCurve:
         ]
         for instruction in BandGapInstructions:
             self.mcp.mcpWrite(SlaveAddress=0x6c, data=instruction)
-            # sleep(0.3)
+            sleep(0.3)
         input('>')
         # let the Analog Voltage settle down for while 
         # sleep(0.5)
@@ -61,7 +61,7 @@ class BandGapCurve:
     
     def measure_BandGap(self):
         try:
-            for temp in tqdm(range(130,-50,-10)):
+            for temp in tqdm(range(30,140,10)):
                 setCode = []
                 BandGapValue = []
                 erro_percentage = []
