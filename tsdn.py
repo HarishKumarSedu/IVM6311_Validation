@@ -17,18 +17,18 @@ class TSDN:
     
     def __init__(self) -> None:
         self.supply = N670x(Instruments().ID.PowerSupply)
-        self.supply.setVoltage(channel=2,voltage=3.3)
+        self.supply.setVoltage(channel=1,voltage=4)
+        self.supply.setVoltage(channel=3,voltage=5)
         self.multimeter = mul_34401A(Instruments().ID.Multimeter1)
+        sleep(4)
         log.info('........... Tsdn ........')
         self.mcp = MCP2221()
         self.mcp.ConfigGPIO0(True)
         self.mcp.GPIO0(True)
         sleep(0.5)
         Startup(mcp=self.mcp)
-        sleep(0.1)
-        self.mcp.GPIO0(False)
         sleep(0.5)
-        input('>')
+        self.mcp.GPIO0(False)
         EnableAnalogTestPoint(mcp=self.mcp)
         TsdnInstructions = [ 
             [0xFE,0x01],
@@ -39,9 +39,8 @@ class TSDN:
         ]
         for instruction in TsdnInstructions:
             self.mcp.mcpWrite(SlaveAddress=0x6c, data=instruction)
-            sleep(1)
-        input('>')
-        sleep(0.5)
+            sleep(0.3)
+        
         if self.mcp.mcpRead(SlaveAddress=0x6c, data=[0x1A]):
             log.info('Tsdn Brought in SWDN pin ....!')
             log.warning(self.mcp.mcpRead(SlaveAddress=0x6c, data=[0xB0]))
@@ -67,13 +66,13 @@ class TSDN:
             sleep(0.3)
             setCode.append(i)
             TsdnValue.append(self.multimeter.meas_V())
-        self.resetSetUp()
+        # self.resetSetUp()
             # erro_percentage.append((abs(TsdnValue[-1]) - 1.799)/TsdnValue[-1] *100)
         if not os.path.exists(Path('measurements/Tsdn')):
             os.makedirs(Path('measurements/Tsdn/'))
         data = pd.DataFrame({'SetCode':setCode,'TsdnValue':TsdnValue,'setabsCode':setabsCode})
         data['error_percentage']  = data['TsdnValue'].apply(lambda x : abs(((x-0.542)/1.799)*100))
-        data.to_csv('measurements/Tsdn/Tsdn1.csv')
+        # data.to_csv('measurements/Tsdn/Tsdn1.csv')
         
         trimmingCode_index = data[['error_percentage']].idxmin()
         optimal_value = data.loc[trimmingCode_index,"TsdnValue"].to_list()[-1]

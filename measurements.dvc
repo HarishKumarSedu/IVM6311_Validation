@@ -2,8 +2,12 @@ outs:
 - hash: md5
   path: measurements
   files:
-  - relpath: BandGapCurve/BandGapCurves.csv
-    md5: 0cc0cddd12e0c6570b54368f32f8548c
+  - relpath: BandGapCurve/BandGapCurves.xlsx
+    md5: f7e797319e620750e047500cbc947ee9
+    size: 45852
+  - relpath: BandGapCurve/Device1/BandgapCurve_30C.csv
+    md5: 4494855304b0dae7f632c0384b576588
+    size: 289
   - relpath: BandGapCurve/Device2/BandgapCurve.csv
     md5: 6916ab4cfc98a9efaea9f47bc550c5f0
   - relpath: BandGapCurve/Device2/BandgapCurve_-10C.csv
