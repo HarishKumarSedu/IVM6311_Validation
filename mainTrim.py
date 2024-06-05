@@ -8,32 +8,44 @@ from time import sleep
 from procedures.startup import Startup
 from bandgapTrim import BandgapTrim
 from IvmDriver.logger import log
+from Instruments.Keysight_E362x import E362X
 import os 
 from datetime import datetime
 import json
-
+from e3648 import E3648
 class MainTrim:
     def __init__(self) -> None:
-        
-        self.supply = N670x(Instruments().ID.PowerSupply)
-        self.supply.setVoltage(channel=1,voltage=4)
-        self.supply.setVoltage(channel=2,voltage=4)
-        self.supply.setVoltage(channel=4,voltage=4)
-        self.supply.setVoltage(channel=3,voltage=5)
-        self.supply.outp_ON(channel=1)
-        self.supply.outp_ON(channel=2)
-        self.supply.outp_ON(channel=3)
-        self.supply.outp_ON(channel=4)
-        sleep(6)
+        self.supply1 = E3648(port=Instruments().ID.KesightSupply1)
+        self.supply2 = E3648(port=Instruments().ID.KesightSupply2)
+        self.supply1.setCurrent(channel=1,current=0.5)
+        self.supply1.setCurrent(channel=2,current=1)
+        self.supply2.setRange(channel=1,range=1)
+        self.supply2.setRange(channel=2,range=1)
+        self.supply1.setVoltage(channel=1,voltage=4)
+        self.supply1.setVoltage(channel=2,voltage=5)
+        self.supply2.setVoltage(channel=1,voltage=4) # vbso 8v 
+        self.supply2.setVoltage(channel=2,voltage=4) #vbias 14v
+        self.supply2.setCurrent(channel=1,current=0.5)
+        self.supply2.setCurrent(channel=2,current=0.5)
+        # self.supply = N670x(Instruments().ID.PowerSupply)
+        # self.supply.setVoltage(channel=1,voltage=4)
+        # self.supply.setVoltage(channel=2,voltage=4)
+        # self.supply.setVoltage(channel=4,voltage=4)
+        # self.supply.setVoltage(channel=3,voltage=5)
+        # self.supply.outp_ON(channel=1)
+        # self.supply.outp_ON(channel=2)
+        # self.supply.outp_ON(channel=3)
+        # self.supply.outp_ON(channel=4)
+        sleep(2)
         self.mcp = MCP2221()
         self.trimvalues = []
-        self.mcp.ConfigGPIO0(True)
         self.mcp.GPIO0(True)
-        sleep(15)
+        self.mcp.ConfigGPIO0(True)
+        sleep(1)
         Startup(mcp=self.mcp)
-        sleep(5)
+        sleep(1)
         self.mcp.GPIO0(False)
-        # sleep(1)
+        sleep(2)
         bandgap = BandgapTrim(mcp=self.mcp)
         self.trimvalues.append(bandgap.trim_codeValue())
         for instruction in self.trimvalues:
@@ -52,18 +64,28 @@ class MainTrim:
         print(f'trim values {self.trimvalues}')
         self.burn_values()
         self.mcp.reset()
-        self.supply.setVoltage(channel=1,voltage=0)
-        self.supply.setVoltage(channel=3,voltage=0)
-        self.supply.setVoltage(channel=2,voltage=0)
-        self.supply.setVoltage(channel=4,voltage=0)
-        self.supply.outp_OFF(channel=1)
-        self.supply.outp_OFF(channel=2)
-        self.supply.outp_OFF(channel=3)
-        self.supply.outp_OFF(channel=4)
+        # self.supply.setVoltage(channel=1,voltage=0)
+        # self.supply.setVoltage(channel=3,voltage=0)
+        # self.supply.setVoltage(channel=2,voltage=0)
+        # self.supply.setVoltage(channel=4,voltage=0)
+        # self.supply.outp_OFF(channel=1)
+        # self.supply.outp_OFF(channel=2)
+        # self.supply.outp_OFF(channel=3)
+        # self.supply.outp_OFF(channel=4)
+        self.supply1.setVoltage(channel=1,voltage=0)
+        self.supply1.setVoltage(channel=2,voltage=0)
+        self.supply2.setVoltage(channel=1,voltage=0) # vbso 8v 
+        self.supply2.setVoltage(channel=2,voltage=0) #vbias 14v
+        self.supply2.setCurrent(channel=1,current=0)
+        self.supply2.setCurrent(channel=2,current=0)
 
     def burn_values(self):
-        self.supply.setVoltage(channel=2,voltage=8)
-        self.supply.setVoltage(channel=4,voltage=14)
+        # self.supply.setVoltage(channel=2,voltage=8)
+        # self.supply.setVoltage(channel=4,voltage=14)
+        self.supply2.setCurrent(channel=1,current=0.5)
+        self.supply2.setCurrent(channel=2,current=0.5)
+        self.supply2.setVoltage(channel=1,voltage=8) # vbso 8v 
+        self.supply2.setVoltage(channel=2,voltage=14) #vbias 14v
         sleep(3)
         burn_registers = [
         [0x0F,0x80],

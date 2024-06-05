@@ -8,7 +8,7 @@ class EnableAnalogTestPoint:
         self.mcp = mcp
         EnableAnalogTestPointInstructions = [ 
             [0xFE,0x01],
-            [0x0F,0x88],
+            # [0x0F,0x88],
             [0x10,0x08],
             [0x19,0x80],
         ]

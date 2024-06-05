@@ -16,7 +16,7 @@ from pathlib import Path
 class TSDNTrim:
     
     def __init__(self,mcp) -> None:
-        self.supply = N670x(Instruments().ID.PowerSupply)
+        # self.supply = N670x(Instruments().ID.PowerSupply)
         # self.supply.setVoltage(channel=2,voltage=3.3)
         self.multimeter = mul_34401A(Instruments().ID.Multimeter1)
         log.info('........... Tsdn ........')

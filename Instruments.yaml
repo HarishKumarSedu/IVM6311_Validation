@@ -3,3 +3,5 @@ ID:
   Multimeter1: USB0::0x2A8D::0x1401::MY57200246::INSTR
   TempChamber: GPIB0::1::INSTR
   DigitalScope: USB0::0x0699::0x0456::C010843::INSTR
+  KesightSupply1: GPIB0::5::INSTR
+  KesightSupply2: GPIB0::7::INSTR

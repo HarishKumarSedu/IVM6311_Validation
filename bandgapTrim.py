@@ -5,8 +5,7 @@ from procedures.Enable_Ana_Testpoint import EnableAnalogTestPoint
 from IvmDriver.logger import log
 from KeySight_N670x import N670x
 from Instruments.multimeter import mul_34401A
-# power supply id 
-# USB0::0x0957::0x0F07::MY50000622::INSTR
+from Instruments.Keysight_E362x import E362X
 from time import sleep 
 from common import Instruments
 import pandas as pd 
@@ -16,11 +15,12 @@ from pathlib import Path
 class BandgapTrim:
     
     def __init__(self,mcp) -> None:
-        self.supply = N670x(Instruments().ID.PowerSupply)
+        # self.supply = N670x(Instruments().ID.PowerSupply)
         self.multimeter = mul_34401A(Instruments().ID.Multimeter1)
         # sleep(2)
         log.info('........... BandGap ........')
         self.mcp = mcp 
+        # input('>')
         EnableAnalogTestPoint(mcp=self.mcp)
         self.trimregister = 0xB0
         BandGapInstructions = [ 
@@ -74,12 +74,13 @@ class BandgapTrim:
             log.info(f'Optimal value : {optimal_value}V')
             self.trimcode = data.loc[trimmingCode_index,"SetCode"].to_list()[-1]
             log.info(f'Trim Code : {self.trimcode}')
+            self.mcp.mcpWrite(SlaveAddress=0x6c, data=[self.trimregister,self.trimcode << 4 | 0xE])
             self.trim_codeValue()
         else:
             log.error(f'Trimming failed measured value : {optimal_value} ')
     def trim_codeValue(self):
-        self.mcp.mcpWrite(SlaveAddress=0x6c, data=[self.trimregister,self.trimcode << 4 | 0xE])
-        log.warning(hex(self.trimcode << 4 | 0xE))
+        
+        # log.warning(hex(self.trimcode << 4 | 0xE))
         return [self.trimregister,self.mcp.mcpRead(SlaveAddress=0x6c, data=[self.trimregister])[-1]]
     
     def burn_value(self, trimcode):

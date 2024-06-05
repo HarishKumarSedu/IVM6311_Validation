@@ -14,7 +14,7 @@ from pathlib import Path
 class FROTrim:
     
     def __init__(self,mcp) -> None:
-        self.supply = N670x(Instruments().ID.PowerSupply)
+        # self.supply = N670x(Instruments().ID.PowerSupply)
         self.scope = dpo_2014B(Instruments().ID.DigitalScope)
         # self.supply.setVoltage(channel=1,voltage=0)
         # self.supply.setVoltage(channel=2,voltage=0)
