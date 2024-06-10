@@ -31,7 +31,7 @@ class BandgapTrim:
         ]
         for instruction in BandGapInstructions:
             self.mcp.mcpWrite(SlaveAddress=0x6c, data=instruction)
-            # sleep(0.3)
+            sleep(0.3)
         # input('>')
         if self.mcp.mcpRead(SlaveAddress=0x6c, data=[0x1A]):
             log.info('BandGap Brought in SWDN pin ....!')
