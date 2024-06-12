@@ -51,17 +51,18 @@ class E3648:
     
     def outp_ON(self,channel=1):
         self.supply.write(f'INSTrument:NSELect {str(channel)}')
-        return self.supply.write('OUTPut:RELay ON')
+        return self.supply.write('OUTPut:STATe ON')
     def outp_OFF(self,channel=1):
         self.supply.write(f'INSTrument:NSELect {str(channel)}')
-        return self.supply.write('OUTPut:RELay OFF')
+        return self.supply.write('OUTPut:STATe OFF')
 
 if __name__ == '__main__':
     supply = E3648(port='GPIB0::5::INSTR')
-    print(supply.get__IDN)
-    supply.setRange(channel=2, range=1)
-    supply.setVoltage(channel=2,voltage=14) 
-    supply.setCurrent(channel=2,current=0.5) 
+    # print(supply.get__IDN)
+    # supply.setRange(channel=2, range=1)
+    # supply.setVoltage(channel=2,voltage=14) 
+    # supply.setCurrent(channel=2,current=0.5) 
     supply.outp_OFF(channel=1)
+    supply.outp_ON(channel=1)
     # supply.setCurrent(current=0.5) 
     # print(supply.meas_Voltage())

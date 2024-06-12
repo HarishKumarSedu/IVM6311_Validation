@@ -10,7 +10,7 @@ import pandas as pd
 from tqdm import tqdm
 import os 
 from pathlib import Path
-
+from tqdm import tqdm
 class FROTrim:
     
     def __init__(self,mcp) -> None:
@@ -68,8 +68,8 @@ class FROTrim:
         self.scope.set_Channel__VScale(scale=0.5)
         # self.scope.init_scopePosEdge__Trigger(channel='CH1')
         sleep(1)
-        for value in range(0,2**(4),1):
-            self.mcp.mcpWrite(SlaveAddress=0x6c,data=[self.trimregister,(0xf0|value)])
+        for value in tqdm(range(0,2**(5),1)):
+            self.mcp.mcpWrite(SlaveAddress=0x6c,data=[self.trimregister,(0xE0+value)])
             sleep(0.5)
             freq = 0
             # input('>>>>>>>>')
@@ -79,10 +79,11 @@ class FROTrim:
             # print(f'Frequency ====> {freq}')
             self.error_abs.append(abs(self.measure_values[-1]/(10**6) - 13))
             self.trim_code.append(value)
+            log.debug(f'Trimming code : {self.trim_code[-1]}')
+            log.debug(f'Trimming Fro Value : {self.measure_values[-1]}')
         self.fro_Limit__Check()
     def fro_Limit__Check(self):
         
-
         error_min = min(self.error_abs)
         error_min__Index =self.error_abs.index(error_min)
         if error_min < 0.5:
@@ -90,7 +91,7 @@ class FROTrim:
             self.trimcode = self.trim_code[error_min__Index]
             log.info(f'Trim code : {self.trimcode}')
             # self.burn_value(trimcode=trimcode)
-            self.mcp.mcpWrite(SlaveAddress=0x6c, data=[self.trimregister,(0x03 << 5 | self.trimcode)])
+            self.mcp.mcpWrite(SlaveAddress=0x6c, data=[self.trimregister,(0xE0 | self.trimcode)])
             self.trim_codeValue()
     def trim_codeValue(self):
         return [self.trimregister, self.mcp.mcpRead(SlaveAddress=0x6c, data=[self.trimregister])[-1]]

@@ -32,7 +32,6 @@ class TSDNTrim:
             [0xFE,0x01],
             [0x19,0x81],
             [0x1A,0x04],
-            [0xB0,0x0E],
             [self.trimregister,0x00],
         ]
         for instruction in TsdnInstructions:
@@ -52,7 +51,7 @@ class TSDNTrim:
         setabsCode = []
         for i in tqdm(range(0,8)):
             value = self.mcp.mcpRead(SlaveAddress=0x6c, data=[self.trimregister])[0]
-            value = (value&0x1f | (i<<5))
+            value = 0x1f + (i<<5)
             setabsCode.append(hex(value))
             self.mcp.mcpWrite(SlaveAddress=0x6c, data=[self.trimregister,value])
             sleep(0.3)
@@ -60,8 +59,8 @@ class TSDNTrim:
             TsdnValue.append(self.multimeter.meas_V())
 
         data = pd.DataFrame({'SetCode':setCode,'TsdnValue':TsdnValue,'setabsCode':setabsCode})
-        data['error_percentage']  = data['TsdnValue'].apply(lambda x : abs(((x-0.542)/1.799)*100))
-        
+        data['error_percentage']  = data['TsdnValue'].apply(lambda x : abs(((x-0.542)/0.542)*100))
+        print(data['TsdnValue'], data['SetCode'])
         trimmingCode_index = data[['error_percentage']].idxmin()
         optimal_value = data.loc[trimmingCode_index,"TsdnValue"].to_list()[-1]
         
@@ -70,8 +69,8 @@ class TSDNTrim:
         log.warning(f'min value : {self.trimcode}')
         self.trim_codeValue()
     def trim_codeValue(self):
-        self.mcp.mcpWrite(SlaveAddress=0x6c, data=[self.trimregister,self.trimcode << 4 | 0xE])
-        log.warning(hex(self.trimcode << 4 | 0xE))
+        self.mcp.mcpWrite(SlaveAddress=0x6c, data=[self.trimregister,0x1f + (self.trimcode << 5)  ])
+        log.warning(hex((self.trimcode << 5 )+ 0x1f))
         return [self.trimregister,self.mcp.mcpRead(SlaveAddress=0x6c, data=[self.trimregister])[-1]]
 
 if __name__ == '__main__':

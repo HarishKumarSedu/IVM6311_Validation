@@ -9,8 +9,9 @@ class EnableAnalogTestPoint:
         EnableAnalogTestPointInstructions = [ 
             [0xFE,0x01],
             # [0x0F,0x88],
-            [0x10,0x08],
-            [0x19,0x80],
+            # [0x10,0x08],
+            [0x19,0x81],
+            [0x1A,0x00],
         ]
         for instruction in EnableAnalogTestPointInstructions:
             self.mcp.mcpWrite(SlaveAddress=0x6c, data=instruction)

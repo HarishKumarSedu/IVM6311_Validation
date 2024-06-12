@@ -25,8 +25,9 @@ class BandgapTrim:
         self.trimregister = 0xB0
         BandGapInstructions = [ 
             [0xFE,0x01],
-            [0x19,0x81],
+            # [0x19,0x81],
             [0x1A,0x01],
+            [0xB1,0xFF],
             [self.trimregister,0x0E],
         ]
         for instruction in BandGapInstructions:
@@ -45,31 +46,36 @@ class BandgapTrim:
         setCode = []
         BandGapValue = []
         erro_percentage = []
+        for i in tqdm(range(8)):
+            value = self.mcp.mcpRead(SlaveAddress=0x6c, data=[self.trimregister])[0]
+            # log.warning(hex(value))
+            value = ((value & 0x0f)| (i<<4))
+            log.warning(hex(value))
+            sleep(0.1)
+            self.mcp.mcpWrite(SlaveAddress=0x6c, data=[self.trimregister,value])
+            sleep(0.3)
+            setCode.append(i)
+            BandGapValue.append(self.multimeter.meas_V(count=1))
+            # BandGapValue.append(self.multimeter.read_value(cnt=1))
         for i in tqdm(range(15,7,-1)):
             value = self.mcp.mcpRead(SlaveAddress=0x6c, data=[self.trimregister])[0]
             log.warning(hex(value))
             value = ((value & 0x0f)| (i<<4))
             log.warning(hex(value))
+            sleep(0.1)
             self.mcp.mcpWrite(SlaveAddress=0x6c, data=[self.trimregister,value])
             sleep(0.3)
             setCode.append(i)
-            BandGapValue.append(self.multimeter.meas_V())
+            BandGapValue.append(self.multimeter.meas_V(count=1))
+            # BandGapValue.append(self.multimeter.read_value(cnt=1))
             erro_percentage.append((abs(BandGapValue[-1]) - 1.799)/BandGapValue[-1] *100)
-        for i in tqdm(range(8)):
-            value = self.mcp.mcpRead(SlaveAddress=0x6c, data=[self.trimregister])[0]
-            log.warning(hex(value))
-            value = ((value & 0x0f)| (i<<4))
-            log.warning(hex(value))
-            self.mcp.mcpWrite(SlaveAddress=0x6c, data=[self.trimregister,value])
-            sleep(0.3)
-            setCode.append(i)
-            BandGapValue.append(self.multimeter.meas_V())
+
         data = pd.DataFrame({'SetCode':setCode,'BandGapValue':BandGapValue})
-        data['error_percentage']  = data['BandGapValue'].apply(lambda x : abs(((x-1.799)/1.799)*100))
-        
+        data['error_percentage']  = data['BandGapValue'].apply(lambda x : abs(x-1.8))
+        # print(data['BandGapValue'], data['SetCode'])
         trimmingCode_index = data[['error_percentage']].idxmin()
         optimal_value = data.loc[trimmingCode_index,"BandGapValue"].to_list()[-1]
-        
+        data.to_csv('bandgap.csv')
         if  1.793 < optimal_value <1.804:
             log.info(f'Optimal value : {optimal_value}V')
             self.trimcode = data.loc[trimmingCode_index,"SetCode"].to_list()[-1]
@@ -112,6 +118,8 @@ class BandgapTrim:
         sleep(3)
         # self.supply.setVoltage(channel=2,voltage=0)
         # self.supply.setVoltage(channel=4,voltage=0)
+
+
 
 if __name__ == '__main__':
     BandgapTrim()
