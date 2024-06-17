@@ -455,7 +455,7 @@ class N670x:
     def emulMode_A_Meter(self,channel:int):
         self.my_instr.write(f'EMUL AMETer,(@{str(channel)})')
 
-    def emulMode_A_Meter(self,channel:int):
+    def emulMode_V_Meter(self,channel:int):
         self.my_instr.write(f'EMUL VMETer,(@{str(channel)})')
 
 if __name__ == '__main__':
