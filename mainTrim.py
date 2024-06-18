@@ -68,6 +68,8 @@ class MainTrim:
             sleep(0.3)
         print(self.mcp.mcpRead(SlaveAddress=0x6c, data=[0xB1]))
         # input('>')
+        # self.trimvalues.append([0xB1,0x00])
+        # self.trimvalues.append([0xB0,0x8E])
         fro = FROTrim(mcp=self.mcp)
         self.trimvalues.append(fro.trim_codeValue())
 

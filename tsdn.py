@@ -34,7 +34,7 @@ class TSDN:
             [0xFE,0x01],
             [0x19,0x81],
             [0x1A,0x04],
-            [0xB0,0x0E],
+            # [0xB0,0x0E],
             [0xB3,0x00],
         ]
         for instruction in TsdnInstructions:

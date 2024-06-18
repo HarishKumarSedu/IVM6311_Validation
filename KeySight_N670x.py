@@ -132,7 +132,11 @@ class N670x:
     # * Channel Number must be int it is between 1-4 
     # * Current range must be float
     def setRange_Current(self,channel:int,voltageRange:float):
-        self.my_instr.write(f'CURR:RANG {str(voltageRange)},(@{str(channel)})')
+        self.my_instr.write(f'SENSE:CURR:RANG {str(voltageRange)},(@{str(channel)})')
+
+
+    def setRange_CurrentAuto(self,channel:int):
+        self.my_instr.write(f'SENSE:CURR:RANG:AUTO,(@{str(channel)})')
 
 
     # * set the channel to the current mode =
@@ -447,6 +451,12 @@ class N670x:
 
     def emulMode_CV_Load(self,channel:int):
         self.my_instr.write(f'EMUL CVLoad,(@{str(channel)})')
+
+    def emulMode_A_Meter(self,channel:int):
+        self.my_instr.write(f'EMUL AMETer,(@{str(channel)})')
+
+    def emulMode_V_Meter(self,channel:int):
+        self.my_instr.write(f'EMUL VMETer,(@{str(channel)})')
 
 if __name__ == '__main__':
     supply = N670x('USB0::0x0957::0x0F07::MY50002157::INSTR')

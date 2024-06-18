@@ -27,7 +27,7 @@ class BandgapTrim:
             [0xFE,0x01],
             # [0x19,0x81],
             [0x1A,0x01],
-            [0xB1,0xFF],
+            [0xB1,0x00],
             [self.trimregister,0x0E],
         ]
         for instruction in BandGapInstructions:

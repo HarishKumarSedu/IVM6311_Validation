@@ -48,7 +48,6 @@ class FROTrim:
             [0x03,0x01],
             [0x04,0x25],
             [0x0F,0x80],
-            [0xB0,0x1E],
             [self.trimregister,0xE7],
 
 
@@ -86,13 +85,13 @@ class FROTrim:
         
         error_min = min(self.error_abs)
         error_min__Index =self.error_abs.index(error_min)
-        if error_min < 0.5:
-            log.info(f'Measured Value : {self.measure_values[error_min__Index]}')
-            self.trimcode = self.trim_code[error_min__Index]
-            log.info(f'Trim code : {self.trimcode}')
-            # self.burn_value(trimcode=trimcode)
-            self.mcp.mcpWrite(SlaveAddress=0x6c, data=[self.trimregister,(0xE0 | self.trimcode)])
-            self.trim_codeValue()
+        # if error_min < 0.5:
+        log.info(f'Measured Value : {self.measure_values[error_min__Index]}')
+        self.trimcode = self.trim_code[error_min__Index]
+        log.info(f'Trim code : {self.trimcode}')
+        # self.burn_value(trimcode=trimcode)
+        self.mcp.mcpWrite(SlaveAddress=0x6c, data=[self.trimregister,(0xE0 | self.trimcode)])
+        self.trim_codeValue()
     def trim_codeValue(self):
         return [self.trimregister, self.mcp.mcpRead(SlaveAddress=0x6c, data=[self.trimregister])[-1]]
     
